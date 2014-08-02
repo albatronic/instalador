@@ -1,0 +1,53 @@
+{% extends layout %}
+
+{% block contenido %}
+
+    <h2>{{values.servicioDesarrollado.Titulo}}</h2>  
+    {% set imagen1 = values.servicioDesarrollado.getImagenN(3) %} 
+    {% set imagen2 = values.servicioDesarrollado.getImagenN(4) %} 
+
+    <div id="colIzqda">
+        {% if values.servicioDesarrollado.PathNameImagenN(3) %}
+        <div class="contenedorImagenServicio">
+            <div class="imagenServicioTop"></div>
+            <img src="{{app.path}}/{{values.servicioDesarrollado.PathNameImagenN(3)}}" alt="{{ imagen.getTitle }}" title="{{ imagen.getTitle }}" class="imagenServ" />
+
+            {% if imagen1.getShowCaption == 'Si' %}
+                <div class="imagenServicioTexto">{{ imagen1.getTitle }}</div>
+            {% endif %}
+            <div class="imagenServiciobottom"></div>           
+        </div>
+        {% endif %}
+
+        {%if values.servicioDesarrollado.PathNameImagenN(4)%}    
+        <div class="contenedorImagenServicio">
+            <div class="imagenServicioTop"></div>
+            <img src="{{app.path}}/{{values.servicioDesarrollado.PathNameImagenN(4)}}" alt="{{ imagen.getTitle }}" title="{{ imagen.getTitle }}" class="imagenServ" />            
+            {% if imagen2.getShowCaption == 'Si' %}
+                <div class="imagenServicioTexto">{{ imagen2.getTitle }}</div>
+            {% endif %}
+            <div class="imagenServiciobottom"></div>           
+        </div> 
+        {%endif%}       
+    </div>
+
+    <div id="colDrcha">
+        {% if values.servicioDesarrollado.ResumenBreve %}
+        <div class="cuadroGris">
+            <div class="cuadrogrisTop"></div>
+            <div class="cuadrogrisInter">
+                <span class="icono"><img src="{{app.path}}/{{values.servicioDesarrollado.PathNameImagenN(2)}}" alt="{{values.servicioDesarrollado.Titulo}}" title="{{values.servicioDesarrollado.Titulo}}" /></span>
+                <span class="textoCuadroGris">
+                    {{values.servicioDesarrollado.ResumenBreve}} 
+                </span>
+            </div>
+            <div class="cuadrogrisBottom"></div>
+        </div>  
+        {% endif %}  
+            
+            {% autoescape false %}{{values.servicioDesarrollado.Resumen}}{% endautoescape %}
+        {% include '_global/botonera.html.twig' %}    
+          
+        </div>
+    </div>    
+{% endblock %}

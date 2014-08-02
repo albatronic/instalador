@@ -1,0 +1,62 @@
+{% extends layout %}
+
+{% block bodyContacto %}onload="initialize ()"{%endblock%}
+
+{% block contenido %}
+    <div id="colIzqda">
+	{% include '_global/calendario.html.twig' %}
+        {% include 'Eventos/banners.html.twig' %}            
+    </div>
+
+    <div id="colDrcha">       
+        {% set nContenidos = values.listadoContenidos.contenidos|length %}
+        {% set seccion = values.listadoContenidos.contenidos[0].contenido.IdSeccion %}
+        {% set nH = 0 %}
+            
+        {# CABECERA CON LOS DATOS DE LA SECCION #}
+        {#<div id="grupoSeccion">
+        {% if (seccion.MostrarTitulo.IDTipo and seccion.Titulo) %}
+            {% set nH = nH + 1 %}
+            <h{{nH}}>{{seccion.Titulo}}</h{{nH}}>
+        {% endif %}
+
+        {% if (seccion.MostrarSubtitulo.IDTipo and seccion.Subtitulo) %}
+            {% set nH = nH + 1 %}
+            <h{{nH}}>{{seccion.Subtitulo}}</h{{nH}}>
+        {% endif %}
+
+        {% if (seccion.MostrarIntroduccion.IDTipo and seccion.Introduccion) %}
+            {% set nH = nH + 1 %}            
+            <h{{nH}}>{{seccion.Introduccion}}</h{{nH}}>
+        {% endif %}
+        </div>#}
+        {# ------------------------------------ #}
+            
+        {% for key,contenido in values.listadoContenidos.contenidos%}
+            
+            {% include 'Contenidos/contenido.html.twig' with {'contenido': contenido.contenido, 'nH': nH}%}
+
+            {# FICHEROS ADJUNTOS #}            
+            {% if contenido.contenido.ShowDocuments.IDTipo == '1' %}
+                {% include 'Contenidos/ficherosAdjuntos.html.twig' with {'contenido': contenido.contenido} %}
+            {% endif %}
+
+            {# ENLACES RELACIONADOS #}            
+            {% if contenido.contenido.ShowRelatedLinks.IDTipo == '1' %}
+                {% include 'Contenidos/enlacesRelacionados.html.twig' with {'enlacesRelacionados': contenido.enlacesRelacionados} %} 
+            {% endif %}
+
+            {# GALERIA DE IMAGENES #}    
+            {% if contenido.contenido.ShowGalery.IDTipo == '1' %}
+                {% include 'Contenidos/galeria.html.twig' with {'galeriaFotos': contenido.galeriaFotos} %} 
+            {% endif %}
+            
+            {% if key+1 < nContenidos%}
+                <div class="separacionVariosContenidos"></div>
+            {% endif %}
+                
+        {% endfor %}
+	
+        {% include '_global/botonera.html.twig' %}        
+    </div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{#
+
+CONTROLAR QUE NO SE MUESTRE EL QUE YA ESTÁ DESARROLLADO !!!!!!!!!!!!
+#}
+
+
+{% if values.otrosPosts.articulos | length > 0 %}
+<h2>{{values.LABELS.tambienPuedeInteresarte}}:</h2>
+
+<div id="posts-shortcode-1" class="posts-shortcode">
+    <ul>
+        {% for item in values.otrosPosts.articulos %}
+        <li class="post-shortcode-item grid_3">
+            <div class="details-wrap">
+
+                <div class="featured-thumbnail">
+                    {% if item.imagen %}
+                    <div class="image-wrap">
+                        <a class="image-wrapper" href="{{item.url.url}}"><img src="{{appPath}}/{{item.imagen}}" alt="{{item.titulo}}"><span class="zoom-icon none"></span></a>
+                    </div>
+                    {% endif %}                                
+                </div>
+
+                <!-- end of .featured-thumbnail -->
+                <div class="tilte">
+                    <h3>
+                        <a href="{{item.url.url}}">{{item.titulo}}</a>
+                    </h3>
+                </div>
+            </div>
+         </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}

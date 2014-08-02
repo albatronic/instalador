@@ -1,0 +1,32 @@
+<div id="servicios" class="section_servicios">
+    <div class="contenedor_central">
+        <h2>{{values.TEXTS.servicios | upper}}</h2>
+        <ul>
+                <li id="analisis"><a href="{{app.path}}/analisis-clinicos" title="{{values.TEXTS.analisisClinicos}}">{{values.TEXTS.analisisClinicos}}</a></li>
+                <li id="cardio"><a href="{{app.path}}/electrocardiograma" title="{{values.TEXTS.analisisClinicos}}">{{values.TEXTS.diagnosticoCardiovascular}}</a></li>
+                <li id="servicios"><a href="{{app.path}}/encargos" title="{{values.TEXTS.servicioDeEncargos}}">{{values.TEXTS.servicioDeEncargos}}</a></li>
+                <li id="facial"><a href="{{app.path}}/diagnostico-facial-y-capilar" title="{{values.TEXTS.diagnosticoFacialYCapilar}}">{{values.TEXTS.diagnosticoFacialYCapilar}}</a></li>
+                <li id="nutricionista"><a href="{{app.path}}/servicio-de-nutricionista" title="{{values.TEXTS.servicioDeNutricionista}}">{{values.TEXTS.servicioDeNutricionista}}</a></li>
+                <li id="parking"><a href="{{app.path}}/parking-gratuito" title="{{values.TEXTS.parkingGratuito}}">{{values.TEXTS.parkingGratuito}}</a></li>
+                <li id="optica2"><a href="{{app.path}}/optica" title="{{values.TEXTS.optica}}">{{values.TEXTS.optica}}</a></li>
+                <li id="spd"><a href="{{app.path}}/sistema-personalizado-de-dosificacion" title="{{values.TEXTS.sPD}}">{{values.TEXTS.sPD}}</a></li>                
+        </ul>
+
+        <div id="servicios_derecha">
+            <div>
+                <h3>{{values.TEXTS.analisisClinicos}}</h3>
+                <a href="{{app.path}}/servicio-desarrollado" title="{{values.TEXTS.analisisRealizados}}"><img src="{{app.path}}/images/analisis.jpg" alt="{{values.TEXTS.analisisRealizados}}" title="{{values.TEXTS.analisisRealizados}}" class="imagen_analisis" /></a>
+                <p>{{values.TEXTS.analisisClinicosDescripcion}}</p>
+                <a href="{{app.path}}/servicio-desarrollado" title="{{values.TEXTS.analisisRealizados}}" class="btn">{{values.TEXTS.analisisRealizados}}</a>
+            </div>
+
+            <div>
+                <h3>{{values.TEXTS.novedades}}</h3>
+                <p>{{values.TEXTS.novedadesDescripcion}}</p>
+                <a href="{{app.path}}/novedades" title="{{values.TEXTS.novedades}}" class="btn">{{values.TEXTS.novedades}}</a>
+            </div>
+            <a onClick="goToByScroll('eventos');" id="btn_servicios"></a>
+            <span class="menta"></span>
+        </div>
+    </div>
+</div>

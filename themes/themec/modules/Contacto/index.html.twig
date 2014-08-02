@@ -1,0 +1,17 @@
+{% extends layout %}
+
+{% block bodyContacto %}onload="initialize ()"{% endblock %}
+
+{% block contenido %}
+    <h2>{{values.TEXTS.contacto}}</h2>
+    <div id="col_izqdaSituacion">
+        {% include 'Contacto/situacion.html.twig' %} 
+        {% include 'Contacto/situacionExtra.html.twig' %} 
+    </div>
+
+    <div id="col_drcha">
+        {% include 'Contacto/formulario.html.twig' %}
+        {# include 'Contacto/mensajes.html.twig' #}
+    </div>
+    <div id="map_canvas"></div>
+{% endblock %}

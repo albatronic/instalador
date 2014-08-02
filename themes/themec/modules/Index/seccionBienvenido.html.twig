@@ -1,0 +1,13 @@
+<div id="bienvenido" class="section_bienvenido">
+    <div class="contenedor_central">
+        <h2>{{values.TEXTS.bienvenido}}</h2>
+        {% include 'Index/seccionBienvenidoSlider.html.twig' %}
+        {% include 'Index/seccionBienvenidoDerecha.html.twig' %}
+
+        <div id="mensajes">
+                <span class="trato">{{values.TEXTS.tratoPersonalizadoYCercano}}</span>
+                <span class="parking">{{values.TEXTS.parkingGratuitoParaClientes}}</span>
+        </div>
+        <a onClick="goToByScroll('servicios');" id="btn_bienvenido"></a>
+    </div>
+</div>

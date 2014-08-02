@@ -1,0 +1,82 @@
+{# PRODUCTOS #}
+{% extends layout %}
+
+{% block cuerpo %}
+<div id="sub-main" class="container_12">
+    <div class="h-wrapper h1 grid_12">
+        <h1>{{macro.idioma('nuestrosProductos')}}<span class="line"></span></h1>
+    </div>    
+    <div id="content" class="portfolio-full">
+        
+        <div class="ports">
+            <div id="load-portfolio" class="grid_12">
+                <ul class="portfolio-filter" data-key="filter">
+                    <li>
+                        <a href="#filter" data-value="*">{{macro.idioma('todos')}}</a>
+                    </li>                    
+                    {% for key,producto in values.productos.contenidos %}
+                    <li>
+                        <a href="{{producto.contenido.Href.url}}" data-value="{{key}}">{{producto.contenido.Titulo}}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <ul id="portfolio-item-wrapper" class="portfolio-item-wrapper gallery border">
+                {% for key,producto in values.productos.contenidos %}
+                <li class="portfolio-item grid_12 {{key}}">
+                    <div class="featured-thumbnail-wrapper image">
+                        <div class="featured-thumbnail">
+                            <div class="image-wrap">
+                                <a class="image-wrapper" href="{{app.path}}/{{theme}}/{{producto.contenido.getPathNameImagenN(5)}}" data-rel="prettyPhoto[gallery]">
+                                    <img src="{{app.path}}/{{theme}}/{{producto.contenido.getPathNameImagenN(4)}}" alt="{{producto.contenido.Subtitulo}}" /><span class="zoom-icon video"></span>
+                                </a>
+                                <div class="zoom-icon gallery-port border">
+                                    <div class="port-icon-wrapper">
+                                        <a href="{{producto.Href.url}}" class="iconcontainer"><span></span></a>
+                                        <a href="{{app.path}}/{{theme}}/{{producto.contenido.getPathNameImagenN(5)}}" data-rel="prettyPhoto[gallery]" class="iconcontainer magnify"><span></span></a>
+                                        <h2>{{producto.contenido.Titulo}}</h2>
+                                        <div>
+                                            <a href="#" rel="tag">{{producto.contenido.Subtitulo}}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end of .featured-thumbnail -->
+                    </div>
+                    <!-- end of .featured-thumbnail-wrapper -->
+                    <div class="portfolio-item-context">
+                        <h2 class="portfolio-item-title">
+                            <a href="{{producto.contenido.Href.url}}"> {{producto.contenido.Titulo}} </a>
+                        </h2>
+                        <div class="portfolio-item-content-wrapper">
+                            <div class="portfolio-item-category">
+                                <a href="#" rel="tag">{{producto.contenido.Subtitulo}}</a>
+                            </div>
+                            <div class="portfolio-item-content"> {{producto.contenido.Resumen}} </div>
+                            <a class="normal-button" href="{{producto.contenido.Href.url}}"> {{macro.idioma('leerMas')|upper}} </a>
+                        </div>
+                        <!-- end of .portfolio-item-content-wrapper -->
+                    </div>
+                    <!-- end of .portfolio-item-context -->
+                </li>
+                {% endfor %}
+            </ul>
+            
+        </div>
+        
+        {# PAGINADOR
+        <div class="grid_12">
+            <div id="pagination-wrapper">
+                <div id="pagination"><span>Page 1 of 3</span><span class="current">1</span>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+         #}
+    </div>
+</div>
+{% endblock %}

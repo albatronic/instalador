@@ -1,0 +1,11 @@
+<div id="banda_ubicacion">
+    <div class="contenedor_central">
+        <img src="{{app.path}}/images/marbella-peq.png" id="marbellaImg" alt="{{values.datosContacto.empresa}} | {{values.datosContacto.poblacion}}" title="{{values.datosContacto.empresa}} | {{values.datosContacto.poblacion}}" />
+        <ul class="globitos globosPeq">
+            <li class="ubicacion"><a href="{{app.path}}/donde-estamos" title="{{values.LABELS.dondeEstamos}}">{{values.LABELS.dondeEstamos}}</a></li>
+            <li class="abierto">{{values.LABELS.abierto24h}}</li>
+            <li class="telefono">952 774 086</li>
+        </ul>
+        {% include '_global/banderas.html.twig' %}
+    </div>
+</div>

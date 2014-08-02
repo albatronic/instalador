@@ -1,0 +1,31 @@
+
+{% set nEnlaces = enlacesRelacionados.enlaces|length %}
+
+{% if nEnlaces > 0 %}
+<div class="ficherosAdjuntos">
+
+    <div class="contenidoTop">
+        <h6>{{values.LABELS.enlacesRelacionados}}</h6>
+    </div>
+
+    <div class="contenidoInter">
+            <ul class="enlaces_rel">
+                {% for key,enlace in enlacesRelacionados.enlaces %}
+                    {% if key is even %}
+                    <li>{{enlace.titulo}}<br /><a href="{{enlace.url.url}}" title="{{enlace.url.url}}" {% if enlace.url.targetBlank %}rel="pop-up"{% endif %}><span class="url_enlace">{{macro.recortaTexto(enlace.url.url,30)}}</span></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+            <ul class="enlaces_rel right">
+                {% for key,enlace in enlacesRelacionados.enlaces %}
+                    {% if key is odd %}
+                    <li>{{enlace.titulo}}<br /><a href="{{enlace.url.url}}" title="{{enlace.url.url}}" {% if enlace.url.targetBlank %}rel="pop-up"{% endif %}><span class="url_enlace">{{macro.recortaTexto(enlace.url.url,30)}}</span></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+    </div>
+    <!-- <div class="contenidoBottom"></div> -->
+		
+</div>
+{% endif %}

@@ -1,0 +1,23 @@
+<div id="cabeceraPeq">
+    <div class="contenedor_central">
+        <a href="{{app.path}}" id="logotipoPeq" title="{{values.LABELS.textoSEOLogotipo}}">
+            <img src="images/farmacia-mingorance-marbella-p.png" alt="{{values.LABELS.textoSEOLogotipo}}" title="{{values.LABELS.textoSEOLogotipo}}" />
+        </a>
+
+        <div id="menu_cabeceraPeq">
+            {% set urlActual = appPath ~ urlAmigable %}            
+            <ul>
+                {% for seccion in values.menuCabecera %}
+                    <li>
+                        {% if urlActual == seccion.url.url %}
+                            {% set claseCss = "activo" %}
+                        {% else %}
+                            {% set claseCss = "" %}
+                        {% endif %}
+                        {{ macro.link(seccion.etiquetaWeb,none,seccion.url.url,seccion.url.targerBlank,none,claseCss) }}
+                    </li>
+                {% endfor %}                
+            </ul>				
+        </div>
+    </div>	
+</div>

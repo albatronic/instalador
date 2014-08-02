@@ -1,0 +1,50 @@
+{# NOTAS A TENER EN CUENTA #}
+{# Para que se muestre el campo de Error en las celdas hay que añadir la palabra Error a la clase "celda"
+## quedando <input class="celdaError">
+## de la misma manera para el campo Checkbox tendría que quedar <div class="checkboxError">
+#}
+<article id="formulario">
+    {% if values.formContacta.accion == '' %}
+    <form name="formEnvio" id="formEnvio" action="" method="POST">
+        <input name="controller" value="Contacto" type="hidden" />
+        <input name="action" value="Index" type="hidden" />
+
+        <article class="contPeq left">
+            <label>{{values.LABELS.nombre}}</label>    
+            <input type="text" name="campos[Nombre][valor]" id="nombre" 
+                   class="{% if values.formContacta.campos.Nombre.error %}celdaError {% else %}celda{% endif %} celdaPeq" />
+        </article>    
+        
+        <article class="contPeq right">        
+            <label>{{values.LABELS.eMail}}</label>            
+            <input type="text" name="campos[Email][valor]" id="email" 
+               class="{% if values.formContacta.campos.Email.error %}celdaError {% else %}celda{% endif %} celdaPeq" />
+        </article>
+
+        <article class="contGran left">                
+            <label>{{values.LABELS.asunto}}</label>                        
+            <input type="text" name="campos[Asunto][valor]" id="asunto" 
+            class="{% if values.formContacta.campos.Asunto.error %}celdaError {% else %}celda{% endif %}" />  
+        </article>
+        
+        <article class="contGran left">        
+            <label>{{values.LABELS.mensaje}}</label>                                    
+            <textarea name="campos[Mensaje][valor]" id="mensaje" 
+                  class="{% if values.formContacta.campos.Mensaje.error %}celdaError {% else %}celda{% endif %}" 
+                  rows="10" cols=""></textarea>
+        </article>
+
+        <div id="contenedorEnviar">
+            <div class="{% if values.formContacta.campos.leidoPolitica.error %}checkboxError {% else %}checkbox{% endif %}">
+                <input name="campos[leidoPolitica][valor]" type="checkbox" id="checkbox2" {%if values.formContacta.campos.leidoPolitica.valor == 'on' %} CHECKED{% endif %} />
+                <label class="textoCheckbox" for="checkbox2">{{values.LABELS.heLeido}} <a href="{{app.path}}/{{values.LABELS.urls.politicaPrivacidad}}" rel="iframe-1000-360" class="pirobox" title="{{values.LABELS.politicaDePrivacidad}}">{{values.LABELS.politicaDePrivacidad}}.</a></label>
+            </div>
+             <a data-type="submit" title="{{values.LABELS.enviar}}" class="boton right" onclick="$('#formEnvio').submit();">{{values.LABELS.enviar}}</a>
+        </div>
+    </form>
+    {% else %}
+        <div class="mensaje">
+            <div class="{%if values.formContacta.resultado%}exito mensajeEnviado{%else%}error{%endif%}">{{values.formContacta.mensaje}}</div>
+        </div>
+    {% endif %}
+</article>

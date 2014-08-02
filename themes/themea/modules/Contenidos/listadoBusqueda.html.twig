@@ -1,0 +1,14 @@
+{# LISTADO DE CONTENIDOS RESULTADO DE LA BUSQUEDA #}
+
+{% extends layout %}
+
+{% block cuerpo %}
+
+<ul>
+{% for key,item in values.listadoBusqueda %}
+<li>
+    {{ macro.link(item.titulo,item.titulo,item.url.url,item.url.targetBlank) }}
+</li>
+{% endfor %}
+</ul>
+{% endblock %}

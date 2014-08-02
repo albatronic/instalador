@@ -1,0 +1,17 @@
+<div id="contenedor_noticias">
+    {% for evento in values.eventos %}   
+    <div class="noticia_individual">         
+	<div class="etiqueta_fecha">
+            <div class="etiqueta_flecha_left"></div>
+            <div class="etiqueta_flecha_inter">{{evento.fecha|date('d-m-Y')}}</div>
+            <div class="etiqueta_flecha_right"></div>
+	</div>
+	
+	<h4><a href="{{evento.url.url}}" title="{{evento.titulo}}">{{evento.titulo|slice(0, 50)}}{% if evento.titulo|length>50 %} ...{% endif %}</a></h4>
+	<p>{% autoescape false %}{{evento.resumen|slice(0, 50)}}{% if evento.desarrollo|length>50%} ...{% endif %}{% endautoescape %}</p>
+    </div>    
+    {% endfor%}  
+                
+    <a href="{{app.path}}/{{values.LABELS.urls.eventos}}" title="{{values.LABELS.verTodosLosEventos}}" class="btn">{{values.LABELS.verTodosLosEventos}}</a>
+    <a onClick="goToByScroll('pie');" id="btn_eventos"></a>
+</div>

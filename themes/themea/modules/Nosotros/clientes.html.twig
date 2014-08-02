@@ -1,0 +1,20 @@
+{% if values.clientes | length > 0 %}
+<div class="grid_12">
+    <div class="h-wrapper">
+        <h3>{{macros.idiomas('nuestrosClientes')}}<span class="line"></span></h3>
+    </div>
+    <div class="clients-wrapper"><span></span>
+        <div id="clients-wrap-1">
+            <ul class="clients">
+                {% for item in values.clientes %}{{item.titulo}}
+                    <li>
+                        <a href="#">
+                            <img src="{{app.path}}/{{THEME}}/{{item.imagen}}" alt="{{item.titulo}}" title="{{item.titulo}}">
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endif %}

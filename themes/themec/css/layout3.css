@@ -1,0 +1,43 @@
+/*******************************
+   DEFINICIÓN BODY
+********************************/
+body {
+	background: url(../imagenes/fondo3.jpg) center repeat-x;
+	background-position: top; 
+	background-color:#ffffff;
+	/*color:#333333;*/
+	margin:0;
+	padding-bottom:0px;
+	margin-bottom:0px;}
+	
+.clear {
+	clear:both;}
+	
+.oculto {
+	display:none; text-indent:-9999px;}
+	
+hr {
+	display:none}
+	
+p,code,ul {
+	padding-bottom: 1.3em;}
+/* __________________________________________ FIN: DEFINICIÓN BODY __________________________________________________ */
+
+
+
+	
+/*******************************
+   CONTENEDOR GLOBAL (No afecta al pide de página)
+********************************/
+
+#contenedor_global {
+
+	
+}
+
+/* __________________________________________ FIN: CONTENEDOR GLOBAL  _________________________________________ */
+
+#contenedor_imagen {	
+	margin:0 auto;
+	width:944px;
+	overflow:hidden;}

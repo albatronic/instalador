@@ -1,0 +1,315 @@
+# ETIQUETAS WEB EN ESPAÑOL
+---
+es:
+  analisisClinicos: 'Análisis clínicos'
+  analisisClinicosDescripcion: 'Lorem ipsum dolor sit amet, consectetur adipiscing vivamus ultricies vestibulum nisl, et sollicitudin congue risus ut socis natoque.'
+  analisisRealizados: '¿Qué análisis realizamos?'
+  
+  bienvenido: 'Bienvenido' 
+  bienvenidoParrafo: 'En nuestro espacio de salud, será atendido por un equipo de profesionales cualificados en diferentes áreas:'  
+  bienvenidoIntroduccion: 'Bienvenido a la web de Farmacia Mingorance Marbella, situada en Ricardo Soriano 44, donde encontrará información de todos los productos y servicios que podemos ofrecerle.'
+
+  dermocosmetica: 'Dermocosmética'  
+  descubreNestrasNovedades: 'Descubre nuestras novedades'
+  diagnosticoCardiovascular: 'Diagnóstico cardiovascular'
+  diagnosticoFacialYCapilar: 'Diagnóstico facial y capilar'  
+  dieteticaYNutricion: 'Dietética y Nutrición'
+  
+  eventosYActividades: 'Eventos y actividades'  
+  
+  farmaciaMingorance: 'Farmacia Mingorance en Marbella'
+  fisioterapia: 'Fisioterapia'
+  formulasMagistrales : 'Fórmulas Magistrales'
+  formulasMagistralesDescripcion: 'Español// Sed elementum ipsum porttitor neque nisi.'
+  
+  hematologia: 'Hematología'
+  hematologiaAcordeonParrafo: 'Vivamus vel neque nec est hendrerit aliquet. Donec sed cursus sapien. Aenean auctor egestas turpis nec aliquam.'
+  hematologiaAcordeonSubtitulo: 'Este marzo obtenga gratis su prueba de Hematrocrito'
+  higiene: 'Higiene'
+  homeopatia: 'Homeopatía'
+  
+  infantil: 'Infantil'  
+
+  laboratorio:  'Laboratorio'
+  laboratorioDescripcion: 'Español// Sed elementum ipsum porttitor neque nisi.'
+  
+  nutricosmetica: 'Nutricosmética'
+  
+  novedades: 'Novedades'
+  novedadesDescripcion: 'Lorem ipsum dolor sit amet, consectetur adipiscing vivamus ultricies vestibulum nisl, et sollicitudin congue risus ut socis natoque.'  
+  
+  oferta: 'Oferta'
+  ofertaAcordeonParrafo: 'Vivamus vel neque nec est hendrerit aliquet. Donec sed cursus sapien. Aenean auctor egestas turpis nec aliquam.'
+  optica: 'Óptica'
+  opticaDescripcion: 'Español// Sed elementum ipsum porttitor neque nisi.'  
+  ofertaAcordeonSubtitulo: 'Consiga un 50% descuento en Graduación de la vista'
+  ortopedia: 'Ortopedia'
+  ortopediaAcordeonParrafo: 'Vivamus vel neque nec est hendrerit aliquet. Donec sed cursus sapien. Aenean auctor egestas turpis nec aliquam.'
+  ortopediaAcordeonSubtitulo: 'Le ofrecemos asesoramiento gratuito durante su lesión'  
+  
+  parafarmacia: 'Parafarmacia'
+  parafarmaciaDescripcion: 'Español// Sed elementum ipsum porttitor neque nisi.' 
+  parkingGratuitoParaClientes: 'Parking gratuito para clientes'   
+  parkingGratuito: 'Parking gratuito'
+  
+  salud: 'Salud'
+  servicios: 'Servicios'  
+  servicioDeEncargos: 'Servicio de encargos'
+  servicioDeNutricionista: 'Servicio de nutricionista'  
+  sPD: 'Sistema personalizado de dosificación'    
+  
+  tratoPersonalizadoYCercano: 'Trato personalizado y cercano'
+  
+  veterinaria: 'Veterinaria'
+
+# ETIQUETAS WEB EN INGLES
+en:
+  analisisClinicos: 'Análisis clínicos'
+  analisisClinicosDescripcion: 'Lorem ipsum dolor sit amet, consectetur adipiscing vivamus ultricies vestibulum nisl, et sollicitudin congue risus ut socis natoque.'
+  analisisRealizados: '¿Qué análisis realizamos?'
+  
+  bienvenido: 'Welcome' 
+  bienvenidoParrafo: 'EN/ En nuestro espacio de salud, será atendido por un equipo de profesionales cualificados en diferentes áreas:'  
+  bienvenidoIntroduccion: 'EN/ Bienvenido a la web de Farmacia Mingorance Marbella, situada en Ricardo Soriano 44, donde encontrará información de todos los productos y servicios que podemos ofrecerle.'
+
+  dermocosmetica: 'Dermocosmética'  
+  descubreNestrasNovedades: 'Descubre nuestras novedades'
+  diagnosticoCardiovascular: 'Diagnóstico cardiovascular'
+  diagnosticoFacialYCapilar: 'Diagnóstico facial y capilar'  
+  dieteticaYNutricion: 'Dietética y Nutrición'
+  
+  eventosYActividades: 'Eventos y actividades'  
+  
+  farmaciaMingorance: 'Farmacia Mingorance en Marbella'
+  fisioterapia: 'Fisioterapia'
+  formulasMagistrales : 'Fórmulas Magistrales'
+  formulasMagistralesDescripcion: 'En// Sed elementum ipsum porttitor neque nisi.'
+  
+  hematologia: 'Hematology'
+  hematologiaAcordeonParrafo: 'Vivamus vel neque nec est hendrerit aliquet. Donec sed cursus sapien. Aenean auctor egestas turpis nec aliquam.'
+  hematologiaAcordeonSubtitulo: 'En/ Este marzo obtenga gratis su prueba de Hematrocrito'
+  higiene: 'Higiene'
+  homeopatia: 'Homeopatía'
+  
+  infantil: 'Infantil'  
+
+  laboratorio:  'Laboratorio'
+  laboratorioDescripcion: 'En// Sed elementum ipsum porttitor neque nisi.'
+  
+  nutricosmetica: 'Nutricosmética'
+  
+  novedades: 'Novedades'
+  novedadesDescripcion: 'Lorem ipsum dolor sit amet, consectetur adipiscing vivamus ultricies vestibulum nisl, et sollicitudin congue risus ut socis natoque.'  
+  
+  oferta: 'Offer'
+  ofertaAcordeonParrafo: 'Vivamus vel neque nec est hendrerit aliquet. Donec sed cursus sapien. Aenean auctor egestas turpis nec aliquam.'
+  optica: 'Optics'
+  opticaDescripcion: 'En// Sed elementum ipsum porttitor neque nisi.'  
+  ofertaAcordeonSubtitulo: 'Consiga un 50% descuento en Graduación de la vista'
+  ortopedia: 'Orthopedics'
+  ortopediaAcordeonParrafo: 'Vivamus vel neque nec est hendrerit aliquet. Donec sed cursus sapien. Aenean auctor egestas turpis nec aliquam.'
+  ortopediaAcordeonSubtitulo: 'Le ofrecemos asesoramiento gratuito durante su lesión'  
+  
+  parafarmacia: 'Parafarmacia'
+  parafarmaciaDescripcion: 'En// Sed elementum ipsum porttitor neque nisi.' 
+  parkingGratuitoParaClientes: 'Parking gratuito para clientes'   
+  parkingGratuito: 'Parking gratuito'
+  
+  salud: 'Salud'
+  servicios: 'Services'  
+  servicioDeEncargos: 'Servicio de encargos'
+  servicioDeNutricionista: 'Servicio de nutricionista'  
+  sPD: 'Sistema personalizado de dosificación'    
+  
+  tratoPersonalizadoYCercano: 'Trato personalizado y cercano'
+  
+  veterinaria: 'Veterinaria' 
+
+# ETIQUETAS WEB EN ALEMAN
+de:
+  analisisClinicos: 'Análisis clínicos'
+  analisisClinicosDescripcion: 'Lorem ipsum dolor sit amet, consectetur adipiscing vivamus ultricies vestibulum nisl, et sollicitudin congue risus ut socis natoque.'
+  analisisRealizados: '¿Qué análisis realizamos?'
+  
+  bienvenido: 'Bienvenido' 
+  bienvenidoParrafo: 'De/ En nuestro espacio de salud, será atendido por un equipo de profesionales cualificados en diferentes áreas:'  
+  bienvenidoIntroduccion: 'De/ Bienvenido a la web de Farmacia Mingorance Marbella, situada en Ricardo Soriano 44, donde encontrará información de todos los productos y servicios que podemos ofrecerle.'
+
+  dermocosmetica: 'Dermocosmética'  
+  descubreNestrasNovedades: 'Descubre nuestras novedades'
+  diagnosticoCardiovascular: 'Diagnóstico cardiovascular'
+  diagnosticoFacialYCapilar: 'Diagnóstico facial y capilar'  
+  dieteticaYNutricion: 'Dietética y Nutrición'
+  
+  eventosYActividades: 'Eventos y actividades'  
+  
+  farmaciaMingorance: 'Farmacia Mingorance en Marbella'
+  fisioterapia: 'Fisioterapia'
+  formulasMagistrales : 'Fórmulas Magistrales'
+  formulasMagistralesDescripcion: 'De// Sed elementum ipsum porttitor neque nisi.'
+  
+  hematologia: 'Hematology'
+  hematologiaAcordeonParrafo: 'Vivamus vel neque nec est hendrerit aliquet. Donec sed cursus sapien. Aenean auctor egestas turpis nec aliquam.'
+  hematologiaAcordeonSubtitulo: 'Este marzo obtenga gratis su prueba de Hematrocrito'
+  higiene: 'Higiene'
+  homeopatia: 'Homeopatía'
+  
+  infantil: 'Infantil'  
+
+  laboratorio:  'Laboratorio'
+  laboratorioDescripcion: 'De// Sed elementum ipsum porttitor neque nisi.'
+  
+  nutricosmetica: 'Nutricosmética'
+  
+  novedades: 'Novedades'
+  novedadesDescripcion: 'Lorem ipsum dolor sit amet, consectetur adipiscing vivamus ultricies vestibulum nisl, et sollicitudin congue risus ut socis natoque.'  
+  
+  oferta: 'Offer'
+  ofertaAcordeonParrafo: 'Vivamus vel neque nec est hendrerit aliquet. Donec sed cursus sapien. Aenean auctor egestas turpis nec aliquam.'
+  optica: 'Optics'
+  opticaDescripcion: 'De// Sed elementum ipsum porttitor neque nisi.'  
+  ofertaAcordeonSubtitulo: 'de/ Consiga un 50% descuento en Graduación de la vista'
+  ortopedia: 'Orthopedics'
+  ortopediaAcordeonParrafo: 'Vivamus vel neque nec est hendrerit aliquet. Donec sed cursus sapien. Aenean auctor egestas turpis nec aliquam.'
+  ortopediaAcordeonSubtitulo: 'Le ofrecemos asesoramiento gratuito durante su lesión'  
+  
+  parafarmacia: 'Parafarmacia'
+  parafarmaciaDescripcion: 'De// Sed elementum ipsum porttitor neque nisi.' 
+  parkingGratuitoParaClientes: 'Parking gratuito para clientes'   
+  parkingGratuito: 'Parking gratuito'
+  
+  salud: 'Salud'
+  servicios: 'Servicios'  
+  servicioDeEncargos: 'Servicio de encargos'
+  servicioDeNutricionista: 'Servicio de nutricionista'  
+  sPD: 'Sistema personalizado de dosificación'    
+  
+  tratoPersonalizadoYCercano: 'Trato personalizado y cercano'
+  
+  veterinaria: 'Veterinaria'  
+
+# ETIQUETAS WEB EN FRANCES
+fr:
+  analisisClinicos: 'Analyse clinique'
+  analisisClinicosDescripcion: 'fr/Lorem ipsum dolor sit amet, consectetur adipiscing vivamus ultricies vestibulum nisl, et sollicitudin congue risus ut socis natoque.'
+  analisisRealizados: '¿Qué análisis realizamos?'
+  
+  bienvenido: 'Bienvenido' 
+  bienvenidoParrafo: 'Fr/ En nuestro espacio de salud, será atendido por un equipo de profesionales cualificados en diferentes áreas:'  
+  bienvenidoIntroduccion: 'FR/ Bienvenido a la web de Farmacia Mingorance Marbella, situada en Ricardo Soriano 44, donde encontrará información de todos los productos y servicios que podemos ofrecerle.'
+
+  dermocosmetica: 'Dermocosmética'  
+  descubreNestrasNovedades: 'Descubre nuestras novedades'
+  diagnosticoCardiovascular: 'Diagnostic cardiovasculaire'
+  diagnosticoFacialYCapilar: 'Diagnóstico facial y capilar'  
+  dieteticaYNutricion: 'Dietética y Nutrición'
+  
+  eventosYActividades: 'Eventos y actividades'  
+  
+  farmaciaMingorance: 'Farmacia Mingorance en Marbella'
+  fisioterapia: 'Fisioterapia'
+  formulasMagistrales : 'Formules maître'
+  formulasMagistralesDescripcion: 'Fr// Sed elementum ipsum porttitor neque nisi.'
+  
+  hematologia: 'Hématologie'
+  hematologiaAcordeonParrafo: 'Vivamus vel neque nec est hendrerit aliquet. Donec sed cursus sapien. Aenean auctor egestas turpis nec aliquam.'
+  hematologiaAcordeonSubtitulo: 'Este marzo obtenga gratis su prueba de Hematrocrito'
+  higiene: 'Higiene'
+  homeopatia: 'Homeopatía'
+  
+  infantil: 'Infantil'  
+
+  laboratorio:  'Laboratoire'
+  laboratorioDescripcion: 'FR// Sed elementum ipsum porttitor neque nisi.'
+  
+  nutricosmetica: 'Nutricosmética'
+  
+  novedades: 'Nouvelles'
+  novedadesDescripcion: 'fr/Lorem ipsum dolor sit amet, consectetur adipiscing vivamus ultricies vestibulum nisl, et sollicitudin congue risus ut socis natoque.'  
+  
+  oferta: 'Offer'
+  ofertaAcordeonParrafo: 'Vivamus vel neque nec est hendrerit aliquet. Donec sed cursus sapien. Aenean auctor egestas turpis nec aliquam.'
+  optica: 'Optique'
+  opticaDescripcion: 'Fr// Sed elementum ipsum porttitor neque nisi.'  
+  ofertaAcordeonSubtitulo: 'Consiga un 50% descuento en Graduación de la vista'
+  ortopedia: 'Orthopedics'
+  ortopediaAcordeonParrafo: 'Vivamus vel neque nec est hendrerit aliquet. Donec sed cursus sapien. Aenean auctor egestas turpis nec aliquam.'
+  ortopediaAcordeonSubtitulo: 'Le ofrecemos asesoramiento gratuito durante su lesión'  
+  
+  parafarmacia: 'Vitamins'
+  parafarmaciaDescripcion: 'Fr// Sed elementum ipsum porttitor neque nisi.' 
+  parkingGratuitoParaClientes: 'Parking gratuito para clientes'   
+  parkingGratuito: 'Parking gratuito'
+  
+  salud: 'Saludf'
+  servicios: 'Services'  
+  servicioDeEncargos: 'Servicio de encargos'
+  servicioDeNutricionista: 'Servicio de nutricionista'  
+  sPD: 'Sistema personalizado de dosificación'    
+  
+  tratoPersonalizadoYCercano: 'Trato personalizado y cercano'
+  
+  veterinaria: 'Veterinaria'     
+
+# ETIQUETAS WEB EN RUSO
+ru:
+  analisisClinicos: 'Análisis clínicos'
+  analisisClinicosDescripcion: 'Lorem ipsum dolor sit amet, consectetur adipiscing vivamus ultricies vestibulum nisl, et sollicitudin congue risus ut socis natoque.'
+  analisisRealizados: '¿Qué análisis realizamos?'
+  
+  bienvenido: 'добро пожаловать' 
+  bienvenidoParrafo: 'RU/ En nuestro espacio de salud, será atendido por un equipo de profesionales cualificados en diferentes áreas:'  
+  bienvenidoIntroduccion: 'RU/ Bienvenido a la web de Farmacia Mingorance Marbella, situada en Ricardo Soriano 44, donde encontrará información de todos los productos y servicios que podemos ofrecerle.'
+
+  dermocosmetica: 'Dermocosmética'  
+  descubreNestrasNovedades: 'Descubre nuestras novedades'
+  diagnosticoCardiovascular: 'Diagnóstico cardiovascular'
+  diagnosticoFacialYCapilar: 'Diagnóstico facial y capilar'  
+  dieteticaYNutricion: 'Dietética y Nutrición'
+  
+  eventosYActividades: 'Eventos y actividades'  
+  
+  farmaciaMingorance: 'Farmacia Mingorance en Marbella'
+  fisioterapia: 'Fisioterapia'
+  formulasMagistrales : 'Fórmulas Magistrales'
+  formulasMagistralesDescripcion: 'Español// Sed elementum ipsum porttitor neque nisi.'
+  
+  hematologia: 'Hematology'
+  hematologiaAcordeonParrafo: 'Vivamus vel neque nec est hendrerit aliquet. Donec sed cursus sapien. Aenean auctor egestas turpis nec aliquam.'
+  hematologiaAcordeonSubtitulo: 'Este marzo obtenga gratis su prueba de Hematrocrito'
+  higiene: 'Higiene'
+  homeopatia: 'Homeopatía'
+  
+  infantil: 'Infantil'  
+
+  laboratorio:  'Laboratorio'
+  laboratorioDescripcion: 'Español// Sed elementum ipsum porttitor neque nisi.'
+  
+  nutricosmetica: 'Nutricosmética'
+  
+  novedades: 'Novedades'
+  novedadesDescripcion: 'Lorem ipsum dolor sit amet, consectetur adipiscing vivamus ultricies vestibulum nisl, et sollicitudin congue risus ut socis natoque.'  
+  
+  oferta: 'Offer'
+  ofertaAcordeonParrafo: 'Vivamus vel neque nec est hendrerit aliquet. Donec sed cursus sapien. Aenean auctor egestas turpis nec aliquam.'
+  optica: 'Optics'
+  opticaDescripcion: 'Español// Sed elementum ipsum porttitor neque nisi.'  
+  ofertaAcordeonSubtitulo: 'Consiga un 50% descuento en Graduación de la vista'
+  ortopedia: 'Orthopedics'
+  ortopediaAcordeonParrafo: 'Vivamus vel neque nec est hendrerit aliquet. Donec sed cursus sapien. Aenean auctor egestas turpis nec aliquam.'
+  ortopediaAcordeonSubtitulo: 'Le ofrecemos asesoramiento gratuito durante su lesión'  
+  
+  parafarmacia: 'Parafarmacia'
+  parafarmaciaDescripcion: 'Español// Sed elementum ipsum porttitor neque nisi.' 
+  parkingGratuitoParaClientes: 'Parking gratuito para clientes'   
+  parkingGratuito: 'Parking gratuito'
+  
+  salud: 'Salud'
+  servicios: 'Servicios'  
+  servicioDeEncargos: 'Servicio de encargos'
+  servicioDeNutricionista: 'Servicio de nutricionista'  
+  sPD: 'Sistema personalizado de dosificación'    
+  
+  tratoPersonalizadoYCercano: 'Trato personalizado y cercano'
+  
+  veterinaria: 'Veterinaria'

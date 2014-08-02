@@ -1,0 +1,79 @@
+#col_izqdaSituacion {
+	width:226px;
+	float:left;
+}
+
+#col_drcha {
+	width:654px;
+	float:right;
+}
+
+/* -------------------------------- */
+/*		SITUACI�N           */
+/* -------------------------------- */
+#col_izqdaSituacion img#mapitas{
+	width:226px;
+	height:46px;
+	float:left;
+	margin-bottom:35px;
+}
+
+#col_izqdaSituacion ul{
+	width:226px;
+	float:left;
+	margin-bottom:10px;
+}
+
+#col_izqdaSituacion ul#datos li{
+	width:220px;
+	float:left;
+	padding-left:26px;
+	color:#444;
+	font:15px Arial, Helvetica, sans-serif;
+	margin-bottom:15px;
+	line-height:1.4em;
+}
+
+#col_izqdaSituacion ul#rrss {
+    margin-bottom: 30px;
+}
+
+#col_izqdaSituacion ul#rrss li{
+	width:27px;
+	height:27px;
+	float:left;
+	margin-right:5px;
+}
+
+#col_izqdaSituacion li a{
+	color:#444;
+}
+
+#col_izqdaSituacion li a:hover{
+	color:#a60837;
+}
+
+#col_izqdaSituacion ul#datos li#cont_domic{
+	background:url(../images/icono-contacto-domicilio.png) 0 0 no-repeat;
+}
+
+#col_izqdaSituacion ul#datos li#cont_tlf{
+	background:url(../images/icono-contacto-telefono.png) 0 0 no-repeat;
+}
+
+#col_izqdaSituacion ul#datos li#cont_mail{
+	background:url(../images/icono-contacto-mail.png) 0 0 no-repeat;
+}
+
+/* -------------------------------- */
+/*	IMÁGENES DONDE ESTAMOS      */
+/* -------------------------------- */
+#estamosPeq {
+    float: left;
+    margin-top: 30px;
+}
+
+#estamosGran {
+    float: left;
+    margin-bottom: 50px;
+}

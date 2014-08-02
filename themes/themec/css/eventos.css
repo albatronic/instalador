@@ -1,0 +1,145 @@
+#colIzqda {
+	width:206px;
+	float:left;
+}
+
+#colDrcha {
+	width:664px;
+	float:right;
+}
+
+/* -------------------------------- */
+/*	    COLUMNA DRCHA           */
+/* -------------------------------- */
+.evento_indiv {
+    border-bottom: 1px solid #ccc;
+    float: left;
+    margin-bottom: 40px;
+    padding-bottom: 35px;
+    width:100%;
+}
+
+.evento_indiv h2 {
+    float: none;
+    font-size: 16px;      
+    color: #A60837;
+    letter-spacing: 0;
+    line-height: 1.4em;
+    margin-bottom: 15px;
+    text-transform: none;
+    width: auto;
+}
+
+.evento_indiv h2 a{     
+    color: #A60837;
+}
+
+.evento_indiv h2 a:hover{
+	color:#444;
+}
+
+.fecha {
+    color: #555;
+    float: left;
+    font-family: 'texgyreadventor-regular', sans-serif;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.fechaEvento {
+    color: #555;
+    float: left;
+    font-family: 'texgyreadventor-regular', sans-serif;
+    font-size: 12px;
+    margin-left: -200px;
+    margin-bottom: 15px;
+    position: relative;
+    top: 140px;
+    z-index: 44;
+}
+
+.fechaLeft {
+    background: url('../images/fecha-left.png') 0 0 no-repeat;
+    float: left;
+    height: 24px;
+    width: 7px;
+}
+
+.fechaInter {
+    background: url('../images/fecha-inter.png') 0 0 repeat-x;
+    float: left;
+    height: 17px;
+    padding: 7px 5px 0 5px;
+}
+
+.fechaRigth {
+    background: url('../images/fecha-right.png') 0 0 no-repeat;
+    float: left;
+    height: 24px;
+    width: 11px;
+}
+
+.imagen_evento img {
+    border: 8px solid #e2e2e2;
+    float: left;
+    height: 160px;
+    margin-bottom: 15px;
+    margin-right: 20px;
+    width: 160px;
+}
+
+.evento_indiv.sin_imagen .fecha {
+    float: left;
+    width: 100%;
+}
+
+.evento_indiv.sin_imagen h2 {
+	width:100% !important;
+	float:left;
+}
+
+h3 {
+    color:#666;
+    float: none;
+    font-size:16px;
+    line-height: 1.4em;
+    margin-bottom:10px;
+}
+
+h3 a{
+    color:#666;
+}
+
+h3 a:hover{
+    color:#111;
+}
+
+.evento_indiv.sin_imagen h3 {
+    width:100% !important;
+    float:left;
+}
+
+p {
+    color: #444;
+    float: none !important;
+    margin-bottom:10px;
+}
+
+.evento_indiv.sin_imagen p {
+	width:100% !important;
+	float:left;
+}
+
+.mensajeEventos {
+    background: url('../images/no-hay-eventos.png') 50% 0 no-repeat;
+    padding-top: 210px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.mensajeEventos p {
+    float: left;
+}
+
+
+

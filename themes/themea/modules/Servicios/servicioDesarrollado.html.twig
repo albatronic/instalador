@@ -1,0 +1,37 @@
+{% extends layout %}
+
+{% block cuerpo %}
+<div id="sub-main" class="container_12">
+    <div class="h-wrapper h1 grid_12">
+	<h1>{{values.servicio.servicio.Titulo}}<span class="line"></span></h1>
+    </div>       
+    <div id="content" class="grid_8">	
+	<div id="portfoliosinglepage" class="ports">
+	    {% if values.servicio.servicio.PathNameImagenN(1) %}
+	    <div class="featured-thumbnail-wrapper image grid_12">
+		<div class="featured-thumbnail">
+		    <div class="image-wrap">
+			<a class="image-wrapper" href="{{values.servicio.servicio.PathNameImagenN(1)}}" data-rel="prettyPhoto[gallery]" title="{{values.servicio.servicio.Titulo}}">
+                        <img src="{{values.servicio.servicio.PathNameImagenN(1)}}" alt="{{values.servicio.servicio.Titulo}}" title="{{values.servicio.servicio.Titulo}}" /><span class="zoom-icon magnify"></span></a>
+		    </div>
+		</div>
+	    </div>
+	    {% endif %}
+		
+            <div id="port-content-wrapper">
+                <div class="content-portstyle grid_9">
+                    <div class="single-port">
+                        <h2>{{values.servicio.servicio.Subtitulo}}</h2>
+                    </div>
+                    <div class="post-content port-content">
+                        <p><strong class="dark-color">{{values.servicio.servicio.ResumenBreve}}</strong></p>
+                        {% autoescape false%}{{values.servicio.servicio.Resumen}}{% endautoescape %}
+                    </div>
+                </div>
+            </div>                
+	</div>						
+    </div>
+    {% include 'Servicios/sidebar.html.twig' %}      
+    {% include 'Servicios/otrosServicios.html.twig' %}           
+</div>
+{% endblock %}

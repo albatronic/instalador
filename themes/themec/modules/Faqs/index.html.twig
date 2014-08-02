@@ -1,0 +1,26 @@
+{% extends layout %}
+
+{% block contenido %}
+    <h2>{{values.LABELS.preguntasFrecuentes}}</h2>        
+     <dl class="accordion">
+        {% for pregunta in values.faq %}
+             <dt><a onclick="#">{{ pregunta.Titulo }}</a></dt>
+            <dd>{% autoescape false %}{{ pregunta.Desarrollo }}{% endautoescape %}</dd>
+        {% endfor %}    
+    </dl>
+
+<script type="text/javascript">
+    (function($) {
+        
+      var allPanels = $('.accordion > dd').hide();
+        
+      $('.accordion > dt > a').click(function() {
+        allPanels.slideUp();
+        $(this).parent().next().slideDown();
+        return false;
+      });
+
+    })(jQuery);
+</script>
+	    
+{% endblock %}

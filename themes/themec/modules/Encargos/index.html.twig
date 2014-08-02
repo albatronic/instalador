@@ -1,0 +1,19 @@
+{% extends layout %}
+
+{% block contenido %}
+    <h2>{{values.LABELS.encargos}}</h2>        
+    <p>{{values.LABELS.encargosDescripcion}}</p>
+    <span>{{values.LABELS.comoFuncionaEsteServicio}}</span>
+    <img src="{{app.path}}/images/encargos.png" alt="{{values.LABELS.comoFuncionaEsteServicio}}" title="{{values.LABELS.comoFuncionaEsteServicio}}" />
+    
+    <ul id="procesoEncargos">
+        <li>{{values.LABELS.encargosRellenarDatos}}</li>
+        <li>{{values.LABELS.encargosEnumeracionArticulos}}</li>
+        <li>{{values.LABELS.encargosGestion}}</li>
+        <li>{{values.LABELS.encargosAviso}}</li>
+    </ul>
+    
+    {% include 'Encargos/formulario.html.twig' %}
+    {# include 'Encargos/mensajes.html.twig' %} {# MENSAJES DE RESPUESTA DEL FORMULARIO #}
+    
+{% endblock %}

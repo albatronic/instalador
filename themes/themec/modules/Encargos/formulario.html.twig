@@ -1,0 +1,117 @@
+{# NOTAS A TENER EN CUENTA #}
+{# Para que se muestre el campo de Error en las celdas hay que añadir la palabra Error a la clase "celda"
+## quedando <input class="celdaError">
+## de la misma manera para el campo Checkbox tendría que quedar <div class="checkboxError">
+#}
+<article id="formulario">
+    {% if values.formContacta.accion == '' %}
+    <form name="formEnvio" id="formEnvio" action="" method="POST">
+        <input name="controller" value="Contacto" type="hidden" />
+        <input name="action" value="Index" type="hidden" />
+
+        <span class="titular">{{values.LABELS.datosPersonales}}</span>    
+        <article class="cont50 left">
+            <label class="labelGrande"><span>*</span>{{values.LABELS.nombreYApellidos}}</label>    
+            <input type="text" name="" id="nombre" 
+                   class="celda{# if values.formContacta.campos.Nombre.error %}celdaError {% else %}celda{% endif #} celda50" />
+        </article>    
+        
+        <article class="cont50 right">        
+            <label class="labelGrande">{{values.LABELS.nif}}</label>            
+            <input type="text" name="" id="email" 
+               class="celda{# if values.formContacta.campos.Email.error %}celdaError {% else %}celda{% endif #} celda50" />
+        </article>
+
+        <article class="cont50 left margin50">                
+            <label>{{values.LABELS.direccion}}</label>                        
+            <input type="text" name="" id="asunto" 
+            class="celda{# if values.formContacta.campos.Asunto.error %}celdaError {% else %}celda{% endif #} celda50" />  
+        </article>
+        
+        <article class="cont30 left">                
+            <label>{{values.LABELS.poblacion}}</label>                        
+            <input type="text" name="" id="asunto" 
+            class="celda{# if values.formContacta.campos.Asunto.error %}celdaError {% else %}celda{% endif #} celda30" />  
+        </article>
+        
+        <article class="cont10 right">                
+            <label>{{values.LABELS.cp}}</label>                        
+            <input type="text" name="" id="asunto" 
+            class="celda{# if values.formContacta.campos.Asunto.error %}celdaError {% else %}celda{% endif #} celda10" />  
+        </article>
+        
+        <article class="cont50 left margin50">                
+            <label>{{values.LABELS.eMail}}</label>                        
+            <input type="text" name="" id="asunto" 
+            class="celda{# if values.formContacta.campos.Asunto.error %}celdaError {% else %}celda{% endif #} celda50" />  
+        </article>
+        
+        <article class="cont50 left">                
+            <label class="labelGrande"><span>*</span>{{values.LABELS.telefono}} / {{values.LABELS.movil}}</label>                        
+            <input type="text" name="" id="asunto" 
+            class="celda{# if values.formContacta.campos.Asunto.error %}celdaError {% else %}celda{% endif #} celda50" />  
+        </article>    
+
+        <span class="informacion">* {{values.LABELS.noOlvidarRellenar}}</span>
+        
+        <div class="clear"></div>
+    
+        <span class="titular">{{values.LABELS.pedido}}</span>    
+        <section class="pedido">
+            <article class="cont70 left margin40">
+                <label class="labelGrande">{{values.LABELS.articulo}} / {{values.LABELS.cn}}</label>    
+                <input type="text" name="" id="nombre" 
+                       class="celda celda70" />
+            </article>    
+
+            <article class="cont10 left">        
+                <label>{{values.LABELS.cantidad}}</label>            
+                <input type="text" name="" id="email" 
+                   class="celda celda10" />
+            </article> 
+                
+            <a href="" title="{{values.LABELS.eliminar}}" class="eliminar"><img src="{{app.path}}/images/papelera.png" alt="{{values.LABELS.eliminar}}" title="{{values.LABELS.eliminar}}" /></a>    
+        </section> 
+
+        <section class="pedido">
+            <article class="cont70 left margin40">
+                <input type="text" name="" id="nombre" 
+                       class="celda celda70" />
+            </article>    
+
+            <article class="cont10 left">        
+                <input type="text" name="" id="email" 
+                   class="celda celda10" />
+            </article> 
+                
+            <a href="" title="{{values.LABELS.eliminar}}" class="eliminarTop"><img src="{{app.path}}/images/papelera.png" alt="{{values.LABELS.eliminar}}" title="{{values.LABELS.eliminar}}" /></a>    
+        </section>          
+        
+        
+       
+        
+        <a id="masPedidos" onclick="" title="{{values.TEXTS.realizarMasPedidos}}">+</a>
+        
+        <div class="clear"></div>
+                       
+        <article class="cont100 left">        
+            <label class="observaciones">{{values.LABELS.observaciones}}</label>                                    
+            <textarea name="campos[Mensaje][valor]" id="mensaje" 
+                  class="celda{# if values.formContacta.campos.Mensaje.error %}celdaError {% else %}celda{% endif #} celda100" 
+                  rows="10" cols=""></textarea>
+        </article>
+
+        <div id="contenedorEnviar">
+            <div class="checkbox{# if values.formContacta.campos.leidoPolitica.error %}checkboxError {% else %}checkbox{% endif #}">
+                <input name="campos[leidoPolitica][valor]" type="checkbox" id="checkbox2" {#if values.formContacta.campos.leidoPolitica.valor == 'on' %} CHECKED{% endif #} />
+                <label class="textoCheckbox" for="checkbox2">{{values.LABELS.heLeido}} <a href="{{app.path}}/politica-de-privacidad" rel="iframe-1000-360" class="pirobox" title="{{values.LABELS.politicaDePrivacidad}}">{{values.LABELS.politicaDePrivacidad}}.</a></label>
+            </div>
+             <a data-type="submit" title="{{values.LABELS.enviar}}" class="boton right" onclick="$('#formEnvio').submit();">{{values.LABELS.enviar}}</a>
+        </div>
+    </form>
+    {% else %}
+        <div class="mensaje">
+            <div class="{%if values.formContacta.resultado%}exito mensaje_enviado{%else%}error{%endif%}">{{values.formContacta.mensaje}}</div>
+        </div>
+    {% endif %}
+</article>

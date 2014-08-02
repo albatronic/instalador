@@ -1,0 +1,20 @@
+{% extends layout %}
+
+{% block cuerpo %}
+{# include 'index/slider.html.twig' #} <!-- SLIDER DE LA HOME -->
+<div id="sub-main" class="container_12">
+    <div id="content">
+	{% include 'Index/servicios.html.twig' %}        
+
+        <div class="clear mb60"></div>
+        
+	{% include 'Index/elegirnos.html.twig' %}	
+
+        <div class="clear mb60"></div>
+
+	{% include 'Index/blog.html.twig' %}        
+
+    </div>
+    <!-- end of #content -->
+</div>
+{% endblock %}

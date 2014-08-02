@@ -1,0 +1,31 @@
+<div id="banners">
+    {% set nBanner=values.banner|length %}
+    {% if nBanner<=4 %}
+            <ul>
+                {% for banner in values.banner %}
+                <li>
+                    <div class="thumbnail">
+                        <a href="{{banner.url}}" title="{{banner.nombre}}" rel="pop-up"><img src="{{app.path}}/{{banner.imagenes[0]}}" title="{{banner.nombre}}" alt="{{banner.nombre|date('')}}" /></a>
+                    </div>
+                </li>
+                {% endfor %}
+
+            </ul>        
+    {% else %}    
+    <div id="newsticker-demo">    
+        <div class="newsticker-jcarousellite">
+            <ul>
+                {% for banner in values.banner %}
+                <li>
+                    <div class="thumbnail">
+                        <a href="{{banner.url}}" title="{{banner.nombre}}" rel="pop-up"><img src="{{app.path}}/{{banner.imagenes[0]}}" title="{{banner.nombre}}" alt="{{banner.nombre}}" /></a>
+                    </div>
+                </li>
+                {% endfor %}
+
+            </ul>
+        </div>
+
+    </div>
+    {% endif %}
+</div>

@@ -1,0 +1,26 @@
+{% extends layout %}
+
+
+{% block cuerpo %}
+<div id="sub-main" class="container_12">
+    <div class="h-wrapper h1 grid_12">
+	<h1>{{macros.idiomas('nosotros')}}<span class="line"></span></h1>
+    </div>     
+    <div id="content">	
+	{% include 'Nosotros/mensajesSeo.html.twig' %}        
+
+        <div class="clear mb40"></div>
+        
+	{% include 'Nosotros/introNosotros.html.twig' %}	
+
+        <div class="clear mb60"></div>
+
+	{% include 'Nosotros/nuestroEquipo.html.twig' %}   
+
+        <div class="clear mb60"></div>
+
+	{% include 'Nosotros/clientes.html.twig' %}   	
+
+    </div>
+</div>
+{% endblock %}

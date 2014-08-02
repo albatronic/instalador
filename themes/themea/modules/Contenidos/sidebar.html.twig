@@ -1,0 +1,11 @@
+<div id="sidebarright" class="sidebar">
+    <div class="grid_4 indent pleft">
+        {% if contenido.BlogPublicar.IDTipo == 1%}
+            {% include 'Blog/categorias.html.twig' %}
+            {% include 'Blog/archivosMes.html.twig' %}
+        {% else %}
+            {# include 'Blog/portfolioBlog.html.twig' #}
+            {% include '_global/testimonios.html.twig' %}
+        {% endif %}
+    </div>
+</div>

@@ -1,0 +1,30 @@
+{% import '_global/macros.html.twig' as macro %}
+
+<!DOCTYPE html>
+<html lang="{{values.meta.lang}}">
+    {% include '_global/head.html.twig' %}
+
+    {% block body %}    
+    <body {% block bodyContacto %}{% endblock %}>          
+        <div id="contenedor_global">
+            <div id="cabeceraFixed">
+                {% include '_global/cabeceraPequena.html.twig' %}
+                {% include '_global/bandaUbicacionMarbella.html.twig' %}    
+            </div>
+
+            <div class="contenedor_central">
+                <section class="contenido">                
+                {% block contenido %}{% endblock %}
+                </section>        
+            </div>
+            {% include '_global/pie.html.twig' %}
+        </div>        
+                                  
+        {% if values._debugMode %}
+            <div style="clear: both;">
+                <pre>{{values._debugValues}}</pre>
+            </div>
+        {% endif %}		       
+    </body>
+    {% endblock %}
+</html>

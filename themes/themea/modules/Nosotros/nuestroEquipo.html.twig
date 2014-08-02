@@ -1,0 +1,29 @@
+{% if values.equipo | length > 0 %}
+    <div class="grid_12">
+        <div class="h-wrapper">
+            <h3>{{macros.idiomas('nuestroEquipo')}}<span class="line"></span></h3>
+        </div>
+    </div>
+    {% for item in values.equipo %}
+    <div class="personnel-shortcode grid_3">
+        <div class="personnel-post">{{item.IdPuesto.Titulo}}</div>
+        <div class="personnel-image"><img src="{{theme}}/images/personnel/personnel1.jpg" alt="" />
+        </div>
+        <div class="personnel-name">{{item.Nombre}} {{item.Apellidos}}</div>
+        <div class="personnel-details">
+            <strong>E:</strong>
+            <a href="#">{{item.Email}}</a>
+            {% if item.Facebook %}            
+            <br />
+            <strong>F:</strong>
+            {{ macro.link(item.Facebook,none,item.Facebook,1) }}
+            {% endif %}
+            {% if item.Twitter %}
+            <br />
+            <strong>T:</strong>
+            {{ macro.link(item.Twitter,none,item.Twitter,1) }}
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+{% endif %}

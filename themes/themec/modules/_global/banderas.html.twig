@@ -1,0 +1,9 @@
+<ul class="banderas">
+    {% for key,idioma in values.idiomas.disponibles %}
+        {% if key != values.idiomas.actual %}
+            <li class="{{ idioma.codigo }}">
+                <a href="{{appPath}}{{values.URLS_LANGUAGES[key]}}" title="{{idioma.texto}}"></a>
+            </li>
+        {% endif %}
+    {% endfor %}	
+</ul>

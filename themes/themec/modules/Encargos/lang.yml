@@ -1,0 +1,25 @@
+# ETIQUETAS WEB EN ESPAÑOL
+---
+es:
+  pedidoError: 'Por problemas técnicos, el mensaje no ha podido ser procesado en estos momentos.'
+  pedidoRecibido: 'Hemos recibido correctamente su pedido. Nos pondremos en contacto con usted para poder recogerlo.'
+
+# ETIQUETAS WEB EN INGLES  
+en:
+  pedidoError: 'Por problemas técnicos, el mensaje no ha podido ser procesado en estos momentos.'
+  pedidoRecibido: 'Hemos recibido correctamente su pedido. Nos pondremos en contacto con usted para poder recogerlo.'
+
+# ETIQUETAS WEB EN ALEMAN
+de:
+  pedidoError: 'Por problemas técnicos, el mensaje no ha podido ser procesado en estos momentos.'
+  pedidoRecibido: 'Hemos recibido correctamente su pedido. Nos pondremos en contacto con usted para poder recogerlo.'
+
+# ETIQUETAS WEB EN FRANCES
+fr:
+  pedidoError: 'Por problemas técnicos, el mensaje no ha podido ser procesado en estos momentos.'
+  pedidoRecibido: 'Hemos recibido correctamente su pedido. Nos pondremos en contacto con usted para poder recogerlo.'
+
+# ETIQUETAS WEB EN RUSO
+ru:
+  pedidoError: 'Por problemas técnicos, el mensaje no ha podido ser procesado en estos momentos.'
+  pedidoRecibido: 'Hemos recibido correctamente su pedido. Nos pondremos en contacto con usted para poder recogerlo.'

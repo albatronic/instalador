@@ -1,0 +1,18 @@
+{% extends layout %}
+
+{% block contenido %}
+    <h2>{{values.LABELS.servicios | upper}}</h2>        
+    <ul id="contenedorServicios">
+        {% for servicio in values.servicios%}
+        <li>
+            <h2>             
+                <a href="{{servicio.Href.url}}" title="{{servicio.Titulo}}">
+                    {% if servicio.PathNameImagenN(1) %}<img src="{{app.path}}/{{servicio.PathNameImagenN(1)}}" alt="{{servicio.Titulo}}" title="{{servicio.Titulo}}" />{% endif %}
+                    {% if servicio.PathNameImagenN(1) %}{{servicio.Titulo}}{% else %}<span class="marginTop">{{ servicio.Titulo }}</span>{% endif %}
+                </a>
+            </h2>
+            <p>{% if servicio.subtitulo | length > 145 %}{{servicio.subtitulo | slice(start, 145)}} ...{% else %}{{ servicio.subtitulo }}{% endif %}</p>
+        </li>
+        {% endfor %}
+    </ul>    
+{% endblock %}

@@ -1,0 +1,66 @@
+.accordion {
+  float: left;
+  margin: 0px;   
+  width: 930px;
+   
+   dt, dd {
+      padding: 10px;
+      border: 1px solid black;
+      border-bottom: 0; 
+      &:last-of-type {
+        border-bottom: 1px solid black; 
+      }
+      a {
+        display: block;
+        color: black;
+        font-weight: bold;
+      }
+   }
+  dd {
+     border-top: 0; 
+     font-size: 12px;
+     &:last-of-type {
+       border-top: 1px solid white;
+       position: relative;
+       top: -1px;
+     }
+  }
+}
+
+dd {
+  border: 0;
+  color: #555;
+  float: left;
+  font-family: Tahoma, Sans-Serif;
+  font-size: 15px;
+  line-height: 1.4em;
+  margin-bottom: 30px;
+  padding: 10px 25px;
+}
+
+dt {
+  background: #b10c3d;
+  border: 6px solid #d8d8d8;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  float: inherit;
+  font-family: 'texgyreadventor-regular';
+  margin-bottom: 15px;
+  text-shadow: 0 -1px black;
+  width: 924px;
+
+}
+
+dt a {
+  background: url('../images/icono-faq.png') right 50% no-repeat;
+  color: white;
+  cursor: pointer;
+  float: left;
+  padding: 8px 25px;
+  text-decoration: none;
+  width: 855px;
+}
+
+body {
+  font: 16px Sans-Serif;   
+}

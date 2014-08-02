@@ -1,0 +1,17 @@
+<h2>{{values.LABELS.otrosServicios}}</h2>
+{% for servicio in values.otrosServicios%}
+    {% if (app.path ~ urlAmigable) != servicio.Href.url %}
+        <div class="service-3 grid_4">
+            {% if servicio.PathNameImagenN(1) %}
+                <div class="icon">
+                    <img src="{{servicio.PathNameImagenN(1)}}" alt="{{servicio.Titulo}}" title="{{servicio.Titulo}}" />
+                </div>
+            {% endif %}
+            <div class="text">{{ macro.recortaTexto (servicio.ResumenBreve, 100) }}</div>
+            <h2>
+                {{macro.link(servicio.Titulo,servicio.Titulo,servicio.Href.url,servicio.Href.targetBlank)}}
+                <span class="triangle"></span>
+            </h2>
+        </div>
+    {% endif %}
+{% endfor %}

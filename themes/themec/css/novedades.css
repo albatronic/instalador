@@ -1,0 +1,267 @@
+/* -----------------
+COLUMNAS
+-------------------*/
+#colIzqda {
+    float:left;
+    margin-bottom: 40px;
+    width:265px;	
+}
+
+#colDrcha {
+    float:right;
+    margin-bottom: 60px;
+    width:620px;	
+}
+/* ------------------ */
+ul.novedades{
+    float: left;
+    width: 930px;
+}
+
+ul.novedades li {
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;    
+    float: left;
+    margin-bottom: 35px;
+    margin-right: 50px;
+    width: 193px;   
+}
+
+ul.novedades li:nth-of-type(4n) {
+    margin: 0;
+}
+
+h3, h5 {
+    background: #f0f0f0; /* Old browsers */
+    background: -moz-linear-gradient(top, #f0f0f0 0%, #e0e0e0 99%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f0f0f0), color-stop(99%,#e0e0e0)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #f0f0f0 0%,#e0e0e0 99%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #f0f0f0 0%,#e0e0e0 99%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #f0f0f0 0%,#e0e0e0 99%); /* IE10+ */
+    background: linear-gradient(to bottom, #f0f0f0 0%,#e0e0e0 99%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f0f0', endColorstr='#e0e0e0',GradientType=0 ); /* IE6-9 */ 
+    border: 1px solid #ccc;
+    border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+    display: table-cell;
+    float: left;
+    height: 46px;
+    line-height: 46px;
+    margin-bottom: 0;
+    overflow: hidden;
+    padding: 7px 15px;     
+    vertical-align: middle;
+    width: 162px;
+}
+
+h3.novedadTitulo {
+    background: none;
+    border: 0;    
+    font-size: 30px;
+    margin-bottom: 20px;
+    padding: 0;
+    width: 100%;
+}
+
+#colDrcha span {
+    color: #A60837;
+    float: left;
+    font-family: texgyreadventor-regular;
+    font-size: 16px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.lineHeight {
+    line-height: normal !important;
+}
+
+ul.novedades li img {
+    border: 1px solid #ccc;    
+    float: left;
+    height: 192px;
+    width: 192px;
+}
+
+a.verProducto {
+    background: #A60837;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    color: #fff;
+    font-family: texgyreadventor-regular;
+    font-size: 13px;
+    margin: 0 0 0 45px;
+    padding: 3px 10px;
+    position: relative;
+    text-shadow: 0 -1px #333;
+    top: -10px;
+}
+
+a.verProducto:hover {
+    background: #710525;
+}
+
+ul.novedades li p {
+    margin-top: 10px;
+}
+
+.marginLeft {
+    background:  #A60837 url('../images/icono-lupa.png') 15px 5px no-repeat !important;
+    margin-left: 70px !important;
+    padding: 3px 20px 6px 35px !important;
+    top: -15px !important;
+}
+
+
+/* -------------------------------- */
+/*	COL IZQUIERDA                 */	
+/* -------------------------------- */
+.contenedorImagenServicio {
+    width: 264px;
+    float: left;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+/*.contenedorImagenServicio a {
+    position: relative;
+    left: 10px;
+    width: 245px;
+    height: 245px;
+} */
+
+.novedadTop {
+    background: url('../images/novedad-top.png')0 0 no-repeat;
+    width: 264px;
+    float: left;
+    height: 13px;
+    position: relative;
+    z-index: 50;
+}
+
+.novedadInter {
+    background: url('../images/novedad-inter.png')0 0 repeat-y;
+    width: 264px;
+    float: left;
+
+}
+
+.imagenServ {
+    position: relative;
+    /*top: -188px;*/
+    left: 10px; /* 10px a la izquierda para que quede centrada la imagen. 2013 03 04 */
+    width: 245px;
+    height: 245px;
+    /*margin-bottom: -160px;*/
+}
+
+.imagenServicioTexto {
+    position: relative;
+    top: -23px;
+    width: 244px;
+    padding: 10px;
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    line-height: 1.4em;
+}
+
+.novedadBottom {
+    background: url('../images/novedad-bottom.png') 0 0 no-repeat;  
+    width: 264px;
+    height: 13px;
+    float: left;
+    /*margin-top:-23px;*/
+}
+
+
+/* -------------------------------- */
+/*	COLUMNA DERECHA              */	
+/* -------------------------------- */
+#colDrcha p {
+    color: #555;
+    font-size: 15px;
+    width: 100%;
+    float: left;
+    margin-bottom: 25px;
+    line-height: 1.4em;
+}
+
+#colDrcha p strong {
+    color: #A60837;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: texgyreadventor-regular, sans-serif;
+}
+
+
+#colDrcha ul {
+    width: 100%;
+    float: left;
+}
+
+#colDrcha ul li {
+    width: 600px;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 5px;
+    background: url('../images/icono-menu-rojo.png') 0 7px no-repeat;
+    padding-left: 20px;
+    color: #555;
+    line-height: 1.4em;
+}
+
+#colDrcha ul li a{
+    color:#555;
+    width: 100%;
+    float: left;
+}
+
+#colDrcha ul li a:hover{
+    color:#fff;
+}
+
+#colDrcha ul li:nth-of-type(2n) {
+    margin-right: 0px;
+}
+
+.botonera {
+    width: 100%;
+    float: left;
+    padding-top:20px;
+    border-top: 1px solid #bfbfbf;
+    margin-top: 30px;
+}
+.btn {
+    width: 100px;
+    height: 25px;
+    float: left;
+    background: url(../images/sprite-boton-peq.png) 0 -30px no-repeat;
+    padding-top: 6px;
+    text-align: center;
+    color: #a60837;
+    font: 14px Arial, Helvetica, sans-serif;
+}
+
+.btn:hover {
+    background: url(../images/sprite-boton-peq.png) 0px -0px no-repeat;
+}
+
+.btnGran {
+    width: 174px;
+    height: 25px;
+    float: left;
+    background: url(../images/sprite-boton.png) 0 -30px no-repeat;
+    padding-top: 6px;
+    text-align: center;
+    color: #a60837;
+    font: 14px Arial, Helvetica, sans-serif;
+}
+
+.btnGran:hover {
+    background: url(../images/sprite-boton.png) 0px -0px no-repeat;
+}

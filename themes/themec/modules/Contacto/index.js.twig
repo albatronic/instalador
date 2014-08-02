@@ -1,0 +1,43 @@
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/jquery-1.8.2.min.js"></script> {# LLAMADA A JQUERY #}
+<script src="{{app.path}}/{{theme}}/js/modernizr.custom.12319.js"></script> {# MODERNIZR #}
+<script src="{{app.path}}/{{theme}}/js/pirobox_extended.js"></script>
+<script src="{{app.path}}/{{theme}}/js/pirobox_function.js"></script> {# pirobox #}
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/jquery-uniform-formulario.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        $(":checkbox").uniform();
+    });
+</script>  {# SPRITES PARA FORMULARIO #}
+
+{# MAPA GOOGLE. SE APOYA EN LAS VARIABLES WEB LATITUD, LONGITUD WEBNAME Y TITLE #}
+<script src="http://maps.google.com/maps/api/js?sensor=true"></script> {# GOOGLE MAPS #}
+<script>
+  function initialize() {
+    var latlng = new google.maps.LatLng({{values.meta.geoPositionLatitude}}, {{values.meta.geoPositionLongitude}});
+	
+    var myOptions = {
+      zoom: 17,
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"),
+        myOptions);
+
+	 var marker = new google.maps.Marker({
+		  position: latlng,
+		  map: map,
+		  title:"{{ values.meta.webName }} | {{ values.meta.title }}"
+	  });
+  }
+</script> {# GOOGLE MAPS #}
+
+<script type="text/javascript">
+	jQuery(document).ready(function($){
+	
+	$("a[rel='pop-up']").click(function () {
+	var caracteristicas = "height="+(screen.availHeight - 40)+",width="+(screen.availWidth - 13)+",screenX=0,screenY=0,left=0,top=0,status=no,menubar=yes,scrollbars=yes,resizable=yes,toolbar=yes,location=yes";
+	nueva=window.open(this.href, 'Popup', caracteristicas);
+	return false;
+	});
+});
+</script> {# POP UP #}

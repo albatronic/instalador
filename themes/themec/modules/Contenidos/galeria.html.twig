@@ -1,0 +1,27 @@
+{% set nThumbnail = galeriaFotos.bloqueThumbnail|length%}
+
+{% if nThumbnail > 0 %}
+    <div id="carrusel" class="ficherosAdjuntos">
+        <div class="contenidoTop">
+            <h6>{{values.LABELS.galeria}}</h6>
+        </div>
+
+        <div class="contenidoInter">            
+            <ul class="galeria">
+                {% for key, galeria in galeriaFotos.bloqueThumbnail %}
+                    <li {% if nThumbnail==key+1 %}class="ultimo"{% endif %}>
+                        <a href="{{app.path}}/{{galeria.PathName}}" rel="gallery" class="pirobox_gall{{key+1}}" title="{{galeria.Title}}">
+                            <img src="{{app.path}}/{{galeria.PathName}}" alt="{{galeria.Title}}" title="{{galeria.Title}}" />
+                        </a>
+                    </li>
+                {% endfor %} 
+            </ul>
+            
+            {% for galeria in galeriaFotos.restoImagenes %}
+                <a href="{{app.path}}/{{galeria.PathName}}" rel="gallery" class="pirobox_gall{{key+1}}" title="{{galeria.Title}}"></a>
+            {% endfor %}
+        </div>
+        <!-- <div class="contenidoBottom"></div> -->
+
+    </div>
+{% endif %}

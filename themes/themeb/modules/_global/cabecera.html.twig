@@ -1,0 +1,17 @@
+<div class="contenedor_100 margin_top">
+    <div class="col_izqda logotipo_cabecera">
+        <a href="{{app.path}}/" title="{{values.datosContacto.empresa}}"><img src="{{app.path}}/{{theme}}/images/logoColor.png" alt="{{values.datosContacto.empresa}}" title="{{values.datosContacto.empresa}}" /></a>
+    </div>
+
+    <div class="col_drcha">
+        <ul id="acceso">
+            <li><span class="telefono" alt="{{macro.idioma('telefono')}}: {{values.datosContacto.telefono1}}" title="{{macro.idioma('telefono')}}: {{values.datosContacto.telefono1}}">{{values.datosContacto.telefono1}}</span></li>
+            <!--<li><a href="#" title="{{macro.idioma('zonaPrivada')}}">{{macro.idioma('zonaPrivada')}}</a></li>-->
+        </ul>
+        {% block menuCabecera %}
+            {% include '_global/menuCabecera.html.twig' %}
+        {% endblock %}
+    </div>
+</div>
+
+<span class="separacion_gran"></span>

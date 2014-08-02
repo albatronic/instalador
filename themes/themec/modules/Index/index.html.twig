@@ -1,0 +1,40 @@
+{% import '_global/macros.html.twig' as macro %}
+
+<!DOCTYPE html>
+<html lang="{{values.meta.lang}}">
+    {% include '_global/head.html.twig' %}
+
+    <body {% block bodyContacto %}{% endblock %}>  
+    {% block contenido %}
+        <div id="contenedor_global">
+            {% include 'Index/cabecera.html.twig' %}
+            {% include 'Index/bandaUbicacion.html.twig' %}
+            {% include 'Index/menuNavegacionScroll.html.twig' %}
+
+            {% include 'Index/seccionHome.html.twig' %}
+                <span class="inter"></span>
+            {% include 'Index/seccionBienvenido.html.twig' %}
+                <span class="inter"></span>
+            {% include 'Index/seccionServicios.html.twig' %}
+                <span class="inter"></span>
+            {% include 'Index/seccionEventos.html.twig' %}
+                <span class="inter"></span>
+            {% include 'Index/seccionPie.html.twig' %}
+
+        </div>	
+    {% endblock %}
+                                  
+        {% if values._debugMode %}
+            <div style="clear: both;">
+                <pre>{{values._debugValues}}</pre>
+            </div>
+        {% endif %}		       
+    </body>
+</html>
+
+
+
+
+
+
+

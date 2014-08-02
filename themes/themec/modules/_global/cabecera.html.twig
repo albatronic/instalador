@@ -1,0 +1,21 @@
+<div id="cabecera">
+    <div class="contenedor_central">
+        <h1 id="logotipo"><a href="{{app.path}}" title="{{values.datosContacto.empresa}} | {{values.datosContacto.poblacion}}">{{values.datosContacto.empresa}} | {{values.datosContacto.poblacion}}</a></h1>
+
+        <div id="menu_cabecera">
+        	{% set urlActual = appPath ~ urlAmigable %}
+            <ul>
+                {% for seccion in values.menuCabecera %}
+                    <li>
+                        {% if urlActual == seccion.url.url %}
+                            {% set claseCss = "activo" %}
+                        {% else %}
+                            {% set claseCss = "" %}
+                        {% endif %}
+                        {{ macro.link(seccion.etiquetaWeb,none,seccion.url.url,seccion.url.targerBlank,none,claseCss) }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>	
+</div>

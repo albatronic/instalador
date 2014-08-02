@@ -1,0 +1,34 @@
+{% extends layout %}
+
+{% block title parent() ~ " - Inicio" %}
+
+{% block cuerpo %}
+<div id="sub-main" class="container_12">
+    <div id="content">
+
+        <div id="colIzqda">
+            <section id="colIzqda1">
+                    {% include 'Index/bienvenido.html.twig' %}
+                    {# include '_global/novedades.html.twig' #}    
+            </section>
+
+            <section id="colIzqda2">
+                <article id="empresas">
+                    <div id="content_1" class="contenido">
+                        <ul>
+                            {% for empresa in values.accesosPortal.empresas %}
+                            <li><a href="#" title="{{empresa.RazonSocial}}" onclick="activar('{{empresa.url.url}}');">{{empresa.RazonSocial}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </article>        
+            </section>    
+         </div> 
+
+        <div class="colDrcha contact-info" id="proyectos">{{proyecto.proyecto}}
+            <iframe src="{{values.accesosPortal.empresas[0].url.url}}" width="100%" height="100%" align="top" frameborder="0" framespacing="0" scrolling="no" border="0" allowTransparency="true"></iframe>
+        </div>      
+
+    </div>
+</div>{% endblock %}
+

@@ -1,0 +1,22 @@
+{% extends layout %}
+
+{% block contenido %}
+    <h2>{{values.LABELS.eventos}} {% if values.fechaEvento %}<span>del {{values.fechaEvento | date('d-m-Y')}}</span>{% endif %}</h2>
+    <div id="colIzqda">
+	{% include '_global/calendario.html.twig' %}
+        {% include 'Eventos/banners.html.twig' %}            
+    </div>
+
+    <div id="colDrcha">
+        {% if values.eventos %}
+            {% for evento in values.eventos %}
+                {{ macro.evento (evento) }}
+            {% endfor %}
+        {% else %}
+            <article class="mensajeEventos">
+                <p>{{values.TEXTS.loSentimos}}</p>
+                <p>{{values.TEXTS.noHayEventoProgamado}}<br />{{values.TEXTS.leMantendremosInformado}}</p>
+            </article>
+        {% endif %}          
+    </div>
+{% endblock %}

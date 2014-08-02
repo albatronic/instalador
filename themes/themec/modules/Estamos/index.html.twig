@@ -1,0 +1,13 @@
+{% extends layout %}
+
+{% block contenido %}
+    <h2>{{values.LABELS.dondeEstamos}}</h2>        
+    <div id="col_izqdaSituacion">
+        {% include 'Contacto/situacion.html.twig' %} 
+        <img id="estamosPeq" src="{{app.path}}/{{theme}}/images/donde-estamos-peq.png" alt="{{values.TEXTS.textoSEO}}" title="{{values.TEXTS.textoSEO}}" />    
+    </div>        
+
+    <div id="col_drcha">
+        <img id="estamosGran" src="{{app.path}}/{{theme}}/images/donde-estamos-gran.png" alt="{{values.TEXTS.textoSEO}}" title="{{values.TEXTS.textoSEO}}" />        
+    </div>
+{% endblock %}

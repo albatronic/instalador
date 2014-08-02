@@ -1,0 +1,39 @@
+<section id="login" class="contact-info">
+    
+    <!-- <h3>Inicia Sesión</h3> -->
+    {% if not user.Id %}
+    <form name="login" method="POST">
+        <input name="controller" value="Index" type="hidden" />
+        <input name="action" value="Login" type="hidden" />
+            {% if values.errorUsuario %}
+                {% set clase = "contenedor errorLogin" %}
+                {% set mensaje = "No encontrado indica" %}
+            {% else %}
+                {% set clase = "contenedor" %}
+                {% set mensaje = "Usuario" %}            
+            {% endif %}
+            <div class="{{clase}}" id="usuario">
+                <label>{{macro.idioma('usuario')}} <span>{{macro.idioma('tu')}} e-mail</span></label> <input type="email" name="email" value="{% if mensaje == "No encontrado indica"%} {{macro.idioma('noEncontrado')}}{%endif%}" {% if not values.errorPassword %}autofocus{% endif %} />
+            </div>
+
+            {% if values.errorPassword %}
+                {% set clase = "contenedor errorLogin" %}
+                {% set mensaje = "Contraseña erronea" %}
+            {% else %}
+                {% set clase = "contenedor" %}
+                {% set mensaje = "Contraseña" %}            
+            {% endif %}        
+            <div class="{{clase}}">
+                <label>{{macro.idioma('contrasenia')}}</label> <input type="password" name="password" value="{% if mensaje == "Contraseña erronea"%} {{macro.idioma('noEncontrado')}}{%endif%}" {% if values.errorPassword %}autofocus{% endif %}/>
+            </div>
+
+            <input type="image" src="{{app.path}}/{{theme}}/images/enviar.png" alt="enviar" width="25" height="26" class="enviar" />
+    </form>
+    
+    <a href="{{app.path}}/olvido" title="{{macro.idioma('olvideMiContrasenia')}}" id="olvidoContrasena">{{macro.idioma('olvideMiContrasenia')}}</a>
+    
+    {% else %}
+        <div>{{user.Nombre}}</div>
+        <span><a href="{{app.path}}/logout">{{macro.idioma('cerrarSesion')}}</a></span>
+    {% endif %}
+</section>

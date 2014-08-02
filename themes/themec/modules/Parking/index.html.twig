@@ -1,0 +1,54 @@
+{% extends layout %}
+
+{% block contenido %}
+    <h2>{{values.TEXTS.parkingGratuito}}</h2>        
+
+        <div id="colIzqdaServ">
+            <div class="contenedorImagenServicio">
+                <div class="imagenServicioTop"></div>
+                    <img src="{{app.path}}/images/parking-gratuito.jpg" alt="{{values.TEXTS.servicioParking}}" title="{{values.TEXTS.servicioParking}}" class="imagenServ" />
+                <div class="imagenServiciobottom"></div>           
+            </div>
+            
+            <div class="contenedorImagenServicio">
+                <div class="imagenServicioTop"></div>
+                    <img src="{{app.path}}/images/foto-farm-parking-2.jpg" alt="{{values.TEXTS.servicioParking}}" title="{{values.TEXTS.servicioParking}}" class="imagenServ" />
+                <div class="imagenServiciobottom"></div>           
+            </div>
+            
+            <div class="textoServicio">
+                <h3>{{values.TEXTS.aparcamientosDisponibles}}</h3>
+                <ul class="parking">
+                    <li><b>Parking el Molino</b></li>
+                    <li>C/ Ramon Gomez de la Serna 8</li>
+                    <li><b>T </b>+34 952 778 301</li>
+                </ul>
+                
+                <ul class="parking">
+                    <li><b>Parking Occidental</b></li>
+                    <li>Avenida arias maldonado, S/N</li>
+                    <li><b>T </b>+34 952 902 488</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="colDrchaServ">
+            <div class="cuadroGris">
+                <div class="cuadrogrisTop"></div>
+                <div class="cuadrogrisInter">
+                    <span class="icono"><img src="{{app.path}}/images/iconosServicios/icono-parking.png" alt="{{values.TEXTS.servicioParking}}" title="{{values.TEXTS.servicioParking}}" class="top30" /></span>
+                    <span class="textoCuadroGris">{{values.TEXTS.cuadroRojo}}</span>
+                </div>
+                <div class="cuadrogrisBottom"></div>
+            </div>    
+    
+            <p class="top20">{{values.TEXTS.facilAcceso}}</p>
+    
+            <iframe id="mapa" width="620" height="360" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.es/maps/ms?hl=es&amp;gl=es&amp;ie=UTF8&amp;oe=UTF8&amp;msa=0&amp;msid=205116095167838082644.0004d2c6271f096021cf4&amp;ll=36.509546,-4.895238&amp;spn=0.002027,0.005198&amp;t=m&amp;vpsrc=6&amp;output=embed">
+            </iframe> 
+         </div>      
+            
+        {% include '_global/botonera.html.twig' %}    
+
+	    
+{% endblock %}

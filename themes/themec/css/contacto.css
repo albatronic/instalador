@@ -1,0 +1,330 @@
+#col_izqdaSituacion {
+	width:226px;
+	float:left;
+}
+
+#col_drcha {
+	width:654px;
+	float:right;
+}
+
+/* -------------------------------- */
+/*		SITUACI�N					*/
+/* -------------------------------- */
+#col_izqdaSituacion img#mapitas{
+	width:226px;
+	height:46px;
+	float:left;
+	margin-bottom:35px;
+}
+
+#col_izqdaSituacion ul{
+	width:226px;
+	float:left;
+	margin-bottom:10px;
+}
+
+#col_izqdaSituacion ul#datos li{
+	width:220px;
+	float:left;
+	padding-left:26px;
+	color:#444;
+	font:15px Arial, Helvetica, sans-serif;
+	margin-bottom:15px;
+	line-height:1.4em;
+}
+
+#col_izqdaSituacion ul#rrss {
+    margin-bottom: 30px;
+}
+
+#col_izqdaSituacion ul#rrss li{
+	width:27px;
+	height:27px;
+	float:left;
+	margin-right:5px;
+}
+
+#col_izqdaSituacion li a{
+	color:#444;
+}
+
+#col_izqdaSituacion li a:hover{
+	color:#a60837;
+}
+
+#col_izqdaSituacion ul#datos li#cont_domic{
+	background:url(../images/icono-contacto-domicilio.png) 0 0 no-repeat;
+}
+
+#col_izqdaSituacion ul#datos li#cont_tlf{
+	background:url(../images/icono-contacto-telefono.png) 0 0 no-repeat;
+}
+
+#col_izqdaSituacion ul#datos li#cont_mail{
+	background:url(../images/icono-contacto-mail.png) 0 0 no-repeat;
+}
+
+/* ------------------------------------------------------------ */
+/*		PARKING 					*/
+/* ------------------------------------------------------------ */
+ul.parking {  
+  background: url('../images/icono-parking-peq.png') 0 0 no-repeat;
+  color: #333;
+  float:left;
+  font: 13px Arial, sans-serif;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  width: 244px;
+}
+
+ul.parking li {
+    float: left;
+    width: 100%;
+    line-height: 1.4em;
+}
+
+ul.parking b {
+    font-weight: bolder;
+}
+
+/* ------------------------------------------------------------ */
+/*		CONTACTO					*/
+/* ------------------------------------------------------------ */
+#formulario {
+	width:654px;
+	float:left;
+}
+
+
+#formulario form{
+	width:654px;
+	float:left;
+}
+
+.contenedor_celda {
+	margin:0px;
+	padding:0px;
+}
+
+.contPeq {
+	width:302px;
+}
+
+.contGran {
+	width:654px;
+}
+
+article.contPeq label, article .contGran label {
+        color:#fff;
+        background: #a60837;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;    	
+	clear:both;
+        display:block;
+	float:left;
+        font-family: texgyreadventor-regular;
+	font-size:13px;	
+	margin-bottom:0px;
+        margin-left: 1px;
+        padding:3px 10px 4px 10px;
+        text-align:center;
+        text-shadow: 0 -1px #444;
+	width:61px;	
+}
+
+.celdaPeq {
+	width:284px !important;
+}
+
+.celda {
+	background:#e9e9e9;
+	border:1px solid #cbcbcb;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	color: #666;    
+	float:left;        
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	outline: none;  
+        overflow:auto;
+	padding:2px 8px;
+	position: relative;        
+	margin-bottom:20px;
+	margin-top:0px;	
+	width:636px;        
+}
+
+.celdaError {
+	background:#a60837;
+	border:1px solid #cbcbcb;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	color: #fff;    
+	float:left;        
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	outline: none;  
+        overflow:auto;
+	padding:4px 8px;
+	position: relative;        
+	margin-bottom:20px;
+	margin-top:0px;	
+	width:636px;        
+}
+
+textarea {
+	padding-top:10px !important;
+        max-width: 634px;
+        overflow: auto;
+}
+
+
+/***************** CHECKBOXES Y ENVIAR *****************************/
+#contenedorEnviar {
+    width:100%;
+    float:left;
+    padding-bottom: 40px;
+    font-size: 11px;    
+}
+
+#contenedorEnviar ul {
+    width: 220px;
+    float: left;
+}
+
+#contenedorEnviar ul li {
+    width: 100%;
+    float: left;
+    margin-bottom: 8px;
+}
+
+#contenedorEnviar ul a {
+    color: #d80773;
+    text-decoration: underline;
+}
+
+div.checker {
+    float: left;
+    left: -3px;
+}
+
+.textoCheckbox {
+    float: left;
+    padding-top: 3px;
+    width: 250px;
+}
+
+.checkbox {
+    width: 285px;
+    float: left;
+    font-size: 11px;
+    color: #777;
+}
+
+.checkboxError {
+    border:1px solid #cbcbcb;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;    
+    width: 285px;
+    float: left;
+    font: 11px Arial;
+    color: #fff;
+    background: #a60837;
+    padding: 5px 10px;
+}
+
+.checkbox a {
+    color: #a60837;
+    text-decoration: underline;
+}
+
+.checkboxError a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.checkbosError a:hover {
+    color: #444;
+}
+
+.checkbox a:hover {
+    color: #444;
+}
+
+.checboxesCaja {
+    width:290px;
+    font-size:11px;
+    color:#666;
+    float:left;
+    margin-bottom:20px;
+}
+
+
+
+.checboxesCajaError { /* Error en checkbox */
+    width:290px;
+    font-size:11px;
+    color:#929E55;
+    float:left;
+    margin-bottom:10px;
+}
+
+/*********************************** FIN: CHECKBOXES Y ENVIAR **************************/
+
+
+/* --------- GOOGLE MAPS ------------- */
+#map_canvas {
+	margin:25px 0 80px 0;
+	float:left;
+	height:268px;
+	width:930px;
+}
+
+
+
+/*__________________________________________
+   MENSAJES DE RESPUESTA DEL FORMULARIO
+__________________________________________*/   
+.mensaje {
+    background:#f2f2f2;
+    border:1px solid #d2d2d2;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    color: #666;
+    float: none !important;
+    font-family: 'texgyreadventor-regular', sans-serif;
+    font-size: 20px;
+    line-height:1.4em;
+    margin: 20px auto;    
+    overflow:auto;
+    padding:40px 20px;
+    text-align:center;
+    width:600px !important;
+}
+
+.error {
+    background: url('../images/mensaje-error.png') 50% 0 no-repeat;
+    float:left;
+    padding-top:60px;
+    text-align:center;
+    width:100%;
+}
+
+
+.exito {
+    float:left;
+    padding-top:60px;
+    text-align:center;
+    width:100%;
+}
+
+.mensajeEnviado{
+    background: url('../images/mensaje-exito.png') 50% 0 no-repeat;
+    padding-top:100px;
+}

@@ -1,0 +1,39 @@
+{# index productos #}
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/jquery.min.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/superfish.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/supersubs.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/jquery.nivo.slider.pack.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/jquery.masonry.min.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/jcarousellite.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/selectnav.min.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/jquery.tipsy.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/jquery.custom.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/jquery.search.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        // menu init
+        jQuery('ul.sf-menu').supersubs({
+            minWidth: 18.4, // minimum width of sub-menus in em units 
+            maxWidth: 27, // maximum width of sub-menus in em units 
+            extraWidth: 1     // extra width can ensure lines don't sometimes turn over due to slight rounding differences and font-family 
+        }).superfish({// main navigation init
+            delay: 200, // one second delay on mouseout 
+            animation: {opacity: 'show', height: "show"}, // fade-in and slide-down animation 
+            speed: 'normal', // faster animation speed 
+            autoArrows: false, // generation of arrow mark-up (for submenu) 
+            dropShadows: false   // drop shadows (for submenu)
+        });
+
+        // slogan init
+        jQuery('#slogan .slogan').jCarouselLite({
+            btnNext: '#slogan .slogan-next',
+            btnPrev: '#slogan .slogan-prev',
+            auto: 8000,
+            speed: 800,
+            vertical: true,
+            visible: 1
+        });
+    });
+</script>

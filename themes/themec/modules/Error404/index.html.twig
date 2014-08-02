@@ -1,0 +1,10 @@
+{% extends layout %}
+
+{% block contenido %}
+<section id="mensaje404">
+    <img src="{{app.path}}/images/aspa.png" alt="{{values.TEXTS.error404}}" title="{{values.TEXTS.error404}}" />
+    <p>{{values.TEXTS.loSentimos}}<br />{{values.TEXTS.localizarPagina}}</p>
+    <p class="exito">{{values.TEXTS.navegarPorMenus}}</p>
+</section>
+{% endblock %}
+

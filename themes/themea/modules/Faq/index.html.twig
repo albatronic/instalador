@@ -1,0 +1,11 @@
+{% extends layout %}
+
+{% block cuerpo %}
+<div id="sub-main" class="container_12">
+    <div class="h-wrapper h1 grid_12">
+	<h1>{{macros.idioma('faq')}}<span class="line"></span></h1>
+    </div>  
+    {% include 'Faq/preguntas.html.twig' %}
+    {% include 'Faq/sidebar.html.twig' %} 	
+</div>
+{% endblock %}

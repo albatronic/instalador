@@ -1,0 +1,25 @@
+<div class="grid_6">
+    <div class="h-wrapper">
+	<h3>{{macro.idioma('teOfrecemos')}}<span class="line"></span></h3>
+    </div>
+    <div class="list check2">
+	<ul>
+	    {% for item in values.otrosServicios %}
+		<li>{{ macro.link(item.Titulo,item.Titulo,item.Href.url,item.Href.targetBlank)}}</li>
+	    {% endfor %}
+	</ul>
+    </div>
+</div>
+
+<div class="grid_6">
+    <div class="h-wrapper">
+	<h3>{{macro.idioma('elegirnos')}}<span class="line"></span></h3>
+    </div>
+    <div class="list check2">
+	<ul>
+	    {% for contenidos in values.elegirnos.contenidos %}
+                <li>{{contenidos.contenido.Titulo}}</li>
+	    {% endfor %}	    
+	</ul>
+    </div>
+</div>

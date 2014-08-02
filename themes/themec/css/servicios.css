@@ -1,0 +1,232 @@
+#contenedorServicios {
+    float: left;
+    width: 930px;    
+}
+
+#contenedorServicios li {
+    float: left;
+    min-height: 255px;
+    margin-bottom: 20px;
+    margin-right: 80px;
+    width: 170px;
+}
+
+#contenedorServicios li:nth-of-type(4n) {
+    margin: 0;
+}
+
+#colIzqda {
+    float:left;
+    margin-bottom: 40px;
+    width:265px;	
+}
+
+#colDrcha {
+    float:right;
+    margin-bottom: 60px;
+    width:620px;	
+}
+
+.marginTop {
+    float: left;
+    margin-top: 80px;
+}
+/* -------------------------------- */
+/*	TEXTOS              */	
+/* -------------------------------- */
+#contenedorServicios h2 {    
+    color: #7a7a7a;
+    font-family: texgyreadventor-regular;;
+    font-size: 18px;
+    letter-spacing: 0px;
+    margin-bottom: 10px;
+    text-transform: none;
+}
+
+#contenedorServicios h2 a {    
+    color: #7a7a7a;
+    float: left;
+    /*padding-top: 80px;*/
+    width: 100%;
+}
+
+
+#contenedorServicios h2 a:hover {
+    color: #A60837;
+}
+
+#contenedorServicios h2 a img {
+    float: left;
+    height: 70px;
+    margin-bottom: 10px;
+    width: 160px;
+}
+
+#contenedorServicios p {
+    color: #444;
+    float: left;
+    font-size: 13px; 
+    line-height: 1.4em;
+}
+
+/* -------------------------------- */
+/*	COL IZQUIERDA                 */	
+/* -------------------------------- */
+.contenedorImagenServicio {
+    width: 264px;
+    float: left;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.imagenServicioTop {
+    background: url('../images/servicio-marco-imagen.png')0 0 no-repeat;
+    width: 264px;
+    float: left;
+    height: 200px;
+    position: relative;
+    z-index: 50;
+}
+
+.imagenServ {
+    position: relative;
+    top: -188px;
+    left: 10px;
+    width: 244px;
+    height: 183px;
+    margin-bottom: -160px;
+}
+
+.imagenServicioTexto {
+    background: url('../images/servicio-marco-inter.png') 0 0 repeat-y;
+    position: relative;
+    top: -23px;
+    width: 244px;
+    padding: 10px;
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    line-height: 1.4em;
+}
+
+.imagenServiciobottom {
+    background: url('../images/servicio-marco-bottom.png') 0 0 no-repeat;  
+    width: 264px;
+    height: 5px;
+    float: left;
+    margin-top:-23px;
+}
+
+
+/* -------------------------------- */
+/*	COLUMNA DERECHA              */	
+/* -------------------------------- */
+#colDrcha p {
+    color: #000;
+    font-size: 15px;
+    width: 100%;
+    float: left;
+    margin-bottom: 15px;
+    line-height: 1.4em;
+}
+
+.cuadroGris {
+    width: 620px;
+    overflow: hidden;
+    float: left;
+    margin-bottom: 20px;
+}
+
+.cuadrogrisTop {
+    width: 620px;
+    height: 13px;
+    float: left;
+    background: url('../images/cuadrogris-top.png') 0 0 no-repeat;
+}
+
+.cuadrogrisInter {
+    width: 576px;
+    overflow: hidden;
+    float: left;
+    background: url('../images/cuadrogris-inter.png') 0 0 repeat-y;
+    padding: 22px;    
+}
+
+.cuadrogrisBottom {
+    width: 620px;
+    height: 12px;
+    float: left;
+    background: url('../images/cuadrogris-bottom.png') 0 0 no-repeat;
+}
+
+.icono {
+    width: 120px;
+    text-align: center; 
+    float: left;
+}
+
+.textoCuadroGris {
+    color: #eee;
+    float: right;
+    font-family: texgyreadventor-regular;    
+    font-size: 20px;
+    line-height: 1.4em;
+    text-shadow: 0 -1px #000;
+    margin-right: 0px;
+    width: 447px;
+}
+
+#colDrcha ul {
+    width: 100%;
+    float: left;
+    font-family: texgyreadventor-regular;
+    margin-top: 15px;
+}
+
+#colDrcha ul li {
+    width: 275px;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 15px;
+    background: url('../images/icono-menu-rojo.png') 0 7px no-repeat;
+    padding-left: 20px;
+    color: #555;
+    font-size: 18px;
+    line-height: 1.4em;
+}
+
+#colDrcha ul li a{
+    color:#555;
+    width: 100%;
+    float: left;
+}
+
+#colDrcha ul li a:hover{
+    color:#fff;
+}
+
+#colDrcha ul li:nth-of-type(2n) {
+    margin-right: 0px;
+}
+
+.botonera {
+    width: 100%;
+    float: left;
+    padding-top:20px;
+    border-top: 1px solid #bfbfbf;
+    margin-top: 30px;
+}
+.btn {
+    width: 100px;
+    height: 25px;
+    float: left;
+    background: url(../images/sprite-boton-peq.png) 0 -30px no-repeat;
+    padding-top: 6px;
+    text-align: center;
+    color: #a60837;
+    font: 14px Arial, Helvetica, sans-serif;
+}
+
+.btn:hover {
+    background: url(../images/sprite-boton-peq.png) 0px -0px no-repeat;
+}

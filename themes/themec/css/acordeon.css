@@ -1,0 +1,127 @@
+﻿#example4 {
+	float: left;
+}
+
+#example4 ul {list-style:none;}
+#example4 h3 {text-transform:uppercase;line-height:1; width:327px;}
+#example4 p {width:327px;}
+#example4 .frame-0 {/*background:url(images/slider-imagen-optica.jpg) top right no-repeat;*/}
+#example4 .frame-1 {/*background:url(images/slider-imagen-optica.jpg) top right no-repeat;*/}
+#example4 .frame-2 {/*background:url(images/slider-imagen-optica.jpg) top right no-repeat;*/}
+#example4 .frame-content {
+	width:409px; 
+	height:241px; 
+	padding:30px 350px 30px 80px;  
+	margin-top:1px;
+}
+
+#example4 .frame-closed .frame-content {display:none;}
+#example4 .frame-open .frame-content {
+	display:block;
+	top: -301px;
+	position: relative;
+}
+
+.pestana {width:42px; float:left;}
+
+.fondo_1 {
+	background:url('../images/slider-imagen-1.jpg') top right no-repeat;
+	float: left;
+	height: 381px;
+	width: 789px;
+ }
+
+.fondo_2 {
+	background:url('../images/slider-imagen-2.jpg') top right no-repeat;
+	float: left;
+	height: 381px;
+	width: 789px;
+}
+
+.fondo_3 {
+	background:url('../images/slider-imagen-3.jpg') top right no-repeat;
+	float: left;
+	height: 381px;
+	width: 789px;	
+}
+
+.mas {
+	background:url(../images/boton-saber-mas.png) 0 0 no-repeat;
+	width:105px;
+	height:31px;
+	float:left;
+}
+
+.mas:hover {
+	background:url(../images/boton-saber-mas-hover.png) 0 0 no-repeat;
+}
+
+/*--------------------------------------------------*/
+			/*TEXTOS*/
+/*--------------------------------------------------*/			
+.frame-content h3{ 
+	text-align: left; 
+	margin:0px 0 10px 0;
+	/*text-shadow: 1px 1px 0 white;*/
+	font-size:46px;
+	float:left;
+	width:222px;
+}
+
+.frame-content h3.titular1 { 
+	color:#666;
+}
+
+.frame-content h3.titular2 { 
+	color:#fff;
+}
+
+.frame-content h3.titular3 { 
+	color:#666;
+}
+
+.frame-content span { 
+	color:#af0042;
+	text-transform:uppercase;
+	line-height:1.4em;
+	float:left;
+	margin:0 0 10px 0;
+	font-size:20px;
+}
+
+.frame-content span.subtitular1 { 
+	color:#af0042;
+	width:330px;
+}
+
+.frame-content span.subtitular2 { 
+	color:#c20d51;
+	width:330px;
+}
+
+.frame-content span.subtitular3 { 
+	color:#af0042;
+	width:330px;
+}
+
+.frame-content p { 
+	line-height:1.4em;
+	float:left;
+	margin:0 0 20px 0;
+	width:222px;
+}
+
+.frame-content p.parrafo1 { 
+	color:#666;	
+	width:310px;
+}
+
+.frame-content p.parrafo2 { 
+	color:#fff;	
+	width:330px;
+}
+
+.frame-content p.parrafo3 { 
+	color:#555;	
+	width:330px;
+}

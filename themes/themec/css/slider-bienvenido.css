@@ -1,0 +1,75 @@
+.sliderContainer{
+    width: 373px;
+    height: 309px;
+    position: relative;
+    margin:0 0 60px 0;
+	float:left;
+	background:url(../images/fondo-slider.png) 0 0 no-repeat;
+}
+#slider {
+    /*-moz-border-radius: 10px;
+    -webkit-border-radius: 10px;*/
+    width: 316px;
+    height: 211px;
+    background: #FFF;
+    /*border: 5px solid #FFF;*/
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+	top:10px;
+	left:27px;
+	float:left;
+}
+
+#slider .slide{
+    width: 316px;
+    height: 211px;
+    float: left;
+}
+
+#botones_slider {
+	float:right;
+	right:0px;
+	position:relative;
+	top:310px;
+	width:40px;
+}
+
+.prev{
+    /*display: block;*/
+    height: 15px;
+    width: 15px;
+    position: relative;
+    /*top: 350px;*/
+	/*left:30px;*/
+	float:left;
+}
+
+.next{
+    /*display: block;*/
+    height: 15px;
+    width: 15px;
+    position: relative;
+    /*top: 350px;*/
+	/*right:-50px;*/
+	float:right;
+}
+
+.prev{
+    background: url('../images/boton-slider-izquierda.png') no-repeat;
+    background-position: 0 0;
+    left: 0;
+}
+
+.prev:hover{
+    background-position: 0 0px;
+}
+
+.next{
+    background: url('../images/boton-slider-derecha.png') no-repeat;
+    background-position: 0 0;
+    right: 0;
+}
+.next:hover{
+    background-position: 0 0px;
+}

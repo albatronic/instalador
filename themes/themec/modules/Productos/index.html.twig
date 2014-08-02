@@ -1,0 +1,32 @@
+{% extends layout %}
+
+{% block contenido %}
+    <h2>{{values.LABELS.novedades}}</h2>        
+
+    {% set numeroElementosPorFila=4 %}    
+    {% set indice=1 %}    
+
+        {% for novedad in values.novedades %}    
+    {% if indice == 1 %}<ul class="novedades">{% endif %}
+
+        <li> {# Modificado para confirmar que el titulo se ve en dos lineas y se corta con 3 puntos cuando es demasiado largo #}
+                {% if novedad.titulo|length > 20 %}
+                <h3 class="lineHeight">{% if novedad.titulo | length > 35 %}{{novedad.titulo | slice(start,35)}} ...{% else %}{{novedad.titulo}}{% endif %}</h3>
+                    {% else %}
+                <h3>{{novedad.titulo}}</h3>
+                {% endif %}
+            <a href="{{novedad.url.url}}" title="{{novedad.titulo}}" {% if novedad.url.targetBlank =='1' %} rel="pop-up" {% endif %}><img src="{{app.path}}/{{novedad.imagen}}" alt="{{novedad.titulo}}" title="{{novedad.titulo}}" /></a>
+            <a href="{{novedad.url.url}}" title="{{values.LABELS.verProducto}}" class="verProducto" {% if novedad.url.targetBlank =='1' %} rel="pop-up" {% endif %}>{{values.LABELS.verProducto}}</a>
+            <p>{% if novedad.desarrollo | length > 94 %}{{novedad.desarrollo | slice(start, 95)}} ...{%else%}{{novedad.desarrollo}}{%endif%}</p>
+        </li>        
+
+{% if indice == numeroElementosPorFila %}</ul>{% endif %}        
+
+{% set indice=indice+1 %}    
+{% if indice == (numeroElementosPorFila+1) %} {% set indice=1 %} {% endif %}        
+
+        {% endfor %}
+
+{% if indice <= numeroElementosPorFila %}</ul> {% endif %}        
+
+{% endblock %}

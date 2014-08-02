@@ -1,0 +1,55 @@
+#newsticker-demo { 
+	width:930px; 
+	padding:0; 
+	font-size:12px;
+	margin:20px auto;
+	/*background:url(../imagenes/fondo-pie.png) 0 0 repeat;*/
+	overflow:hidden;
+	height:80px;
+	/*float:left;*/
+}
+
+#newsticker-demo a { text-decoration:none; }
+#newsticker-demo img {/* border: 2px solid #FFFFFF;*/ width:169px; height:81px;}
+
+#newsticker-demo .title {
+text-align:center;
+font-size:14px;
+font-weight:bold;
+padding:5px;
+}
+
+.newsticker-jcarousellite { width:300px; }
+.newsticker-jcarousellite ul li{ list-style:none; display:block; padding-bottom:1px; margin-bottom:5px; }
+.newsticker-jcarousellite .thumbnail { float:left; width:169px; height:81px; margin-right:21px;}
+.newsticker-jcarousellite .info { float:right; width:190px; }
+.newsticker-jcarousellite .info span.cat { display: block; font-size:10px; color:#808080; }
+
+.clear { clear: both; }
+
+/* PARA CUANDO EL CARRUSEL DE BANNERS ES FIJO */
+.carruselBanners {
+    float: left;
+    margin: 25px 0;
+    text-align: center;
+    width: 930px;
+}
+
+.thumbnailIndividual {
+    width: 169px;
+    height: 81px;
+    float: right;
+    margin-left: 20px;
+}
+
+.bannerParafarmacia {
+    background: #f9f9f9;
+    float: left !important;
+    margin-left: 0 !important;
+    margin-right: 20px !important;
+}
+
+.thumbnailIndividual:nth-of-type(5n) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}

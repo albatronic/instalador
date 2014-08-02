@@ -1,0 +1,68 @@
+{% extends layout %}
+
+{% block contenido %}
+    <h2>{{values.TEXTS.novedades}}</h2>        
+    <article id="colIzqda">
+        <div class="contenedorImagenServicio">
+            <div class="novedadTop"></div>
+            <div class="novedadInter">
+                <img src="{{app.path}}/{{values.novedad.imagen}}" alt="{{values.novedad.titulo}}" title="{{values.novedad.titulo}}" class="imagenServ" />
+            </div>
+            <div class="novedadBottom"></div>
+
+{# #}            
+{% if values.novedad.tieneGaleria==1 %}
+{% set contador = 1 %}
+            
+    {% for imagenesPirobox in values.novedad.galeria %}
+
+    {% if contador==1 %}
+    <a href="{{imagenesPirobox.PathName}}" title="{{imagenesPirobox.Title}}" rel="gallery" class="pirobox_gall item verProducto marginLeft">{{values.TEXTS.ampliar}}</a>
+    {% endif %}
+
+    {% if contador>1 %}
+    <a href="{{imagenesPirobox.PathName}}" title="{{imagenesPirobox.Title}}" rel="gallery" class="pirobox_gall item"></a>
+    {% endif %}
+
+    {% set contador = contador + 1 %}
+
+    {% endfor %}
+
+{% endif %}
+
+
+
+
+        </div>
+    </article>
+
+    <article id="colDrcha"> 
+        <h3 class="novedadTitulo">{{values.novedad.titulo}}</h3>
+        {% autoescape false%}{{values.novedad.caracteristicas}}{% endautoescape%}
+
+    </article>
+    
+    <article id="otrasNovedades">
+        <h4>{{values.TEXTS.otrasNovedades}}</h4>
+        <ul class="novedades">
+            {% for novedad in values.novedades %}   
+        {# posibilidad de poner el título más grande y en dos filas #}                
+            <li>
+                {% if novedad.titulo|length > 20 %}
+                <h5 class="lineHeight">{% if novedad.titulo | length > 35 %}{{novedad.titulo | slice(start,35)}} ...{% else %}{{novedad.titulo}}{% endif %}</h5>
+                    {% else %}
+                <h5>{{novedad.titulo}}</h5>
+                {% endif %}
+                <a href="{{novedad.url.url}}" title="{{novedad.titulo}}" {% if novedad.url.targetBlank =='1' %} rel="pop-up" {% endif %}><img src="{{app.path}}/{{novedad.imagen}}" alt="{{novedad.titulo}}" title="{{novedad.titulo}}" /></a>
+                <a href="{{novedad.url.url}}" title="{{values.TEXTS.verProducto}}" class="verProducto" {% if novedad.url.targetBlank =='1' %} rel="pop-up" {% endif %}>{{values.TEXTS.verProducto}}</a>
+                <p>{{novedad.desarrollo}}</p>
+            </li>        
+            {% endfor %}
+        </ul>        
+    </article>
+    
+    
+    <div class="botonera">
+        <a href="{{app.path}}/novedades" title="{{values.TEXTS.verTodasNovedades}}" class="btnGran right">{{values.TEXTS.verTodasNovedades}}</a>
+    </div>   	    
+{% endblock %}

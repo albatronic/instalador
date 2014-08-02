@@ -1,0 +1,22 @@
+/* -------------------------------- */
+/*	ERROR 404                    */
+/* -------------------------------- */
+section#mensaje404 {
+    text-align: center;
+    width:882px;
+    overflow:hidden;
+    float:left;
+    padding:0px 30px 10px 30px;
+}
+
+section#mensaje404 img{
+    float:left;
+    margin:30px 390px;
+}
+
+section#mensaje404 p {
+    width: 100%;
+    float: left;
+    color: #444;
+    margin-bottom: 10px;
+}

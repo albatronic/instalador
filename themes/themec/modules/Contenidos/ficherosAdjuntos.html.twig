@@ -1,0 +1,31 @@
+{% set archivos = contenido.getDocuments('document')%}
+{% set nArchivos = archivos|length %}
+
+{% if nArchivos > 0 %}
+    <div class="ficherosAdjuntos">
+
+        <div class="contenidoTop">
+            <h6>{{values.LABELS.archivosAdjuntos}}</h6>
+        </div>
+
+        <div class="contenidoInter">                
+                <ul>
+                    {% for key,archivo in archivos %}
+                        {% if key is even %}
+                        <li><a href="{{app.path}}/{{archivo.PathName}}" title="{{archivo.Title}}" rel="pop-up">{{archivo.Name}}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+                <ul class="right">
+                    {% for key, archivo in archivos %}
+                        {% if key is odd %}
+                        <li><a href="{{app.path}}/{{archivo.PathName}}" title="{{archivo.Title}}" rel="pop-up">{{archivo.Name}}</a></li>
+                        {% endif%}
+                    {% endfor %}
+                </ul>
+        </div> 
+        <!-- <div class="contenidoBottom"></div> -->
+
+    </div>
+{% endif %}

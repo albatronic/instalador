@@ -1,0 +1,659 @@
+
+/* -------------------------------- */
+/*		 scroll de navegaci�n 		*/
+/* -------------------------------- */
+#nav {position:fixed; top:50%; float:left; z-index: 1;} 
+#nav ul {display:block;position:fixed;right:20px;width:11px;z-index:850;}
+#nav ul li {display:block;padding:2px 0;line-height:11px;float:left;}
+#nav ul li a {background:url('../images/nav-li-a.png') no-repeat 0 0;height:13px;width:13px;display:block;cursor:pointer;}
+#nav ul li a:hover, #nav ul li.current a {background-position:0 -13px;}
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------- SECCIONES ---------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------- */
+/* -------------------------------- */
+/*	    fondo inter-secciones 		*/
+/* -------------------------------- */
+.inter {
+	width:100%;
+	float:left;
+	height:9px;
+	background:url('../images/fondo-inter-seccion.png') 0 0 repeat-x;
+	position:relative;
+}
+
+.inter_eventos {
+	width:100%;
+	float:left;
+	height:9px;
+	background:url('../images/fondo-inter-seccion.png') 0 0 repeat-x;
+	/*margin-top:-25px;*/
+	position:relative;
+	top:9px;
+}
+
+/* -------------------------------- */
+/*	  botones cuadrados secciones	*/
+/* -------------------------------- */
+#btn_home {
+	width:22px;
+	height:47px;
+	background:url('../images/sprite-botones-deslizantes.png') 0 0 no-repeat;
+	float:right;
+	display:block;
+	position:relative;
+	/*margin-top:350px;*/
+	right:3px;
+	top:25px;
+	/*margin-left:16px;*/
+	cursor:pointer;
+}
+
+#btn_home:hover {
+	background:url('../images/sprite-botones-deslizantes.png') 0 -28px no-repeat;
+}
+
+#btn_bienvenido {
+	width:23px;
+	height:23px;
+	background:url('../images/sprite-botones-deslizantes.png') -30px 0 no-repeat;
+	float:right;
+	display:block;
+	position:relative;
+	/*margin-top:350px;*/
+	right:3px;
+	top:0px;
+	margin-top:10px;
+	/*margin-left:16px;*/
+	cursor:pointer;
+}
+
+#btn_bienvenido:hover {
+	background:url('../images/sprite-botones-deslizantes.png') -30px -28px no-repeat;
+}
+
+#btn_servicios {
+	width:23px;
+	height:23px;
+	background:url('../images/sprite-botones-deslizantes.png') -30px 0 no-repeat;
+	float:right;
+	display:block;
+	position:relative;
+	/*margin-top:350px;*/
+	right:3px;
+	top:-30px;
+	margin-top:-10px;
+	/*margin-left:16px;*/
+	cursor:pointer;
+	z-index:99;
+}
+
+#btn_servicios:hover {
+	background:url('../images/sprite-botones-deslizantes.png') -60px 0px no-repeat;
+}
+
+#btn_eventos {
+	cursor:pointer;
+	height:23px;
+	background:url('../images/sprite-botones-deslizantes.png') -30px 0 no-repeat;
+	float:right;
+	display:block;
+	clear:both;
+	position:relative;
+	right:0px;
+	top: -20px;
+	width:23px;	
+}
+
+#btn_eventos:hover {
+	background:url('../images/sprite-botones-deslizantes.png') -60px -28px no-repeat;
+}
+
+#btn_pie {
+	width:23px;
+	height:23px;
+	background:url('../images/sprite-botones-deslizantes.png') -90px 0 no-repeat;
+	float:right;
+	display:block;
+	clear:both;
+	position:relative;
+	/*margin-top:350px;*/
+	right:0px;
+	/*margin-left:16px;*/
+	cursor:pointer;
+	margin-bottom:20px;
+}
+
+#btn_pie:hover {
+	background:url('../images/sprite-botones-deslizantes.png') -90px -28px no-repeat;
+}
+
+
+
+
+
+/* -------------------------------- */
+/*			 	home		  		*/
+/* -------------------------------- */
+/*#home {
+	width:100%;
+	float:left;
+}*/
+
+#enlaces_iconos {
+	width:930px;
+	padding:0;
+	margin:36px 0 38px 0;
+	font:13px Arial, Helvetica, sans-serif;
+	color:#444;
+	float:left;
+}
+
+#enlaces_iconos a{
+	width:185px;
+	float:left;
+}
+
+#enlaces_iconos a h2{
+	color:#7a7a7a;
+	font-size:18px;
+	margin:12px 0 5px 0;
+	float:left;
+}
+
+#enlaces_iconos a .titular_icono{
+	color:#7a7a7a;
+	font-size:18px;
+	margin:12px 0 5px 0;
+	float:left;
+	width:100%;
+        font-family: 'texgyreadventor-regular', sans-serif;
+}
+
+#enlaces_iconos p{
+	color:#444;
+	margin:0 0 10px 0;
+	float:left;
+}
+
+#enlaces_iconos .texto_icono{
+	color:#444;
+	margin:0 0 10px 0;
+	float:left;
+}
+
+#laboratorio, #parafarmacia, #formulas, #optica{
+	float:left;
+}
+ 
+#laboratorio {
+	width:255px;
+}
+
+#laboratorio a{
+	width:185px;
+	/*height:140px;*/
+	float:left;
+	background:url('../images/boton-laboratorio.png') 0 0 no-repeat;
+	padding:55px 0 0 0;
+}
+
+#laboratorio a:hover{
+	background:url('../images/boton-laboratorio-hover.png') 0 0 no-repeat;
+}
+
+
+#parafarmacia {
+	width:245px;
+}
+
+#parafarmacia a{
+	background:url('../images/boton-parafarmacia.png') 0 13px no-repeat;
+	padding:55px 0 0 0;
+}
+
+#parafarmacia a:hover{
+	background:url('../images/boton-parafarmacia-hover.png') 0 13px no-repeat;
+}
+
+
+#formulas {
+	width:260px;
+}
+
+#formulas a{
+	background:url('../images/boton-formulas.png') 0 0 no-repeat;
+	padding:55px 0 0 18px;
+}
+
+#formulas a:hover{
+	background:url('../images/boton-formulas-hover.png') 0 0 no-repeat;
+}
+
+
+#optica {
+	width:165px;
+}
+
+#optica a{
+	background:url('../images/boton-optica.png') 0 20px no-repeat;
+	padding:55px 0 0 0;
+}
+
+#optica a:hover{
+	background:url('../images/boton-optica-hover.png') 0 20px no-repeat;
+}
+
+
+#sombra {
+	width:1253px;
+	height:114px;
+	margin:0 auto;
+	background:url('../images/sombra.jpg') 0 0 no-repeat;
+	position:relative;
+	top:684px;
+}
+
+/* -------------------------------- */
+/*	bienvenido                  */
+/* -------------------------------- */
+#bienvenido {
+	float:left;
+	width:100%;
+	margin-top:-8px;
+}
+
+#bienvenido .contenedor_central h2 {
+	float:left;
+	width:100%;
+	height:55px;
+	/*background:url('../images/bienvenido.png') 10px 0 no-repeat;*/
+	padding-top:30px;
+	font-size:42px;
+        font-family: 'texgyreadventor-regular';
+	color:#fff;
+	margin:10px 0 28px 0;
+}
+
+/*#slider_bienvenido {
+	width:380px;
+	height:325px;
+	float:left;
+	margin:0 0 30px 0;
+	background:#FFFFCC;
+}*/
+
+#bienvenido_drcha {
+	width:465px;
+	height:325px;
+	float:right;
+}
+
+#bienvenido_drcha h3{
+    background:url('../images/hendido-horizontal-bienvenido.png') 0 bottom repeat-x;
+    color:#fff;
+    float:left;	
+    font-size:18px;
+    font-family: 'texgyreadventor-regular', sans-serif;
+    font-weight: lighter;
+    line-height:1.6em;
+    margin:0px;
+    padding-bottom:20px;
+    text-shadow: 0 1px #999;
+    width:465px;
+}
+
+#bienvenido_drcha p{
+	margin:22px 0 0 0;
+	width:465px;
+	float:left;
+	color:#444;
+	font:15px Arial, Helvetica, sans-serif;
+	line-height:1.4em;
+	padding-bottom:20px;
+}
+
+ul.lista_1 {
+	width:142px;
+	margin-right:19px;
+}
+
+ul.lista_2 {
+	width:142px;
+	margin-right:19px;
+}
+
+ul.lista_3 {
+	width:142px;
+}
+
+#bienvenido_drcha ul{
+	margin-top:0;
+	padding:0;
+	float:left;
+	color:#444;
+	font:15px Arial, Helvetica, sans-serif;
+	line-height:1.4em;
+}
+
+#bienvenido_drcha ul li{
+	margin:0 0 8px 0;
+	width:100%;
+	float:left;
+	padding-left:18px;
+	background:url('../images/icono-puntitos.png') 0 6px no-repeat;
+	color:#444;
+	font:15px Arial, Helvetica, sans-serif;
+	line-height:1.4em;
+}
+
+#bienvenido_drcha ul li a{
+	color:#444;
+	text-decoration:underline;
+}
+
+#bienvenido_drcha ul li a:hover{
+	color:#fff;
+	text-decoration:none;
+}
+
+#mensajes {
+	width:930px;
+	float:left;
+	color:#fff;
+	font:24px Arial, Helvetica, sans-serif;
+}
+
+.trato {
+	width:368px;
+	height:35px;
+	float:left;
+	background:url('../images/icono-cruz.png') 36px 0 no-repeat;
+	padding-left:84px;
+	padding-top:4px;
+        font-family: 'texgyreadventor-regular', sans-serif;
+}
+
+.parking {
+	width:350px;
+	height:35px;
+	float:right;
+	background:url('../images/icono-parking.png') 36px 0 no-repeat;
+	padding-left:84px;
+	padding-top:4px;
+        font-family: 'texgyreadventor-regular';
+}
+
+
+/* -------------------------------- */
+/*			servicios		  		*/
+/* -------------------------------- */
+#servicios {
+	float:left;
+	width:100%;
+	margin-top:-8px;
+
+}
+#servicios .contenedor_central {
+	background:url('../images/fondo-servicios-central.png') top right no-repeat;
+}
+
+#servicios .contenedor_central h2 {
+	float:left;
+	width:100%;
+	height:55px;
+	/*background:url('../images/servicios.png') 10px 35px no-repeat;*/
+	padding-top:30px;
+	font-size:42px;
+        font-family: 'texgyreadventor-regular', sans-serif;
+        color:#fff;
+	margin:10px 0 28px 0;
+}
+
+#servicios ul {     
+    float:left;
+    font-family: 'texgyreadventor-regular', sans-serif;
+    margin:0;
+    padding:0;
+    width:400px;
+}
+
+#servicios ul li{
+    padding:0;
+    margin:0;
+    float:left;
+    width:350px;
+    height:35px;
+    background-image:url('../images/sprite-servicios.png');
+    background-repeat:no-repeat;
+    color:#444;
+    font-size:18px;
+    padding-left:50px;
+    padding-top:15px;
+}
+
+#servicios ul li a{
+	color:#fff;
+}
+
+#servicios ul li a:hover{
+	color:#444;
+	border-bottom:0px;
+}
+
+li#analisis {
+	background-position:0 0;
+}
+
+li#cardio {
+	background-position:0px -50px;
+}
+
+li#spd {
+	background-position:0 -400px;
+}
+
+li#servicios {
+	background-position:0px -150px;
+}
+
+li#facial {
+	background-position:0 -200px;
+}
+
+li#nutricionista {
+	background-position:0px -250px;
+}
+
+li#parking {
+	background-position:0 -300px;
+}
+
+li#optica2 {
+	background-position:0px -350px;
+}
+
+
+#servicios_derecha {
+	width:530px;
+	float:right;
+	position:relative;
+	top:-70px;
+}
+
+#servicios_derecha div{
+	width:530px;
+	float:left;
+	margin-bottom:60px;
+}
+
+#servicios_derecha h3{
+	width:530px;
+	float:left;
+	color:#fff;
+	margin:0px 0 20px 0;
+	padding:0px;
+	font-size:32px;
+	text-shadow:0 1px #8b9d3c;
+}
+
+#servicios_derecha .imagen_analisis {
+	float:left;
+	margin-right:35px;
+}
+
+#servicios_derecha p {
+	color:#444;
+        float: none;
+	font:15px Arial, Helvetica, sans-serif;
+	line-height:1.4em;
+        margin-bottom: 14px;
+}
+
+#servicios_derecha .btn {
+	width:174px;
+	height:24px;
+	float:left;
+	background:url('../images/sprite-boton.png') 0 0 no-repeat;
+	padding-top:6px;
+	text-align:center;
+	color:#6d9a00;
+	font:14px Arial, Helvetica, sans-serif;
+}
+
+#servicios_derecha .btn:hover{
+	background:url('../images/sprite-boton.png') 0 -30px no-repeat;
+}
+
+.menta {
+	background:url('../images/menta.png') 220px 0px no-repeat;
+	width:100%;
+	height:220px;
+	float:right;
+	text-align:right;
+	margin-top:-80px;
+	position:relative;
+	z-index:9;
+}
+
+/* -------------------------------- */
+/*				eventos		  		*/
+/* -------------------------------- */
+#eventos {
+	float:left;
+	width:100%;
+	margin-top:-8px;
+	margin-bottom:-35px;
+}
+
+#eventos .contenedor_central h2 {
+	float:left;
+	width:100%;
+	height:105px;
+	/*background: url('../images/eventos.png') 10px 5px no-repeat;*/
+	padding-top:30px;
+	font-size:42px;
+        font-family: 'texgyreadventor-regular', sans-serif;
+	color:#fff;
+	margin:10px 0 -8px 0;
+}
+
+#contenedor_noticias{
+	width:560px;
+	float:right;
+}
+
+.noticia_individual {
+    width:260px;
+    float:left;
+    font-size:18px;
+    margin-bottom:15px;
+    margin-right: 40px;
+    /*margin-left:80px;*/
+}
+
+.noticia_individual:nth-of-type(2n) {
+    margin-right: 0;
+}
+
+.espacio_noticias {
+	width:80px;
+	float:left;
+	height:1px;
+}
+
+.noticia_individual h4{
+	color:#fff;
+	font-size:18px;
+	float:left;
+	margin:0 0 8px 0;
+	width:100%;
+	line-height:1.3em;
+        font-family: 'texgyreadventor-regular', sans-serif;
+}
+
+.noticia_individual h4 a{
+	color:#fff;
+}
+
+.noticia_individual h4 a:hover{
+	color:#444;
+}
+
+.noticia_individual p{
+	color:#444;
+	font-size:15px;
+	float:left;
+	margin:0 0 10px 0;
+	width:100%;
+	line-height:1.4em;
+}
+
+.etiqueta_fecha {
+	float:left;
+	height:21px;
+	font-size:12px;
+	color:#fff;
+	width:100%;
+	margin-bottom:10px;
+}
+
+.etiqueta_flecha_left {
+	float:left;
+	background:url('../images/fondo-etiqueta-noticia-left.png') 0 0 no-repeat;
+	width:4px;
+	height:21px;
+}
+
+.etiqueta_flecha_inter {
+	float:left;
+	background:url('../images/fondo-etiqueta-noticia-inter.png') 0 0 repeat-x;
+	height:19px;
+	padding-top:4px;
+	padding-left:8px;
+	padding-right:8px;
+}
+
+.etiqueta_flecha_right {
+	float:left;
+	background:url('../images/fondo-etiqueta-noticia-right.png') 0 0 no-repeat;
+	width:10px;
+	height:21px;
+}
+
+#contenedor_noticias .btn {
+	width:174px;
+	height:23px;
+	float:left;
+	background:url('../images/sprite-boton.png') 0 0 no-repeat;
+	padding-top:6px;
+	text-align:center;
+	color:#397b97;
+	font:14px Arial, Helvetica, sans-serif;
+}
+
+#contenedor_noticias .btn:hover {
+	background:url('../images/sprite-boton.png') 0 -30px no-repeat;
+}
