@@ -4,7 +4,7 @@
  * Description of EventosController
  *
  * @author Sergio Pérez <sergio.perez@albatronic.com>
- * @copyright ÁRTICO ESTUDIO
+ * @copyright ALBATRONIC
  * @date 15-01-2013
  */
 class EventosController extends ControllerProject {

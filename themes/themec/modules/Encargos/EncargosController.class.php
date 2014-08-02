@@ -4,7 +4,7 @@
  * Description of EncargosController
  *
  * @author Sergio Pérez <sergio.perez@albatronic.com>
- * @copyright ÁRTICO ESTUDIO
+ * @copyright ALBATRONIC
  * @date 06-nov-2012
  *
  */

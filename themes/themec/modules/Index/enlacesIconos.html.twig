@@ -1,4 +1,5 @@
 <ul id="enlaces_iconos">
+    {#
     <li id="laboratorio">
         <a href="{{app.path}}/analisis-clinicos" title="{{values.TEXTS.laboratorio}}">
             <span class="titular_icono">{{values.TEXTS.laboratorio}}</span>
@@ -26,4 +27,13 @@
             <span class="texto_icono">{{values.TEXTS.opticaDescripcion}}</span>
         </a>
     </li>
+    #}
+    {% for item in values.serviciosPortada %}
+        <li id="formulas">
+            <a href="{{app.path}}{{item.Href.url}}" title="{{item.Titulo}}">
+                <span class="titular_icono">{{item.Titulo}}</span>
+                <span class="texto_icono">{{item.ResumenBreve}}</span>
+            </a>
+        </li>        
+    {% endfor %}
 </ul>

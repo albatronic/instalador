@@ -5,10 +5,11 @@
     <!-- Para que esté disponible el path de la app en todos los java scripts -->
     <script type="text/javascript">
         var appPath = "{{appPath}}";
+        var theme = "{{theme}}";
         var language = "{{language}}";
     </script>          
     {% include values.archivoJs %}
-    <script type="text/javascript" src="{{app.path}}/{{theme}}/js/AEscripts.js"></script> 
+    <script type="text/javascript" src="{{app.path}}/{{theme}}/js/albatronic.js"></script> 
     
     <!-- Obtener la resolución del dispositivo de navegación del cliente web -->
     {% if not chequeadaResolucionVisitante %}

@@ -4,7 +4,7 @@
  * Description of PoliticaController
  *
  * @author Sergio Pérez <sergio.perez@albatronic.com>
- * @copyright ÁRTICO ESTUDIO
+ * @copyright ALBATRONIC
  * @date 26-nov-2012
  *
  */

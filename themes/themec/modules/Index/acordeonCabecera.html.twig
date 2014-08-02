@@ -1,5 +1,7 @@
 <div id="example4">
+
     <ul>
+        {#
         <li class="frame-0">
             <img src="{{app.path}}/{{theme}}/images/slider-pestana-1_{{values.LANGUAGE}}.png" class="pestana" />
             <div class="frame-content fondo_1">
@@ -27,5 +29,17 @@
                 <a href="{{app.path}}/parafarmacia" title="{{values.LABELS.verMas}}" class="botonPeq">{{values.LABELS.verMas}}</a>
             </div>
         </li>
-    </ul>
+        #}
+        {% for item in values.sliders %}
+        <li style="background:url({{app.path}}/{{theme}}/{{item.imagen}})">
+            <img src="{{app.path}}/{{theme}}/images/slider-pestana-{{loop.index}}.png" class="pestana" />
+            <div class="frame-content fondo_{{loop.index}}">
+                <h3 class="titular{{loop.index}}">{{item.titulo}}</h3>
+                <span class="subtitular{{loop.index}}">{{item.subtitulo}}</span>
+                <p class="parrafo{{loop.index}}">{{item.resumen}}</p>
+                <a href="{{app.path}}/{{item.url}}" title="{{macro.idioma('verMas')}}" class="botonPeq">{{macro.idioma('verMas')}}</a>
+            </div>
+        </li>            
+        {% endfor %}
+    </ul>          
 </div>

@@ -1,9 +1,9 @@
 <div id="banda_ubicacion">
     <div class="contenedor_central">
         <ul class="globitos">
-            <li class="ubicacion"><a href="{{app.path}}/donde-estamos" title="{{values.LABELS.dondeEstamos}}">{{values.LABELS.dondeEstamos}}</a></li>
-            <li class="abierto">{{values.LABELS.abierto24h}}</li>
-            <li class="telefono">952 774 086</li>
+            <li class="ubicacion"><a href="{{app.path}}/donde-estamos" title="{{macro.idioma('dondeEstamos')}}">{{macro.idioma('dondeEstamos')}}</a></li>
+            <li class="abierto">{{macro.idioma('servicio24Horas')}}</li>
+            <li class="telefono">{{values.datosContacto.telefono1}}</li>
         </ul>
         {% include '_global/banderas.html.twig' %}
     </div>

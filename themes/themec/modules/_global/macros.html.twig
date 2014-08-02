@@ -146,3 +146,13 @@
     {% endif %}
     {{ texto|slice(0,nCaracteres) }} {{puntos}}
 {% endmacro %}
+
+{% macro moneda(importe, nDecimales, separadorMiles, separadorDecimales, simbolo)%}
+    {{importe | number_format(nDecimales|default(2), separadorDecimales|default('.'), separadorMiles|default(','))}} {{simbolo|default('€')}}
+{% endmacro%}
+
+{% macro idioma(clave)%}
+    {%spaceless%}
+    {% if LABELS[clave] %}{{LABELS[clave]}}{% else %}[{{clave}}]{% endif %}
+    {%endspaceless%}        
+{% endmacro%}    

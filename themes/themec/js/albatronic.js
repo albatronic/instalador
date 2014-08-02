@@ -1,6 +1,6 @@
 /* 
  * @author Sergio Pérez <sergio.perez@albatronic.com>
- * @copyright Ártico Estudio, sl
+ * @copyright ALBATRONIC, sl
  * @version 1.0 27-nov-2012
  */
 
@@ -76,7 +76,7 @@ function calendario(idDiv,mes,ano) {
     var parametros = 'mes='+mes+'&ano='+ano;
 
     // Coloco un gif "Cargando..." en la capa
-    $('#'+idDiv).html("<img src='"+appPath+"/images/loading.gif'>");
+    $('#'+idDiv).html("<img src='"+appPath+"/"+theme+"/images/loading.gif'>");
 
     // Pintar el literal del mes y año
     jQuery('#calendarioTextoMes').html(meses[language][mes-1] + " " + ano);
