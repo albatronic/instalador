@@ -39,7 +39,7 @@ config:
       user: 
       password: 
       timeout: 30
-      folder: instalador.local/themes/themec
+      folder: instalador.local/themes/themed
       
   # CONTROL DE ACCESO POR IP
   ip_control: true
@@ -52,7 +52,7 @@ config:
     url: http://instalador.local
     path: 
     framework: bin/albatronic/
-    theme: themes/themec
+    theme: themes/themed
 
   # SEMILLA PARA CONSTRUIR CLAVES MD5
   semillaMD5: pablo
@@ -87,4 +87,4 @@ config:
       host: localhost
       user: root
       password: root
-      database: instalador
+      database: formulacapital
