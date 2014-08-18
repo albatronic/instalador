@@ -39,7 +39,7 @@ config:
       user: 
       password: 
       timeout: 30
-      folder: instalador.local/themes/themed
+      folder: instalador.local/themes/themea
       
   # CONTROL DE ACCESO POR IP
   ip_control: true
@@ -52,7 +52,7 @@ config:
     url: http://instalador.local
     path: 
     framework: bin/albatronic/
-    theme: themes/themed
+    theme: themes/themea
 
   # SEMILLA PARA CONSTRUIR CLAVES MD5
   semillaMD5: pablo
