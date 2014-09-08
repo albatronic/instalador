@@ -45,9 +45,9 @@ if (file_exists("bin/yaml/lib/sfYaml.php")) {
 // CARGO LOS PARAMETROS DE CONFIGURACION.
 // ---------------------------------------------------------------
 if (!isset($_SESSION['configWeb'])) {
-    if (!file_exists('config/config.yml')) {
+    if (!file_exists('config/config.yml'))
         die("NO EXISTE EL FICHERO DE CONFIGURACION");
-    } else {
+    else {
         $yaml = sfYaml::load('config/config.yml');
         $_SESSION['configWeb'] = $yaml['config'];
     }
@@ -138,16 +138,16 @@ if (!isset($_SESSION['idiomas']['actual'])) {
 // Si el navegador es antiguo muestro template especial
 $url = new CpanUrlAmigables();
 if ($rq->isOldBrowser()) {
-    $rows = $url->cargaCondicion("Id,Idioma,UrlFriendly,Controller,Action,Parameters,Entity,IdEntity", "UrlFriendly='/oldbrowser'");
+    $rows = $url->cargaCondicion("Id,Idioma,UrlFriendly,Controller,Action,Template,Parameters,Entity,IdEntity", "UrlFriendly='/oldbrowser'");
 } else {
     // Localizar la url amigable
-    $rows = $url->cargaCondicion("Id,Idioma,UrlFriendly,Controller,Action,Parameters,Entity,IdEntity", "Idioma='{$_SESSION['idiomas']['actual']}' and UrlFriendly='{$rq->getUrlFriendly($app['path'])}'"); 
-// Localizar la url amigable
+    $rows = $url->cargaCondicion("Id,Idioma,UrlFriendly,Controller,Action,Template,Parameters,Entity,IdEntity", "Idioma='{$_SESSION['idiomas']['actual']}' and UrlFriendly='{$rq->getUrlFriendly($app['path'])}'");
+    // Localizar la url amigable
     //$rows[0] = $url->matchUrl($rq->getUrlFriendly($app['path']));
 
     if (count($url->getErrores()) == 0) {
-        if (!$rows[0]['Id']) {
-            $rows = $url->cargaCondicion("Id,Idioma,UrlFriendly,Controller,Action,Parameters,Entity,IdEntity", "UrlFriendly='/error404'");
+        if (!$rows) {
+            $rows = $url->cargaCondicion("Id,Idioma,UrlFriendly,Controller,Action,Template,Parameters,Entity,IdEntity", "UrlFriendly='/error404'");
         }
     } else {
         print_r($url->getErrores());
@@ -157,7 +157,6 @@ if ($rq->isOldBrowser()) {
 
 unset($url);
 $row = $rows[0];
-if (!$row['Id']) die("No se ha localizado ninguna url amigable");
 
 $_SESSION['idiomas']['actual'] = $row['Idioma'];
 $_SESSION['urlFriendly'] = $row['UrlFriendly'];
@@ -176,10 +175,6 @@ switch ($rq->getMethod()) {
         //$action = $request[1];
         $controller = ucfirst($row['Controller']);
         $action = $row['Action'];
-        $request['IdUrlAmigable'] = $row['Id'];
-        $request['Parameters'] = $row['Parameters'];
-        $request['Entity'] = $row['Entity'];
-        $request['IdEntity'] = $row['IdEntity'];
         break;
 
     case 'POST':
@@ -187,12 +182,16 @@ switch ($rq->getMethod()) {
         $request['METHOD'] = "POST";
         $controller = ucfirst($request['controller']);
         $action = $request['action'];
-        $request['IdUrlAmigable'] = $row['Id'];
-        $request['Parameters'] = $row['Parameters'];
-        $request['Entity'] = $row['Entity'];
-        $request['IdEntity'] = $row['IdEntity'];
         break;
 }
+
+$request['Template'] = $row['Template'];
+$request['IdUrlAmigable'] = $row['Id'];
+$request['Parameters'] = $row['Parameters'];
+$request['Entity'] = $row['Entity'];
+$request['IdEntity'] = $row['IdEntity'];
+
+$controller = ControllerWeb::validaController($controller,$row['Template']);
 
 // Si no se ha localizado el controlador, lo pongo a Error404
 if ($controller == '') {
@@ -206,10 +205,10 @@ if ($action == '') {
 // Si no existe el controller lo pongo a 'Error404'
 $fileController = "{$_SESSION['theme']}/modules/{$controller}/{$controller}Controller.class.php";
 
-if (!file_exists($fileController)) {
-    $controller = "Error404";
-    $fileController = "{$_SESSION['theme']}/modules/Error404/Error404Controller.class.php";
-}
+//if (!file_exists($fileController)) {
+//    $controller = "Error404";
+//    $fileController = "{$_SESSION['theme']}/modules/Error404/Error404Controller.class.php";
+//}
 
 $clase = $controller . "Controller";
 $metodo = $action . "Action";
@@ -239,6 +238,7 @@ if ($_SESSION['isMobile']) {
 $result['values']['urlAmigable'] = $_SESSION['urlFriendly'];
 $result['values']['controller'] = $controller;
 $result['values']['action'] = $metodo;
+$result['values']['template'] = $result['template'];
 $result['values']['archivoCss'] = ControllerWeb::getArchivoCss($result['template']);
 $result['values']['archivoJs'] = ControllerWeb::getArchivoJs($result['template']);
 
@@ -284,8 +284,8 @@ $twig->loadTemplate($result['template'])
             'app' => $app,
             'chequeadaResolucionVisitante' => isset($_SESSION['resolucionVisitante']),
             'user' => $_SESSION['usuarioWeb'],
+            'agente' => $_SESSION['agente'],
         ));
-
 //------------------------------------------------------------
 
 unset($rq);
