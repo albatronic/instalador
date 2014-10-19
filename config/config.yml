@@ -86,5 +86,5 @@ config:
       dbEngine: mysql
       host: localhost
       user: root
-      password: root
-      database: formulacapital
+      password: 
+      database: instalador
