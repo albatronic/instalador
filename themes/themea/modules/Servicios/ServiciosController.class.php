@@ -26,6 +26,7 @@ class ServiciosController extends ControllerProject {
                 break;
 
             case 'GconSecciones':
+                $this->values['servicio'] = new GconSecciones($this->request['IdEntity']);
                 // Se muestran todos los servicios
                 $this->values['servicios'] = Servicios::getServicios(0, -1);
                 $this->template = $this->entity . "/index.html.twig";

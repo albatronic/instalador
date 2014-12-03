@@ -1,10 +1,12 @@
-<h2>{{values.LABELS.otrosServicios}}</h2>
+<div class="h-wrapper h1 grid_12">
+    <h2>{{macro.idioma('otrosServicios')}}<span class="line"></span></h2>
+</div>
 {% for servicio in values.otrosServicios%}
     {% if (app.path ~ urlAmigable) != servicio.Href.url %}
-        <div class="service-3 grid_4">
+        <div class="service-1 grid_4">
             {% if servicio.PathNameImagenN(1) %}
                 <div class="icon">
-                    <img src="{{servicio.PathNameImagenN(1)}}" alt="{{servicio.Titulo}}" title="{{servicio.Titulo}}" />
+                    <img src="{{theme}}/{{servicio.PathNameImagenN(1)}}" alt="{{servicio.Titulo}}" title="{{servicio.Titulo}}" />
                 </div>
             {% endif %}
             <div class="text">{{ macro.recortaTexto (servicio.ResumenBreve, 100) }}</div>

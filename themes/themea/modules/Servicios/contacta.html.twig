@@ -1,9 +1,9 @@
 <div class="grid_12">  
     <div class="stunningtext">
-	<h3 class="stunningtext-title">{{macros.idioma('asesoramiento')}}</h3>
+	<h3 class="stunningtext-title">{{values.servicio.Subtitulo}}</h3>
 	<div class="stunningtext-caption">
-            <p style="width: 75%">{{macros.idioma('textoServicios')}}</p>
-            <a class="normal-button larg stunning" href="{{app.path}}/contacto">{{macros.idioma('contactaConNosotros')}}</a>
-	</div>
+            {%autoescape false%}{{values.servicio.Introduccion}}{%endautoescape%}
+	</div>    
     </div>
+    <a class="normal-button larg stunning" href="{{app.path}}/contacto">{{macro.idioma('contactaConNosotros')}}</a>          
 </div>	

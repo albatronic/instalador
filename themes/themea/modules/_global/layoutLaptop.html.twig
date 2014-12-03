@@ -30,12 +30,7 @@
             var language = "{{language}}";
         </script>
         
-        {% include values.archivoJs %}
-        
-        <!-- Obtener la resolución del dispositivo de navegación del cliente web -->
-        {% if not chequeadaResolucionVisitante %}
-        <script type="text/javascript">chequeaResolucionVisitante();</script>
-        {% endif %}            
+        {% include values.archivoJs %}           
     </div>
 
         {# PARA HACER DEBUGER EN ENTORNO DE DESARROLLO #}            

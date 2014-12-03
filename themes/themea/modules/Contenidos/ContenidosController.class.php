@@ -13,13 +13,19 @@ class ContenidosController extends ControllerProject {
     protected $entity = "Contenidos";
 
     public function IndexAction() {
-
-        $contenido = Contenidos::getContenidoDesarrollado($this->request['IdEntity']);
-        $this->values['contenidoDesarrollado'] = $contenido;
-        if ($contenido['contenido']->getBlogPublicar()->getIDTipo()) {
-            $this->values['blog']['categorias'] = Blog::getSecciones();
-            $this->values['postsPorMes'] = Blog::getArticulosMeses(12);
-            $this->values['otrosPosts'] = Blog::getArticulos(0, false, 1, 0, 1);
+        switch ($this->request['Entity']) {
+            case 'GconSecciones':
+                $this->values['contenidoDesarrollado'] = new GconSecciones($this->request['IdEntity']);
+                break;
+            case 'GconContenidos':
+                $contenido = Contenidos::getContenidoDesarrollado($this->request['IdEntity']);
+                $this->values['contenidoDesarrollado'] = $contenido;
+                if ($contenido['contenido']->getBlogPublicar()->getIDTipo()) {
+                    $this->values['blog']['categorias'] = Blog::getSecciones();
+                    $this->values['postsPorMes'] = Blog::getArticulosMeses(12);
+                    $this->values['otrosPosts'] = Blog::getArticulos(0, false, 1, 0, 1);
+                }
+                break;
         }
         $this->values['testimonios'] = Contenidos::getContenidosSeccion($this->varWeb['Pro']['staticContents'][1]);
         return parent::IndexAction();

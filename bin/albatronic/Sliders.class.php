@@ -47,7 +47,7 @@ class Sliders {
         $em = new EntityManager("");
         $select = "select s.Id,s.Titulo,s.Subtitulo,s.Resumen,s.MostrarTextos,s.Entidad,s.IdEntidad,s.UrlTarget,s.UrlIsHttps,s.UrlParameters,s.UrlTargetBlank,d.PathName as imagen
                     from SldSliders s 
-                    left join CpanDocs d on s.Id=d.IdEntity and d.Entity='SldSliders' and d.Type='image1' and d.IsThumbnail='0' and d.Publish='1'";
+                    join CpanDocs d on s.Id=d.IdEntity and d.Entity='SldSliders' and d.Type='image1' and d.IsThumbnail='0' and d.Publish='1' and s.Publish='1'";
         $rows = $em->getResult("s", $select, $where, "", $limite);
 
         foreach ($rows as $row) {

@@ -28,7 +28,7 @@
                     <ul id="main-nav" class="sf-menu">
                         {% for item in values.menuCabecera %}
                         <li {% if values.controller==item.controller %}class="current-menu-item"{% endif %}>
-                            <a href="{{item.url.url}}">{{item.seccion}}</a>
+                            <a href="{{item.url.url}}">{{item.etiquetaWeb}}</a>
                             {% if item.subsecciones|length>0%}
                                 <ul>
                                 {% for subitem in item.subsecciones %}
@@ -301,6 +301,7 @@
                         </li>
                             #}
                     </ul>
+                    {#
                     <form class="searchform" method="post" action="">
                         <input name="controller" value="Contenidos" type="hidden" />
                         <input name="action" value="Buscar" type="hidden" />
@@ -310,6 +311,7 @@
                             <input class="submit" type="submit" value>
                         </div>
                     </form>
+                    #}
                 </div>
                     <!-- end of menu-wrapper -->
             </div>

@@ -22,7 +22,7 @@ class ControllerProject extends ControllerWeb {
         $this->values['ustedEstaEn'] = $this->getUstedEstaEn();
         $this->values['menuCabecera'] = Menu::getMenuN(2,7);
         $this->values['menuDesplegable'] = Menu::getMenuDesplegable(1);
-        $this->values['menuPie'] = Menu::getMenuN(3,8);
+        $this->values['menuPie'] = Menu::getMenuN(3,5);
         
         $this->values['datosContacto'] = $this->varWeb['Pro']['globales'];    
         $this->values['redes'] = RedesSociales::getRedes();

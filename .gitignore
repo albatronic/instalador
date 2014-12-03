@@ -1,3 +1,4 @@
+/config/config.yml
 /log/
 /themes/themea/cache/
 /themes/themeb/cache/
@@ -5,3 +6,5 @@
 /themes/themed/cache/
 /nbproject/
 /unique/
+error_log
+/lib/error_log

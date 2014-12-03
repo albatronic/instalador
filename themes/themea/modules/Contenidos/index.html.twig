@@ -1,91 +1,16 @@
 {% extends layout %}
 
-{% set contenido = values.contenidoDesarrollado.contenido %}
+{% set contenido = values.contenidoDesarrollado %}
 {% block cuerpo %}
 <div id="sub-main" class="container_12">
-    <div class="h-wrapper h1 grid_12">
-	<h1>{{contenido.Titulo}}<span class="line"></span></h1>
-    </div>  
-	
-    <div id="content" class="grid_8">
+    <div id="content" class="padding30">
 
-	<div id="postsinglepage" class="posts">
-	    {% if contenido.PathNameImagenN(1) %}
-	    <div class="featured-thumbnail-wrapper image">		   		    
-		<div class="featured-thumbnail">
-		    <div class="image-wrap">
-			<a class="image-wrapper" href="{{contenido.PathNameImagenN(1)}}" data-rel="prettyPhoto[gallery]">
-			<img src="{{contenido.PathNameImagenN(1)}}" alt="{{contenido.Titulo}}" title="{{contenido.Titulo}}" /><span class="zoom-icon magnify"></span>
-			</a>
-		    </div>
-		</div>		  
-	    </div>
-	    {% endif %}
-	    		
-	    <div class="single-post">
-		<div class="date-wrapper">
-                    <div class="post-icon"></div>
-                    <span class="fechaPost">{{contenido.PublishAt | date('d M Y')}}</span>
-		</div>
+	<div class="h-wrapper h1 grid_12">	
+	    <h1 id="politica">{{contenido.Titulo}}</h1>
+	</div>
+        {%autoescape false%}{{contenido.Introduccion}}{%endautoescape%}
 
-		<div class="post-content">
-		    <div class="single-port">
-			<h2>{{contenido.Subtitulo}}</h2>
-		    </div>
-		    
-		    <div class="post-content port-content">
-			<p><strong class="dark-color">{{contenido.Resumen}}</strong></p>
-			{% autoescape false%}{{contenido.Desarrollo}}{% endautoescape %}
-		    </div>
-		
-                    {% if values.contenidoDesarrollado.docsAdjuntos | length > 0 %}
-		    <div class="author-info adjuntos">
-                        <h4>{{values.LABELS.archivosAdjuntos}}</h4>
-			<ul>
-                            {% for item in values.contenidoDesarrollado.docsAdjuntos %}
-                                <li><a href="{{app.path}}/{{item.PathName}}" title="{{item.Title}}" target="_blank">{{item.Title}}</a></li>
-                            {% endfor %}
-			</ul>	
-		    </div>
-                    {% endif %}
-                        
-                    {% if values.contenidoDesarrollado.enlacesRelacionados.enlaces | length > 0 %}                        
-		    <div class="author-info adjuntos">
-                        <h4>{{values.LABELS.enlacesRelacionados}}</h4>
-			<ul>
-                            {% for enlace in values.contenidoDesarrollado.enlacesRelacionados.enlaces %}
-			    <li>{{ macro.link(enlace.titulo,enlace.titulo,enlace.url.url,enlace.url.targetBlank) }}</li>
-                            {% endfor %}
-			</ul>	
-		    </div>
-                    {% endif %}
-                        
-                    {% if values.contenidoDesarrollado.galeriaFotos.bloqueThumbnail | length > 0 %}
-		    <div class="author-info adjuntos galeria">
-                        <h4>{{values.LABELS.galeria}}</h4>
-			<ul>
-                            {% for imagen in values.contenidoDesarrollado.galeriaFotos.bloqueThumbnail%}
-                            <li>
-                                <a href="{{app.path}}/{{imagen.PathName}}" title="" rel="gallery" class="pirobox_gall{{contenido.Id}}">
-                                    <img src="{{app.path}}/{{imagen.PathNameThumbnail}}" alt="" title="" />
-                                </a>
-                            </li> 
-                            {% endfor %}  
-                                                          
-			</ul>
-                        <a href="" title="" rel="gallery" class="pirobox_gall{{contenido.Id}}"></a>
-		    </div> 
-                    {% endif %}
-			
-                    <a href="javascript:history.back(-1)" title="{{values.LABELS.volverAtras}}" class="buttons boton right">{{values.LABELS.volverAtras}}</a> {# boton volver atras #}
-		</div>
-	    </div>
-	</div>			
-	{% if contenido.PublicarBlog.IDTipo == 1 %}
-            {% include 'Blog/otrosPosts.html.twig' %}
-        {% endif %}
     </div>
-    {% include 'Contenidos/sidebar.html.twig' %} 
-	
+    	
 </div>
 {% endblock %}
