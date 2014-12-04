@@ -43,5 +43,3 @@ class ControllerProject extends ControllerWeb {
     }
 
 }
-
-?>

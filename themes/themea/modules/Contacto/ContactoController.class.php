@@ -75,7 +75,9 @@ class ContactoController extends ControllerProject {
                 }
                 break;
         }
-
+        $this->values['contenido'] = new GconSecciones($this->request['IdEntity']);
+        // Portfolio
+        $this->values['portfolio'] = Contenidos::getContenidosSeccion(52);
         $this->values['formContacta'] = $this->formContacta;
 
         return parent::IndexAction();
@@ -110,4 +112,3 @@ class ContactoController extends ControllerProject {
 
 }
 
-?>

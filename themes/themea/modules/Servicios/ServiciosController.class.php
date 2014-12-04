@@ -20,8 +20,9 @@ class ServiciosController extends ControllerProject {
                 $this->values['servicio'] = Servicios::getServicioDesarrollado($this->request['IdEntity']);
                 // Tres servicios adicionales excluyendo el actual
                 $this->values['otrosServicios'] = Servicios::getServicios(0, -1, 3, $this->request['IdEntity']);
-                // Testimonio
-                $this->values['testimonios'] = Contenidos::getContenidosSeccion($this->varWeb['Pro']['staticContents'][1]);
+                // Testimonios (Contenidos relacionados)
+                $servicio = new ServServicios($this->request['IdEntity']);           
+                $this->values['testimonios'] = $servicio->getObjetosRelacionados();
                 $this->template = $this->entity . "/servicioDesarrollado.html.twig";
                 break;
 

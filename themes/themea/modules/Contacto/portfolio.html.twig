@@ -1,0 +1,17 @@
+{# portfolio #}
+<div id="text-6" class="widget_text widget">
+    <div class="h-wrapper">
+        <h3>Portfolio<span class="line"></span></h3>
+    </div>
+    <div class="textwidget">
+        <div class="shortcodeslider featured-thumbnail center">
+            <div class="image-wrap">
+                <div id="shortcodeslider-1" class="nivoSlider">
+                    {% for item in values.portfolio.contenidos %}
+                    <img src="{{theme}}/{{item.contenido.PathNameImagenN(3)}}" alt="" title="">
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

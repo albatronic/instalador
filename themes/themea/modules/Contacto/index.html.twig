@@ -2,22 +2,29 @@
 
 
 {% block cuerpo %}
-<div id="sub-main" class="container_12">
-    <div class="h-wrapper h1 grid_12">
-	<h1>{{macro.idioma('contacto')}}<span class="line"></span></h1>
-    </div>     
-    <div id="content" class="grid_8">
-	<p>{{macro.idioma('textoContacto')}}</p> 
-	    
-	<div class="clear mb15"></div>
-	
-	{% include 'Contacto/datosContacto.html.twig' %}  
-	    
-        <div class="clear mb15"></div>
-
-	{% include 'Contacto/formulario.html.twig' %} 
-		 
+<div id="main">
+    <div id="sub-main" class="container_12">
+        <div class="h-wrapper h1 grid_12">
+            <h1>{{macro.idioma('contacto')}}<span class="line"></span></h1>
+        </div>
+        <div id="content" class="grid_8">
+            <p>{%autoescape false%}{{values.contenido.Introduccion}}{%endautoescape%}</p>
+            <div class="clear mb15"></div>
+            {% include 'Contacto/datosContacto.html.twig' %}
+            <div class="clear mb30"></div>
+            {% include 'Contacto/maps.html.twig' %}
+            {% include 'Contacto/formulario.html.twig' %} 
+        </div>
+        <!-- end of #content -->
+        <div id="sidebarright" class="sidebar">
+            <div class="grid_4 indent pleft">
+                {% include 'Contacto/horario.html.twig' %}  
+                {% include 'Contacto/portfolio.html.twig' %}
+                {% include 'Contacto/share.html.twig' %}
+            </div>
+        </div>
+        <!-- end of #sidebarright -->
     </div>
-    {% include 'Contacto/columnaDerecha.html.twig' %}
-</div>
+</div>    
+
 {% endblock %}

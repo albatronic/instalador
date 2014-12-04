@@ -1,4 +1,4 @@
-{% if values.testimonios.contenidos | length > 0 %}
+{% if values.testimonios | length > 0 %}
 <div class="widget_persianart_cycleposts widget">
     <div class="h-wrapper">
         <h3>{{macro.idioma('testimonios')}}<span class="line"></span></h3>
@@ -11,19 +11,19 @@
 
         <div id="testimonial-widget-1">
             <ul>
-		{% for testimonio in values.testimonios.contenidos %} 
-                    {% set imagen = testimonio.contenido.PathNameImagenN(2) %}                    
+		{% for testimonio in values.testimonios %} 
+                    {% set imagen = testimonio.PathNameImagenN(2) %}                    
                     <li class="testimonial testi-widget {% if not imagen %}testi-noimage{%endif%}">
                         {% if imagen %}
                             <div class="testi-pic">
-                                <a href="#"><img src="{{app.path}}/{{theme}}/{{imagen}}" alt="" /></a>
+                                <a href="{{testimonio.Href.url}}"><img src="{{app.path}}/{{theme}}/{{imagen}}" title="{{testimonio.Titulo}}" alt="{{testimonio.Titulo}}" /></a>
                             </div>
                         {% endif %}                    
 
                         <div>
-                            {{testimonio.contenido.Resumen}}
+                            {{testimonio.Resumen}}
                             <span class="testi-name">
-                                <span class="testi-user">{{macro.link(testimonio.contenido.Titulo,none,testimonio.contenido.Href.url,testimonio.contenido.Href.targetBlank)}}</span>
+                                <span class="testi-user">{{macro.link(testimonio.Titulo,none,testimonio.Href.url,testimonio.Href.targetBlank)}}</span>
                             </span>
                         </div>
                     </li>

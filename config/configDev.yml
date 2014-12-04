@@ -87,4 +87,4 @@ config:
       host: localhost
       user: root
       password: 
-      database: instaladorA
+      database: instaladora
