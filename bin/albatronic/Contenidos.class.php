@@ -69,6 +69,57 @@ class Contenidos {
         );
     }
 
+    static function getSubSecciones($idSeccion) {
+        
+        $seccion = new GconSecciones();
+        $rows = $seccion->cargaCondicion("Id,Titulo,Subtitulo,Introduccion", "BelongsTo='{$idSeccion}'");
+        foreach ($rows as $row) {
+            $array[] = array(
+                'idSeccion' => $row['Id'],
+                'titulo' => $row['Titulo'],
+                'subtitulo' => $row['Subtitulo'],
+                'introduccion' => $row['Introduccion'],
+            );
+        }
+
+        return $array;
+    }
+
+    static function getSeccionDesarrollada($idSeccion, $nPagina = 1, $nItems = 0) {
+
+        $array = array();
+
+        if ($nPagina <= 0)
+            $nPagina = 1;
+
+        $var = CpanVariables::getVariables("Web", "Mod", "GconContenidos");
+        if ($nItems <= 0)
+            $nItems = $var['especificas']['NumContenidosPorPaginaListado'];
+
+        if ($nItems <= 0)
+            $nItems = 5;
+
+        $filtro = ($idSeccion <= 0) ? "(1)" : "IdSeccion='{$idSeccion}'";
+
+        $criterioOrden = $var['especificas']['CriterioOrdenContenidos'];
+        if ($criterioOrden == '')
+            $criterioOrden = "SortOrder DESC";
+
+        $seccion = new GconSecciones();
+        $rows = $seccion->cargaCondicion("Id,Titulo,Subtitulo,Introduccion", "BelongsTo='{$idSeccion}'");
+        foreach ($rows as $row) {
+            $array[] = array(
+                'idSeccion' => $row['Id'],
+                'titulo' => $row['Titulo'],
+                'subtitulo' => $row['Subtitulo'],
+                'introduccion' => $row['Introduccion'],
+                'contenidos' => self::getContenidosSeccion($row['Id']),
+            );
+        }
+
+        return $array;
+    }
+
     /**
      * Devuelve un array de contenidos paginados correspondientes a la sección $idSeccion
      * Si no se indica seccion, se devuelven todas
@@ -136,7 +187,7 @@ class Contenidos {
             $nImagenes = 99999;
 
         $arrayComentarios = array();
-        
+
         $contenido = self::getContenido($idContenido);
         $idSeccionVideos = $contenido->getIDSeccionVideos()->getId();
         $videos = ($idSeccionVideos > 0) ? Videos::getVideos($idSeccionVideos, -1) : array();
@@ -197,4 +248,3 @@ class Contenidos {
     }
 
 }
-

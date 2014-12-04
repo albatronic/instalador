@@ -29,10 +29,7 @@ class ControllerProject extends ControllerWeb {
 
         
         // El objeto widgets para que esté disponible en todas las vistas
-        $this->values['widgets'] = new Widgets();     
-        
-        // Sliders
-        $this->values['sliders'] = Sliders::getSliders(1);       
+        $this->values['widgets'] = new Widgets();           
 
         // GESTION DE COOKIES. El cartel debe mostrarse cada 7 días
         if (empty($_COOKIE["SESS_ID_CARTEL_COOKIE"])) {

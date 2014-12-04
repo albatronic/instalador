@@ -18,7 +18,9 @@ class IndexController extends ControllerProject {
         $this->values['otrosServicios'] = Servicios::getServicios(0, 0, 4);
         $this->values['seccionesBlog'] = Blog::getSecciones();
         //$this->values['blog'] = Blog::getArticulos(0,true,1,0,2);
-        $this->values['elegirnos'] = Contenidos::getContenidosSeccion(19, 1, 4);
+        $this->values['elegirnos'] = Contenidos::getContenidosSeccion(19, 1, 4);    
+        // Todos los sliders de la sección 1
+        $this->values['sliders'] = Sliders::getSliders(1);         
 
         return parent::IndexAction();
     }
