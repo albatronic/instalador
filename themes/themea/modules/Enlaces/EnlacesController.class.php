@@ -12,6 +12,6 @@
  */
 class EnlacesController extends ControllerProject {
 
-    protected $controller = "Enlaces";
+    protected $entity = "Enlaces";
 
 }
