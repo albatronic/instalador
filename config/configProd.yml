@@ -24,7 +24,7 @@
 #
 
 config:
-  debug_mode: true
+  debug_mode: false
 
   # PARA MOSTRAR O NO EL BOTON DE LA AUDITORIA DE LOS FORMULARIOS
   audit_mode: true
@@ -48,9 +48,9 @@ config:
   # SI LA APP ESTÁ EN EL RAIZ, 'path' debe estar vacío
   # NORMALMENTE, EN PRODUCCION 'path' estará vacio
   app:
-    name: 'Albatronic Cloud Solutions'
-    url: http://instalador.local
-    path: 
+    name: 'Web demo Instaladores'
+    url: http://www.albatronic.com/webs/instalador
+    path: /webs/instalador
     framework: bin/albatronic/
     theme: themes/themea
 
@@ -85,6 +85,6 @@ config:
     pcae:
       dbEngine: mysql
       host: localhost
-      user: root
-      password: 
-      database: instalador
+      user: albatro
+      password: p17s26a26
+      database: albatro_instaladorA
