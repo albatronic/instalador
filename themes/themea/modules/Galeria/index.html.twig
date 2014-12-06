@@ -1,0 +1,254 @@
+{# Galeria #}
+{% extends layout %}
+
+{% block cuerpo %}
+    <div id="sub-main" class="container_12">
+        <div class="h-wrapper h1 grid_12">
+            <h1>{{macro.idioma('galeriaDeImagenes')}}<span class="line"></span></h1>
+        </div>
+        <div id="content" class="portfolio-full">
+            <div class="ports">
+                <div id="load-portfolio" class="grid_12">
+                    <ul class="portfolio-filter" data-key="filter">
+                        <li>
+                            <a href="#filter" data-value="*">{{macro.idioma('todo')}}</a>
+                        </li>
+                        {% for item in values.galeria %}
+                        <li>
+                            <a href="#filter" data-value="{{item.id}}">{{item.titulo}}</a>
+                        </li>
+                        {% endfor %}                        
+                    </ul>
+                </div>
+                <ul id="portfolio-item-wrapper" class="portfolio-item-wrapper gallery">
+                    {#
+                    <li class="portfolio-item grid_4 Web_Design">
+                        <div class="featured-thumbnail-wrapper image">
+                            <div class="featured-thumbnail">
+                                <div class="image-wrap">
+                                    <a class="image-wrapper" href="http://www.youtube.com/watch?v=l5wCMZP97BE" data-rel="prettyPhoto[gallery]"><img src="images/portfolio/portfolio5-300x210.jpg" alt="" /><span class="zoom-icon video"></span></a>
+                                    <div class="zoom-icon gallery-port">
+                                        <span class="triangle"></span>
+                                        <div class="port-icon-wrapper">
+                                            <a href="#" class="iconcontainer"><span></span></a>
+                                            <a href="http://www.youtube.com/watch?v=l5wCMZP97BE" data-rel="prettyPhoto[gallery]" class="iconcontainer video"><span></span></a>
+                                            <h2>Piece of classical Latin literature</h2>
+                                            <div></div>
+                                        </div>
+                                        <div class="port-cat">
+                                            <a href="#" rel="tag">Web Design</a>
+                                            <span class="triangle"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end of .featured-thumbnail -->
+                        </div>
+                        <!-- end of .featured-thumbnail-wrapper -->
+                    </li>
+                    #}
+                    {% for item in values.galeria %}
+                    <li class="portfolio-item grid_4 {{item.id}}">
+                        <div class="featured-thumbnail-wrapper image">
+                            <div class="featured-thumbnail">
+                                <div class="image-wrap">
+                                    <a class="image-wrapper" href="{{theme}}/{{item.imagen}}" data-rel="prettyPhoto[gallery]"><img src="{{theme}}/{{item.imagen}}" title="{{item.titulo}}" alt="{{item.titulo}}" /><span class="zoom-icon picture"></span></a>
+                                    <div class="zoom-icon gallery-port">
+                                        <span class="triangle"></span>
+                                        <div class="port-icon-wrapper">
+                                            {#<a href="#" class="iconcontainer"><span></span></a>#}
+                                            {% for foto in item.bloqueThumbnail %}
+                                            <a href="{{theme}}/{{foto.PathName}}" data-rel="prettyPhoto[gallery]" class="iconcontainer picture"><span></span></a>
+                                            {% endfor %}
+                                            <h2>{{item.titulo}}</h2>
+                                            <div></div>
+                                        </div>
+                                        <div class="port-cat">
+                                            <a href="#" rel="tag">{{item.fecha}}</a>
+                                            <span class="triangle"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end of .featured-thumbnail -->
+                        </div>
+                        <!-- end of .featured-thumbnail-wrapper -->
+                    </li>
+                    {% endfor %}
+                    {#
+                    <li class="portfolio-item grid_4 Digital_Painting Printing">
+                        <div class="featured-thumbnail-wrapper image">
+                            <div class="featured-thumbnail">
+                                <div class="image-wrap">
+                                    <a class="image-wrapper" href="images/portfolio/portfolio11.jpg" data-rel="prettyPhoto[gallery]"><img src="images/portfolio/portfolio11-300x210.jpg" alt="" /><span class="zoom-icon magnify"></span></a>
+                                    <div class="zoom-icon gallery-port">
+                                        <span class="triangle"></span>
+                                        <div class="port-icon-wrapper">
+                                            <a href="#" class="iconcontainer"><span></span></a>
+                                            <a href="images/portfolio/portfolio11.jpg" data-rel="prettyPhoto[gallery]" class="iconcontainer magnify"><span></span></a>
+                                            <h2>It has survived not only</h2>
+                                            <div></div>
+                                        </div>
+                                        <div class="port-cat">
+                                            <a href="#" rel="tag">Digital Painting</a>, <a href="#" rel="tag">Printing</a>
+                                            <span class="triangle"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end of .featured-thumbnail -->
+                        </div>
+                        <!-- end of .featured-thumbnail-wrapper -->
+                    </li>
+                    <li class="portfolio-item grid_4 Digital_Painting">
+                        <div class="featured-thumbnail-wrapper image">
+                            <div class="featured-thumbnail">
+                                <div class="image-wrap">
+                                    <a class="image-wrapper" href="http://www.envato.com"><img src="images/portfolio/portfolio8-300x210.jpg" alt="" /><span class="zoom-icon link"></span></a>
+                                    <div class="zoom-icon gallery-port">
+                                        <span class="triangle"></span>
+                                        <div class="port-icon-wrapper">
+                                            <a href="#" class="iconcontainer"><span></span></a>
+                                            <a href="http://www.envato.com" class="iconcontainer link"><span></span></a>
+                                            <h2>Galley of type and scrambled</h2>
+                                            <div></div>
+                                        </div>
+                                        <div class="port-cat">
+                                            <a href="#" rel="tag">Digital Painting</a>
+                                            <span class="triangle"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end of .featured-thumbnail -->
+                        </div>
+                        <!-- end of .featured-thumbnail-wrapper -->
+                    </li>
+                    <li class="portfolio-item grid_4 Web_Design">
+                        <div class="featured-thumbnail-wrapper image">
+                            <div class="featured-thumbnail">
+                                <div class="image-wrap">
+                                    <a class="image-wrapper" href="#"><img src="images/portfolio/portfolio10-300x210.jpg" alt="" /><span class="zoom-icon none"></span></a>
+                                    <div class="zoom-icon gallery-port">
+                                        <span class="triangle"></span>
+                                        <div class="port-icon-wrapper">
+                                            <a href="#" class="iconcontainer"><span></span></a>
+                                            <h2>Make a type specimen book</h2>
+                                            <div></div>
+                                        </div>
+                                        <div class="port-cat">
+                                            <a href="#" rel="tag">Web Design</a>
+                                            <span class="triangle"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end of .featured-thumbnail -->
+                        </div>
+                        <!-- end of .featured-thumbnail-wrapper -->
+                    </li>
+                    <li class="portfolio-item grid_4 3D_Works">
+                        <div class="featured-thumbnail-wrapper image">
+                            <div class="featured-thumbnail">
+                                <div class="image-wrap">
+                                    <a class="image-wrapper" href="#"><img src="images/portfolio/portfolio2-300x210.jpg" alt="" /><span class="zoom-icon none"></span></a>
+                                    <div class="zoom-icon gallery-port">
+                                        <span class="triangle"></span>
+                                        <div class="port-icon-wrapper">
+                                            <a href="#" class="iconcontainer"><span></span></a>
+                                            <h2>Praesent commodo cursus na</h2>
+                                            <div></div>
+                                        </div>
+                                        <div class="port-cat">
+                                            <a href="#" rel="tag">3D Works</a>
+                                            <span class="triangle"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end of .featured-thumbnail -->
+                        </div>
+                        <!-- end of .featured-thumbnail-wrapper -->
+                    </li>
+                    <li class="portfolio-item grid_4 Printing Web_Design">
+                        <div class="featured-thumbnail-wrapper slider">
+                            <div class="featured-thumbnail">
+                                <div class="image-wrap">
+                                    <div id="thumbslider-1" class="nivoSlider">
+                                        <img src="images/portfolio/portfolio12-300x210.jpg" alt="" />
+                                        <img src="images/portfolio/portfolio3-300x210.jpg" alt="" />
+                                        <img src="images/portfolio/portfolio4-300x210.jpg" alt="" />
+                                    </div>
+                                    <div class="zoom-icon gallery-port">
+                                        <span class="triangle"></span>
+                                        <div class="port-icon-wrapper">
+                                            <a href="#" class="iconcontainer"><span></span></a>
+                                            <h2>Aliquam lorem ante dapibus</h2>
+                                            <div></div>
+                                        </div>
+                                        <div class="port-cat">
+                                            <a href="#" rel="tag">Printing</a>, <a href="#" rel="tag">Web Design</a>
+                                            <span class="triangle"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end of .featured-thumbnail -->
+                        </div>
+                        <!-- end of .featured-thumbnail-wrapper -->
+                    </li>
+                    <li class="portfolio-item grid_4 Digital_Painting Printing">
+                        <div class="featured-thumbnail-wrapper video">
+                            <div class="featured-thumbnail">
+                                <div class="image-wrap">
+                                    <iframe src="http://player.vimeo.com/video/1084537?title=0&amp;byline=0&amp;portrait=0" width="300" height="210" title="">vimeo</iframe>
+                                    <div class="zoom-icon gallery-port">
+                                        <span class="triangle"></span>
+                                        <div class="port-icon-wrapper">
+                                            <a href="#" class="iconcontainer"><span></span></a>
+                                            <h2>Lorem Ipsum is simply dummy</h2>
+                                            <div></div>
+                                        </div>
+                                        <div class="port-cat">
+                                            <a href="#" rel="tag">Digital Painting</a>, <a href="#" rel="tag">Printing</a>
+                                            <span class="triangle"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end of .featured-thumbnail -->
+                        </div>
+                        <!-- end of .featured-thumbnail-wrapper -->
+                    </li>
+                    <li class="portfolio-item grid_4 Web_Design">
+                        <div class="featured-thumbnail-wrapper image">
+                            <div class="featured-thumbnail">
+                                <div class="image-wrap">
+                                    <a class="image-wrapper" href="#"><img src="images/portfolio/portfolio1-300x210.jpg" alt="" /><span class="zoom-icon none"></span></a>
+                                    <div class="zoom-icon gallery-port">
+                                        <span class="triangle"></span>
+                                        <div class="port-icon-wrapper">
+                                            <a href="#" class="iconcontainer"><span></span></a>
+                                            <h2>Ullamcorper nulla non done</h2>
+                                            <div></div>
+                                        </div>
+                                        <div class="port-cat">
+                                            <a href="#" rel="tag">Web Design</a>
+                                            <span class="triangle"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end of .featured-thumbnail -->
+                        </div>
+                        <!-- end of .featured-thumbnail-wrapper -->
+                    </li>
+                    #}
+                </ul>
+            </div>
+            {#
+            <div class="grid_12">
+                <div id="pagination-wrapper">
+                    <div id="pagination"><span>Page 1 of 2</span><span class="current">1</span>
+                        <a href="#">2</a>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+            #}
+        </div>
+        <!-- end of #content -->
+    </div>    
+{% endblock %}    

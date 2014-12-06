@@ -69,10 +69,12 @@ class Albumes {
             $album = new AlbmAlbumes($row['Id']);
 
             $albumes[$key] = self::getAlbum($row['Id'], $nImagenes);
+            $albumes[$key]['id'] = $album->getId();
             $albumes[$key]['titulo'] = $album->getTitulo();
             $albumes[$key]['subtitulo'] = $album->getSubtitulo();
             $albumes[$key]['resumen'] = $album->getResumen();
             $albumes[$key]['autor'] = $album->getAutor();
+            $albumes[$key]['fecha'] = $album->getPublishedAt();
             $albumes[$key]['imagen'] = ($album->getPathNameImagenN(2))?$album->getPathNameImagenN(2):$album->getPathNameImagenN(1);
         }
         unset($album);

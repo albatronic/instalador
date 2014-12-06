@@ -7,25 +7,15 @@
 	<h1>{{servicio.Titulo}}<span class="line"></span></h1>
     </div>       
     <div id="content" class="grid_8">	
-	<div id="portfoliosinglepage" class="ports">
-	    {% if servicio.PathNameImagenN(1) %}
-	    <div class="featured-thumbnail-wrapper image grid_12">
+        {% if servicio.PathNameImagenN(1) %}
+        <div class="featured-thumbnail image-frame left">
+            <div class="image-wrap">
                 <img src="{{theme}}/{{servicio.PathNameImagenN(1)}}" alt="{{servicio.Titulo}}" title="{{servicio.Titulo}}" />
-	    </div>
-	    {% endif %}
-		
-            <div id="port-content-wrapper">
-                <div class="content-portstyle grid_9">
-                    <div class="single-port">
-                        <h2>{{servicio.Subtitulo}}</h2>
-                    </div>
-                    <div class="post-content port-content">
-                        <p><strong class="dark-color">{{servicio.ResumenBreve}}</strong></p>
-                        {% autoescape false%}{{servicio.Resumen}}{% endautoescape %}
-                    </div>
-                </div>
-            </div>                
-	</div>						
+            </div>
+        </div>
+        {% endif %}
+        <h4>{{servicio.Subtitulo}}</h4>
+        {% autoescape false%}{{servicio.Resumen}}{% endautoescape %}                           						
     </div>
     {% include 'Servicios/sidebar.html.twig' %}      
     {% include 'Servicios/otrosServicios.html.twig' %}           

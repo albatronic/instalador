@@ -12,7 +12,7 @@ class PortfolioController extends ControllerProject {
     public function IndexAction() {
 
         $this->values['portfolioTipos'] = Contenidos::getSubSecciones($this->request['IdEntity']);
-        $this->values['portfolio'] = Contenidos::getContenidosSeccion($this->request['IdEntity']);
+        $this->values['portfolio'] = Contenidos::getAllContenidosSeccion($this->request['IdEntity']);
         return parent::IndexAction();
     }
 }

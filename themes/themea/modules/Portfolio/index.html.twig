@@ -1,271 +1,273 @@
-{# Portfolio tipo 1 #}
+{# Portfolio #}
 {% extends layout %}
 
 {% block cuerpo %}
-    <div id="sub-main" class="container_12">
-        <div class="h-wrapper h1 grid_12">
-            <h1>Portfolio<span class="line"></span></h1>
-        </div>
-        <div id="content" class="portfolio-full">
-            <div class="ports">
-                <div id="load-portfolio" class="grid_12">
-                    <ul class="portfolio-filter" data-key="filter">
-                        <li>
-                            <a href="#filter" data-value="*">Todo</a>
-                        </li>
-                        {% for item in values.portfolioTipos %}
-                        <li>
-                            <a href="#filter" data-value="{{item.titulo}}">{{item.titulo}}</a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                <ul id="portfolio-item-wrapper" class="portfolio-item-wrapper style1">
-                    {#
-                    <li class="portfolio-item grid_4 Web_Design">
-                        <div class="featured-thumbnail-wrapper image">
-                            <div class="featured-thumbnail">
-                                <div class="image-wrap">
-                                    <a class="image-wrapper" href="http://www.youtube.com/watch?v=l5wCMZP97BE" data-rel="prettyPhoto[gallery]"><img src="images/portfolio/portfolio5-300x170.jpg" alt="" /><span class="zoom-icon video"></span></a>
-                                </div>
-                            </div>
-                            <!-- end of .featured-thumbnail -->
-                        </div>
-                        <!-- end of .featured-thumbnail-wrapper -->
-                        <div class="portfolio-item-context">
-                            <h2 class="portfolio-item-title">
-                                <a href="#"> Piece of classical Lat </a>
-                            </h2>
-                            <div class="portfolio-item-content-wrapper">
-                                <div class="portfolio-item-category">
-                                    <a href="#" rel="tag">Web Design</a>
-                                </div>
-                                <div class="portfolio-item-content"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.... </div>
-                                <a class="normal-button" href="#"> READ MORE </a>
-                            </div>
-                            <!-- end of .portfolio-item-content-wrapper -->
-                        </div>
-                        <!-- end of .portfolio-item-context -->
-                    </li>#}
-                    {% for item in values.portfolio %}
-                    <li class="portfolio-item grid_4 {{item.IdSeccion.Titulo}}}}">
-                        <div class="featured-thumbnail-wrapper image">
-                            <div class="featured-thumbnail">
-                                <div class="image-wrap">
-                                    <a class="image-wrapper" href="images/portfolio/portfolio1.jpg" data-rel="prettyPhoto[gallery]"><img src="images/portfolio/portfolio7-300x170.jpg" alt="" /><span class="zoom-icon picture"></span></a>
-                                </div>
-                            </div>
-                            <!-- end of .featured-thumbnail -->
-                        </div>
-                        <!-- end of .featured-thumbnail-wrapper -->
-                        <div class="portfolio-item-context">
-                            <h2 class="portfolio-item-title">
-                                <a href="#"> Contrary popular belie </a>
-                            </h2>
-                            <div class="portfolio-item-content-wrapper">
-                                <div class="portfolio-item-category">
-                                    <a href="#" rel="tag">3D Works</a>, <a href="#" rel="tag">Digital Painting</a>
-                                </div>
-                                <div class="portfolio-item-content"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.... </div>
-                                <a class="normal-button" href="#"> READ MORE </a>
-                            </div>
-                            <!-- end of .portfolio-item-content-wrapper -->
-                        </div>
-                        <!-- end of .portfolio-item-context -->
+<div id="sub-main" class="container_12">
+    <div class="h-wrapper h1 grid_12">
+        <h1>{{macro.idioma('portfolio')}}<span class="line"></span></h1>
+    </div>
+    <div id="content" class="portfolio-full">
+        <div class="ports">
+            <div id="load-portfolio" class="grid_12">
+                <ul class="portfolio-filter" data-key="filter">
+                    <li>
+                        <a href="#filter" data-value="*">{{macro.idioma('todo')}}</a>
+                    </li>
+                    {% for item in values.portfolioTipos %}
+                    <li>
+                        <a href="#filter" data-value="{{item.idSeccion}}">{{item.titulo}}</a>
                     </li>
                     {% endfor %}
-                    {#
-                    <li class="portfolio-item grid_4 Digital_Painting Printing">
-                        <div class="featured-thumbnail-wrapper image">
-                            <div class="featured-thumbnail">
-                                <div class="image-wrap">
-                                    <a class="image-wrapper" href="images/portfolio/portfolio11.jpg" data-rel="prettyPhoto[gallery]"><img src="images/portfolio/portfolio11-300x170.jpg" alt="" /><span class="zoom-icon magnify"></span></a>
-                                </div>
-                            </div>
-                            <!-- end of .featured-thumbnail -->
-                        </div>
-                        <!-- end of .featured-thumbnail-wrapper -->
-                        <div class="portfolio-item-context">
-                            <h2 class="portfolio-item-title">
-                                <a href="#"> It has survived not on </a>
-                            </h2>
-                            <div class="portfolio-item-content-wrapper">
-                                <div class="portfolio-item-category">
-                                    <a href="#" rel="tag">Digital Painting</a>, <a href="#" rel="tag">Printing</a>
-                                </div>
-                                <div class="portfolio-item-content"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.... </div>
-                                <a class="normal-button" href="#"> READ MORE </a>
-                            </div>
-                            <!-- end of .portfolio-item-content-wrapper -->
-                        </div>
-                        <!-- end of .portfolio-item-context -->
-                    </li>
-                    <li class="portfolio-item grid_4 Digital_Painting">
-                        <div class="featured-thumbnail-wrapper image">
-                            <div class="featured-thumbnail">
-                                <div class="image-wrap">
-                                    <a class="image-wrapper" href="http://www.envato.com"><img src="images/portfolio/portfolio8-300x170.jpg" alt="" /><span class="zoom-icon link"></span></a>
-                                </div>
-                            </div>
-                            <!-- end of .featured-thumbnail -->
-                        </div>
-                        <!-- end of .featured-thumbnail-wrapper -->
-                        <div class="portfolio-item-context">
-                            <h2 class="portfolio-item-title">
-                                <a href="#"> Galley of type and scr </a>
-                            </h2>
-                            <div class="portfolio-item-content-wrapper">
-                                <div class="portfolio-item-category">
-                                    <a href="#" rel="tag">Digital Painting</a>
-                                </div>
-                                <div class="portfolio-item-content"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.... </div>
-                                <a class="normal-button" href="#"> READ MORE </a>
-                            </div>
-                            <!-- end of .portfolio-item-content-wrapper -->
-                        </div>
-                        <!-- end of .portfolio-item-context -->
-                    </li>
-                    <li class="portfolio-item grid_4 Web_Design">
-                        <div class="featured-thumbnail-wrapper image">
-                            <div class="featured-thumbnail">
-                                <div class="image-wrap">
-                                    <a class="image-wrapper" href="#"><img src="images/portfolio/portfolio10-300x170.jpg" alt="" /><span class="zoom-icon none"></span></a>
-                                </div>
-                            </div>
-                            <!-- end of .featured-thumbnail -->
-                        </div>
-                        <!-- end of .featured-thumbnail-wrapper -->
-                        <div class="portfolio-item-context">
-                            <h2 class="portfolio-item-title">
-                                <a href="#"> Make a type specimen b </a>
-                            </h2>
-                            <div class="portfolio-item-content-wrapper">
-                                <div class="portfolio-item-category">
-                                    <a href="#" rel="tag">Web Design</a>
-                                </div>
-                                <div class="portfolio-item-content"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.... </div>
-                                <a class="normal-button" href="#"> READ MORE </a>
-                            </div>
-                            <!-- end of .portfolio-item-content-wrapper -->
-                        </div>
-                        <!-- end of .portfolio-item-context -->
-                    </li>
-                    <li class="portfolio-item grid_4 3D_Works">
-                        <div class="featured-thumbnail-wrapper image">
-                            <div class="featured-thumbnail">
-                                <div class="image-wrap">
-                                    <a class="image-wrapper" href="#"><img src="images/portfolio/portfolio2-300x170.jpg" alt="" /><span class="zoom-icon none"></span></a>
-                                </div>
-                            </div>
-                            <!-- end of .featured-thumbnail -->
-                        </div>
-                        <!-- end of .featured-thumbnail-wrapper -->
-                        <div class="portfolio-item-context">
-                            <h2 class="portfolio-item-title">
-                                <a href="#"> Praesent commodo cursu </a>
-                            </h2>
-                            <div class="portfolio-item-content-wrapper">
-                                <div class="portfolio-item-category">
-                                    <a href="#" rel="tag">3D Works</a>
-                                </div>
-                                <div class="portfolio-item-content"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.... </div>
-                                <a class="normal-button" href="#"> READ MORE </a>
-                            </div>
-                            <!-- end of .portfolio-item-content-wrapper -->
-                        </div>
-                        <!-- end of .portfolio-item-context -->
-                    </li>
-                    <li class="portfolio-item grid_4 Printing Web_Design">
-                        <div class="featured-thumbnail-wrapper slider">
-                            <div class="featured-thumbnail">
-                                <div class="image-wrap">
-                                    <div id="thumbslider-1" class="nivoSlider">
-                                        <img src="images/portfolio/portfolio12-300x170.jpg" alt="" />
-                                        <img src="images/portfolio/portfolio3-300x170.jpg" alt="" />
-                                        <img src="images/portfolio/portfolio4-300x170.jpg" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end of .featured-thumbnail -->
-                        </div>
-                        <!-- end of .featured-thumbnail-wrapper -->
-                        <div class="portfolio-item-context">
-                            <h2 class="portfolio-item-title">
-                                <a href="#"> Aliquam lorem ante dap </a>
-                            </h2>
-                            <div class="portfolio-item-content-wrapper">
-                                <div class="portfolio-item-category">
-                                    <a href="#" rel="tag">Printing</a>, <a href="#" rel="tag">Web Design</a>
-                                </div>
-                                <div class="portfolio-item-content"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.... </div>
-                                <a class="normal-button" href="#"> READ MORE </a>
-                            </div>
-                            <!-- end of .portfolio-item-content-wrapper -->
-                        </div>
-                        <!-- end of .portfolio-item-context -->
-                    </li>
-                    <li class="portfolio-item grid_4 Digital_Painting Printing">
-                        <div class="featured-thumbnail-wrapper video">
-                            <div class="featured-thumbnail">
-                                <div class="image-wrap">
-                                    <iframe src="http://player.vimeo.com/video/1084537?title=0&amp;byline=0&amp;portrait=0" width="300" height="170" title="">vimeo</iframe>
-                                </div>
-                            </div>
-                            <!-- end of .featured-thumbnail -->
-                        </div>
-                        <!-- end of .featured-thumbnail-wrapper -->
-                        <div class="portfolio-item-context">
-                            <h2 class="portfolio-item-title">
-                                <a href="#"> Lorem Ipsum is simply </a>
-                            </h2>
-                            <div class="portfolio-item-content-wrapper">
-                                <div class="portfolio-item-category">
-                                    <a href="#" rel="tag">Digital Painting</a>, <a href="#" rel="tag">Printing</a>
-                                </div>
-                                <div class="portfolio-item-content"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.... </div>
-                                <a class="normal-button" href="#"> READ MORE </a>
-                            </div>
-                            <!-- end of .portfolio-item-content-wrapper -->
-                        </div>
-                        <!-- end of .portfolio-item-context -->
-                    </li>
-                    <li class="portfolio-item grid_4 Web_Design">
-                        <div class="featured-thumbnail-wrapper image">
-                            <div class="featured-thumbnail">
-                                <div class="image-wrap">
-                                    <a class="image-wrapper" href="#"><img src="images/portfolio/portfolio1-300x170.jpg" alt="" /><span class="zoom-icon none"></span></a>
-                                </div>
-                            </div>
-                            <!-- end of .featured-thumbnail -->
-                        </div>
-                        <!-- end of .featured-thumbnail-wrapper -->
-                        <div class="portfolio-item-context">
-                            <h2 class="portfolio-item-title">
-                                <a href="#"> Ullamcorper nulla non </a>
-                            </h2>
-                            <div class="portfolio-item-content-wrapper">
-                                <div class="portfolio-item-category">
-                                    <a href="#" rel="tag">Web Design</a>
-                                </div>
-                                <div class="portfolio-item-content"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.... </div>
-                                <a class="normal-button" href="#"> READ MORE </a>
-                            </div>
-                            <!-- end of .portfolio-item-content-wrapper -->
-                        </div>
-                        <!-- end of .portfolio-item-context -->
-                    </li>
-                    #}
                 </ul>
             </div>
-            <div class="grid_12">
-                <div id="pagination-wrapper">
-                    <div id="pagination"><span>Page 1 of 2</span><span class="current">1</span>
-                        <a href="#">2</a>
-                        <div class="line"></div>
+            <ul id="portfolio-item-wrapper" class="portfolio-item-wrapper style1">
+                {#
+                <li class="portfolio-item grid_4 Web_Design">
+                    <div class="featured-thumbnail-wrapper image">
+                        <div class="featured-thumbnail">
+                            <div class="image-wrap">
+                                <a class="image-wrapper" href="http://www.youtube.com/watch?v=l5wCMZP97BE" data-rel="prettyPhoto[gallery]"><img src="images/portfolio/portfolio5-300x170.jpg" alt="" /><span class="zoom-icon video"></span></a>
+                            </div>
+                        </div>
+                        <!-- end of .featured-thumbnail -->
                     </div>
+                    <!-- end of .featured-thumbnail-wrapper -->
+                    <div class="portfolio-item-context">
+                        <h2 class="portfolio-item-title">
+                            <a href="#"> Piece of classical Lat </a>
+                        </h2>
+                        <div class="portfolio-item-content-wrapper">
+                            <div class="portfolio-item-category">
+                                <a href="#" rel="tag">Web Design</a>
+                            </div>
+                            <div class="portfolio-item-content"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.... </div>
+                            <a class="normal-button" href="#"> READ MORE </a>
+                        </div>
+                        <!-- end of .portfolio-item-content-wrapper -->
+                    </div>
+                    <!-- end of .portfolio-item-context -->
+                </li>#}
+                {% for item in values.portfolio %}
+                <li class="portfolio-item grid_4 {{item.IDSeccion.Id}}">
+                    <div class="featured-thumbnail-wrapper image">
+                        <div class="featured-thumbnail">
+                            <div class="image-wrap">
+                                <a class="image-wrapper" href="{{theme}}/{{item.PathNameImagenN(1)}}" data-rel="prettyPhoto[gallery]"><img src="{{theme}}/{{item.PathNameImagenN(2)}}" title="{{item.IdSeccion.Titulo}}" alt="{{item.IdSeccion.Titulo}}" /><span class="zoom-icon picture"></span></a>
+                            </div>
+                        </div>
+                        <!-- end of .featured-thumbnail -->
+                    </div>
+                    <!-- end of .featured-thumbnail-wrapper -->
+                    <div class="portfolio-item-context">
+                        <h2 class="portfolio-item-title">
+                            <a href="{{app.path}}{{item.Href.url}}"> {{item.Titulo}} </a>
+                        </h2>
+                        <div class="portfolio-item-content-wrapper">
+                            <div class="portfolio-item-category">
+                                <a href="#" rel="tag">{{item.IdSeccion.Titulo}}</a>
+                            </div>
+                            <div class="portfolio-item-content"> {{macro.recortaTexto(item.Resumen,60)}} </div>
+                            <a class="normal-button" href="{{app.path}}{{item.Href.url}}"> {{macro.idioma('masInfo')}} </a>
+                        </div>
+                        <!-- end of .portfolio-item-content-wrapper -->
+                    </div>
+                    <!-- end of .portfolio-item-context -->
+                </li>
+                {% endfor %}
+                {#
+                <li class="portfolio-item grid_4 Digital_Painting Printing">
+                    <div class="featured-thumbnail-wrapper image">
+                        <div class="featured-thumbnail">
+                            <div class="image-wrap">
+                                <a class="image-wrapper" href="images/portfolio/portfolio11.jpg" data-rel="prettyPhoto[gallery]"><img src="images/portfolio/portfolio11-300x170.jpg" alt="" /><span class="zoom-icon magnify"></span></a>
+                            </div>
+                        </div>
+                        <!-- end of .featured-thumbnail -->
+                    </div>
+                    <!-- end of .featured-thumbnail-wrapper -->
+                    <div class="portfolio-item-context">
+                        <h2 class="portfolio-item-title">
+                            <a href="#"> It has survived not on </a>
+                        </h2>
+                        <div class="portfolio-item-content-wrapper">
+                            <div class="portfolio-item-category">
+                                <a href="#" rel="tag">Digital Painting</a>, <a href="#" rel="tag">Printing</a>
+                            </div>
+                            <div class="portfolio-item-content"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.... </div>
+                            <a class="normal-button" href="#"> READ MORE </a>
+                        </div>
+                        <!-- end of .portfolio-item-content-wrapper -->
+                    </div>
+                    <!-- end of .portfolio-item-context -->
+                </li>
+                <li class="portfolio-item grid_4 Digital_Painting">
+                    <div class="featured-thumbnail-wrapper image">
+                        <div class="featured-thumbnail">
+                            <div class="image-wrap">
+                                <a class="image-wrapper" href="http://www.envato.com"><img src="images/portfolio/portfolio8-300x170.jpg" alt="" /><span class="zoom-icon link"></span></a>
+                            </div>
+                        </div>
+                        <!-- end of .featured-thumbnail -->
+                    </div>
+                    <!-- end of .featured-thumbnail-wrapper -->
+                    <div class="portfolio-item-context">
+                        <h2 class="portfolio-item-title">
+                            <a href="#"> Galley of type and scr </a>
+                        </h2>
+                        <div class="portfolio-item-content-wrapper">
+                            <div class="portfolio-item-category">
+                                <a href="#" rel="tag">Digital Painting</a>
+                            </div>
+                            <div class="portfolio-item-content"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.... </div>
+                            <a class="normal-button" href="#"> READ MORE </a>
+                        </div>
+                        <!-- end of .portfolio-item-content-wrapper -->
+                    </div>
+                    <!-- end of .portfolio-item-context -->
+                </li>
+                <li class="portfolio-item grid_4 Web_Design">
+                    <div class="featured-thumbnail-wrapper image">
+                        <div class="featured-thumbnail">
+                            <div class="image-wrap">
+                                <a class="image-wrapper" href="#"><img src="images/portfolio/portfolio10-300x170.jpg" alt="" /><span class="zoom-icon none"></span></a>
+                            </div>
+                        </div>
+                        <!-- end of .featured-thumbnail -->
+                    </div>
+                    <!-- end of .featured-thumbnail-wrapper -->
+                    <div class="portfolio-item-context">
+                        <h2 class="portfolio-item-title">
+                            <a href="#"> Make a type specimen b </a>
+                        </h2>
+                        <div class="portfolio-item-content-wrapper">
+                            <div class="portfolio-item-category">
+                                <a href="#" rel="tag">Web Design</a>
+                            </div>
+                            <div class="portfolio-item-content"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.... </div>
+                            <a class="normal-button" href="#"> READ MORE </a>
+                        </div>
+                        <!-- end of .portfolio-item-content-wrapper -->
+                    </div>
+                    <!-- end of .portfolio-item-context -->
+                </li>
+                <li class="portfolio-item grid_4 3D_Works">
+                    <div class="featured-thumbnail-wrapper image">
+                        <div class="featured-thumbnail">
+                            <div class="image-wrap">
+                                <a class="image-wrapper" href="#"><img src="images/portfolio/portfolio2-300x170.jpg" alt="" /><span class="zoom-icon none"></span></a>
+                            </div>
+                        </div>
+                        <!-- end of .featured-thumbnail -->
+                    </div>
+                    <!-- end of .featured-thumbnail-wrapper -->
+                    <div class="portfolio-item-context">
+                        <h2 class="portfolio-item-title">
+                            <a href="#"> Praesent commodo cursu </a>
+                        </h2>
+                        <div class="portfolio-item-content-wrapper">
+                            <div class="portfolio-item-category">
+                                <a href="#" rel="tag">3D Works</a>
+                            </div>
+                            <div class="portfolio-item-content"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.... </div>
+                            <a class="normal-button" href="#"> READ MORE </a>
+                        </div>
+                        <!-- end of .portfolio-item-content-wrapper -->
+                    </div>
+                    <!-- end of .portfolio-item-context -->
+                </li>
+                <li class="portfolio-item grid_4 Printing Web_Design">
+                    <div class="featured-thumbnail-wrapper slider">
+                        <div class="featured-thumbnail">
+                            <div class="image-wrap">
+                                <div id="thumbslider-1" class="nivoSlider">
+                                    <img src="images/portfolio/portfolio12-300x170.jpg" alt="" />
+                                    <img src="images/portfolio/portfolio3-300x170.jpg" alt="" />
+                                    <img src="images/portfolio/portfolio4-300x170.jpg" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end of .featured-thumbnail -->
+                    </div>
+                    <!-- end of .featured-thumbnail-wrapper -->
+                    <div class="portfolio-item-context">
+                        <h2 class="portfolio-item-title">
+                            <a href="#"> Aliquam lorem ante dap </a>
+                        </h2>
+                        <div class="portfolio-item-content-wrapper">
+                            <div class="portfolio-item-category">
+                                <a href="#" rel="tag">Printing</a>, <a href="#" rel="tag">Web Design</a>
+                            </div>
+                            <div class="portfolio-item-content"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.... </div>
+                            <a class="normal-button" href="#"> READ MORE </a>
+                        </div>
+                        <!-- end of .portfolio-item-content-wrapper -->
+                    </div>
+                    <!-- end of .portfolio-item-context -->
+                </li>
+                <li class="portfolio-item grid_4 Digital_Painting Printing">
+                    <div class="featured-thumbnail-wrapper video">
+                        <div class="featured-thumbnail">
+                            <div class="image-wrap">
+                                <iframe src="http://player.vimeo.com/video/1084537?title=0&amp;byline=0&amp;portrait=0" width="300" height="170" title="">vimeo</iframe>
+                            </div>
+                        </div>
+                        <!-- end of .featured-thumbnail -->
+                    </div>
+                    <!-- end of .featured-thumbnail-wrapper -->
+                    <div class="portfolio-item-context">
+                        <h2 class="portfolio-item-title">
+                            <a href="#"> Lorem Ipsum is simply </a>
+                        </h2>
+                        <div class="portfolio-item-content-wrapper">
+                            <div class="portfolio-item-category">
+                                <a href="#" rel="tag">Digital Painting</a>, <a href="#" rel="tag">Printing</a>
+                            </div>
+                            <div class="portfolio-item-content"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.... </div>
+                            <a class="normal-button" href="#"> READ MORE </a>
+                        </div>
+                        <!-- end of .portfolio-item-content-wrapper -->
+                    </div>
+                    <!-- end of .portfolio-item-context -->
+                </li>
+                <li class="portfolio-item grid_4 Web_Design">
+                    <div class="featured-thumbnail-wrapper image">
+                        <div class="featured-thumbnail">
+                            <div class="image-wrap">
+                                <a class="image-wrapper" href="#"><img src="images/portfolio/portfolio1-300x170.jpg" alt="" /><span class="zoom-icon none"></span></a>
+                            </div>
+                        </div>
+                        <!-- end of .featured-thumbnail -->
+                    </div>
+                    <!-- end of .featured-thumbnail-wrapper -->
+                    <div class="portfolio-item-context">
+                        <h2 class="portfolio-item-title">
+                            <a href="#"> Ullamcorper nulla non </a>
+                        </h2>
+                        <div class="portfolio-item-content-wrapper">
+                            <div class="portfolio-item-category">
+                                <a href="#" rel="tag">Web Design</a>
+                            </div>
+                            <div class="portfolio-item-content"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.... </div>
+                            <a class="normal-button" href="#"> READ MORE </a>
+                        </div>
+                        <!-- end of .portfolio-item-content-wrapper -->
+                    </div>
+                    <!-- end of .portfolio-item-context -->
+                </li>
+                #}
+            </ul>
+        </div>
+        {#
+        <div class="grid_12">
+            <div id="pagination-wrapper">
+                <div id="pagination"><span>Page 1 of 2</span><span class="current">1</span>
+                    <a href="#">2</a>
+                    <div class="line"></div>
                 </div>
             </div>
         </div>
-        <!-- end of #content -->
+        #}
     </div>
+    <!-- end of #content -->
+</div>
 {% endblock %}

@@ -70,7 +70,9 @@ class Contenidos {
     }
 
     static function getSubSecciones($idSeccion) {
-        
+
+        $array = array();
+
         $seccion = new GconSecciones();
         $rows = $seccion->cargaCondicion("Id,Titulo,Subtitulo,Introduccion", "BelongsTo='{$idSeccion}'");
         foreach ($rows as $row) {
@@ -80,6 +82,23 @@ class Contenidos {
                 'subtitulo' => $row['Subtitulo'],
                 'introduccion' => $row['Introduccion'],
             );
+        }
+
+        return $array;
+    }
+
+    static function getAllContenidosSeccion($idSeccion) {
+
+        $array = array();
+
+        $seccion = new GconSecciones();
+        $rows = $seccion->cargaCondicion("Id", "BelongsTo='{$idSeccion}'");
+        foreach ($rows as $row) {
+            $contenido = new GconContenidos();
+            $contenidos = $contenido->cargaCondicion("Id", "IDSeccion='{$row['Id']}'");
+            foreach ($contenidos as $contenido) {
+                $array[] = new GconContenidos($contenido['Id']);
+            }
         }
 
         return $array;
@@ -116,7 +135,7 @@ class Contenidos {
                 'contenidos' => self::getContenidosSeccion($row['Id']),
             );
         }
-
+        print_r($array);
         return $array;
     }
 

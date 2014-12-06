@@ -2,11 +2,36 @@
 
 {% block cuerpo %}
 <div id="sub-main" class="container_12">
-    <div id="content">
+    <div id="content">    
 	<div class="h-wrapper h1 grid_12">	
-	    <h1 id="politica">{{values.contenido.Titulo}}<span class="line"></span></h1>
+	    <h1>{{values.contenido.Titulo}}<span class="line"></span></h1>
 	</div>
-        {%autoescape false%}{{values.contenido.Introduccion}}{%endautoescape%}
+    </div>
+    <div id="content" class="grid_12">
+	<div id="postsinglepage" class="posts">
+	    {% if values.contenido.PathNameImagenN(1) %}
+	    <div class="featured-thumbnail-wrapper image">		   		    
+		<div class="featured-thumbnail">
+		    <div class="image-wrap">
+			<img src="{{theme}}/{{values.contenido.PathNameImagenN(1)}}" alt="{{values.contenido.Titulo}}" title="{{values.contenido.Titulo}}" />
+		    </div>
+		</div>		  
+	    </div>
+	    {% endif %}
+            
+            <div class="single-post">
+                <div class="post-content">
+                    <div class="single-port">
+                        <h2>{{values.contenido.Subtitulo}}</h2>
+                    </div>
+
+                    <div class="post-content port-content">
+                        <p><strong class="dark-color">{{contenido.Resumen}}</strong></p>
+                        {% autoescape false%}{{values.contenido.Introduccion}}{% endautoescape %}
+                    </div> 
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}

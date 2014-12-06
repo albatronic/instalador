@@ -7,7 +7,7 @@
     <div class="textwidget">
         {% for red in values.redes %} 
 	<div class="social-icon {{red.titulo}}">
-	    <a class="dark" href="{{red.url}}/{{red.idUsuario}}" title="{{red.titulo}}"><img src="images/icons/network/dark/{{red.titulo}}.png" alt="{{red.titulo}}" /></a>
+	    <a class="dark" href="{{red.url}}/{{red.idUsuario}}" title="{{red.titulo}}"><img src="{{theme}}/images/icons/network/dark/{{red.titulo}}.png" alt="{{red.titulo}}" /></a>
 	</div>
 	{% endfor %}   
     </div>
