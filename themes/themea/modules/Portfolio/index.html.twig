@@ -60,14 +60,14 @@
                     <!-- end of .featured-thumbnail-wrapper -->
                     <div class="portfolio-item-context">
                         <h2 class="portfolio-item-title">
-                            <a href="{{app.path}}/{{item.Href.url}}"> {{item.Titulo}} </a>
+                            <a href="{{item.Href.url}}"> {{item.Titulo}} </a>
                         </h2>
                         <div class="portfolio-item-content-wrapper">
                             <div class="portfolio-item-category">
                                 <a href="#" rel="tag">{{item.IdSeccion.Titulo}}</a>
                             </div>
                             <div class="portfolio-item-content"> {{macro.recortaTexto(item.Resumen,60)}} </div>
-                            <a class="normal-button" href="{{app.path}}{{item.Href.url}}"> {{macro.idioma('masInfo')}} </a>
+                            <a class="normal-button" href="{{item.Href.url}}"> {{macro.idioma('masInfo')}} </a>
                         </div>
                         <!-- end of .portfolio-item-content-wrapper -->
                     </div>
