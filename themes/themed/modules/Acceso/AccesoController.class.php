@@ -9,7 +9,7 @@
  */
 class AccesoController extends ControllerProject {
 
-    protected $entity = "Acceso";
+    protected $controller = "Acceso";
 
     public function IndexAction() {
 

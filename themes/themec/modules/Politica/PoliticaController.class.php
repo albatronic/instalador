@@ -10,7 +10,7 @@
  */
 class PoliticaController extends ControllerProject {
 
-    protected $entity = "Politica";
+    protected $controller = "Politica";
 
 }
 

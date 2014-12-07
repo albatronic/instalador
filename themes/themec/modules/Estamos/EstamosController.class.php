@@ -10,7 +10,7 @@
  */
 class EstamosController extends ControllerProject {
 
-    protected $entity = "Estamos";
+    protected $controller = "Estamos";
     protected $nivel = "";
 
 }

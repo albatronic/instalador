@@ -8,7 +8,7 @@
  */
 class SitemapController extends ControllerProject {
 
-    protected $entity = "Sitemap";
+    protected $controller = "Sitemap";
 
     public function IndexAction() {
 
@@ -105,7 +105,7 @@ class SitemapController extends ControllerProject {
         //exit;
 
         return array(
-            'template' => $this->entity . "/index.xml.twig",
+            'template' => $this->controller . "/index.xml.twig",
             'values' => $this->values,
         );
     }

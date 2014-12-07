@@ -10,7 +10,8 @@
  */
 class ContactoController extends ControllerProject {
 
-    var $entity = "Contacto";
+    protected $controller = "Contacto";
+    
     var $plantilla = array(
         'campos' => array(
             'Nombre' => array('valor' => 'Nombre y apellidos', 'error' => false),

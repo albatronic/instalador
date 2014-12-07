@@ -10,7 +10,7 @@
  */
 class NosotrosController extends ControllerProject {
 
-    protected $entity = "Nosotros";
+    protected $controller = "Nosotros";
 
     public function IndexAction() {
 	$this->values['mensajesSEO'] = Contenidos::getContenidosSeccion(24);

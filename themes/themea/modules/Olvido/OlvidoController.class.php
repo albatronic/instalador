@@ -10,7 +10,7 @@
  */
 class OlvidoController extends ControllerProject {
 
-    protected $entity = "Olvido";
+    protected $controller = "Olvido";
 
     public function NuevaPasswordAction() {
 
@@ -36,11 +36,11 @@ class OlvidoController extends ControllerProject {
             $this->values['mensaje'][] = $mail->send($to, '', 'Administrador ' . $config['config']['app']['name'], $subject, $message, array());
             unset($mail);
 
-            $template = $this->entity . "/index.html.twig";
+            $template = $this->controller . "/index.html.twig";
         } else {
             $this->values['mensaje'][] = "Este e-mail no figura en nuestro sistema.";
             $this->values['mensaje'][] = "Por favor introduzca uno correcto.";
-            $template = $this->entity . "/index.html.twig";
+            $template = $this->controller . "/index.html.twig";
         }
 
         unset($usuario);

@@ -7,11 +7,11 @@
 
  * @author Sergio Pérez <sergio.perez@albatronic.com>
  * @copyright Informática ALBATRONIC
- * @date 06-Dec-2014
+ * @date 07-Dec-2014
  *
  */
 class EnlacesController extends ControllerProject {
 
-    protected $entity = "Enlaces";
+    protected $controller = "Enlaces";
 
 }

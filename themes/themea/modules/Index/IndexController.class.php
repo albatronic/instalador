@@ -10,7 +10,7 @@
  */
 class IndexController extends ControllerProject {
 
-    protected $entity = "Index";
+    protected $controller = "Index";
 
     public function IndexAction() {
 
@@ -100,7 +100,7 @@ class IndexController extends ControllerProject {
 
                 $this->values['accesosPortal'] = $_SESSION['usuarioWeb']['accesosPortal'];
 
-                $template = $this->entity . "/proyectos.html.twig";
+                $template = $this->controller . "/proyectos.html.twig";
             } else {
                 $this->values['email'] = $this->request['email'];
                 $this->values['errorPassword'] = true;
@@ -119,7 +119,7 @@ class IndexController extends ControllerProject {
 
     public function ProyectosAction() {
 
-        $template = $this->entity . "/proyectos.html.twig";
+        $template = $this->controller . "/proyectos.html.twig";
         $this->values['accesosPortal'] = $_SESSION['usuarioWeb']['accesosPortal'];
         $this->values['menuCabecera'] = Menu::getMenuN(1, 9);
         $this->values['menuPie'] = Menu::getMenuN(2, 8);

@@ -89,7 +89,7 @@ class ControllerWeb {
         // CORRESPONDIENTES AL IDIOMA SELECCIONADO
         //$this->values['TEXTS'] = $this->getTextosIdioma($codigoIdiomaActual);
         $textos = new CpanTextos();
-        $this->values['LABELS'] = $textos->getTextos($this->entity);
+        $this->values['LABELS'] = $textos->getTextos($this->controller);
         unset($textos);
         
         // CONTROL DE VISITAS, SI ESTÁ ACTIVO POR LA VARIABLE DE ENTORNO
@@ -136,7 +136,7 @@ class ControllerWeb {
     public function IndexAction() {
 
         return array(
-            'template' => $this->entity . "/index.html.twig",
+            'template' => $this->controller . "/index.html.twig",
             'values' => $this->values,
         );
     }
@@ -162,8 +162,9 @@ class ControllerWeb {
         $location = trim($locations[rand(0, count($locations) - 1)]);
 
         $idioma = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);
-        if (!is_array($this->varWeb['Pro']['signatures']['services'][$idioma]))
+        if (!is_array($this->varWeb['Pro']['signatures']['services'][$idioma])) {
             $idioma = 'es';
+        }
 
         $services = explode(",", $this->varWeb['Pro']['signatures']['services'][$idioma]);
         $service = trim($services[rand(0, count($services) - 1)]);
@@ -305,8 +306,9 @@ class ControllerWeb {
             }
 
             return $array;
-        } else
+        } else {
             return $objeto;
+        }
     }
 
     /**
@@ -335,16 +337,19 @@ class ControllerWeb {
                     $filtro .= " OR ";
                 $filtro .= "Entity='{$entidad}'";
             }
-        } else
+        } else {
             $filtro = "1";
+        }
 
         $urls = new CpanUrlAmigables();
         $rows = $urls->cargaCondicion("Entity,IdEntity", $filtro, "NumberVisits DESC {$limite}");
         unset($urls);
 
-        foreach ($rows as $row)
-            if (class_exists($row['Entity']))
+        foreach ($rows as $row) {
+            if (class_exists($row['Entity'])) {
                 $array[] = new $row['Entity']($row['IdEntity']);
+            }
+        }
 
         return $array;
     }
@@ -526,7 +531,7 @@ class ControllerWeb {
 
         $array = array();
 
-        $file = APP_PATH . "/modules/{$this->entity}/lang.yml";
+        $file = APP_PATH . "/modules/{$this->controller}/lang.yml";
         if (file_exists($file)) {
             $textos = sfYaml::load($file);
             $array = isset($textos[$lang]) ? $textos[$lang] : $textos['es'];
@@ -552,8 +557,9 @@ class ControllerWeb {
 
         $array = array();
 
-        foreach ($rows as $row)
+        foreach ($rows as $row) {
             $array[$row['Idioma']] = $row['UrlFriendly'];
+        }
 
         return $array;
     }

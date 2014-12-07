@@ -10,7 +10,7 @@
  */
 class EnlacesController extends ControllerProject {
 
-    protected $entity = "Enlaces";
+    protected $controller = "Enlaces";
 
     public function IndexAction() {
 
@@ -31,7 +31,7 @@ class EnlacesController extends ControllerProject {
         $this->values['enlacesInteres'] = Enlaces::getEnlacesDeInteres($this->request['IdEntity']);
 
         return array(
-            'template' => $this->entity . '/listado.html.twig',
+            'template' => $this->controller . '/listado.html.twig',
             'values' => $this->values
         );
     }

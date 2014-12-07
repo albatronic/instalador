@@ -10,7 +10,7 @@
  */
 class IndexController extends ControllerProject {
 
-    protected $entity = "Index";
+    protected $controller = "Index";
     protected $nivel = "";
 
     public function IndexAction() {

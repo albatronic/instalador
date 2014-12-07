@@ -10,7 +10,7 @@
  */
 class ServiciosController extends ControllerProject {
 
-    protected $entity = "Servicios";
+    protected $controller = "Servicios";
 
     public function IndexAction() {
 
@@ -24,7 +24,7 @@ class ServiciosController extends ControllerProject {
         $this->values['servicioDesarrollado'] = Servicios::getServicio($this->request['IdEntity']);
 
         return array(
-            'template' => $this->entity . '/servicioDesarrollado.html.twig',
+            'template' => $this->controller . '/servicioDesarrollado.html.twig',
             'values' => $this->values
         );
     }

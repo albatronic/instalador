@@ -10,7 +10,7 @@
  */
 class ParafarmaciaController extends ControllerProject {
 
-    protected $entity = "Parafarmacia";
+    protected $controller = "Parafarmacia";
     protected $nivel = "";
 
     public function IndexAction() {

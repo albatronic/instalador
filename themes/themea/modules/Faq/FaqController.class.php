@@ -10,7 +10,7 @@
  */
 class FaqController extends ControllerProject {
 
-    protected $entity = "Faq";
+    protected $controller = "Faq";
 
     public function IndexAction() {
 

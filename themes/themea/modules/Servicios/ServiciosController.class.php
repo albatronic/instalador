@@ -10,7 +10,7 @@
  */
 class ServiciosController extends ControllerProject {
 
-    protected $entity = "Servicios";
+    protected $controller = "Servicios";
 
     public function IndexAction() {
 
@@ -23,14 +23,14 @@ class ServiciosController extends ControllerProject {
                 // Testimonios (Contenidos relacionados)
                 $servicio = new ServServicios($this->request['IdEntity']);           
                 $this->values['testimonios'] = $servicio->getObjetosRelacionados();
-                $this->template = $this->entity . "/servicioDesarrollado.html.twig";
+                $this->template = $this->controller . "/servicioDesarrollado.html.twig";
                 break;
 
             case 'GconSecciones':
                 $this->values['servicio'] = new GconSecciones($this->request['IdEntity']);
                 // Se muestran todos los servicios
                 $this->values['servicios'] = Servicios::getServicios(0, -1);
-                $this->template = $this->entity . "/index.html.twig";
+                $this->template = $this->controller . "/index.html.twig";
                 break;
         }
 

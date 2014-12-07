@@ -48,7 +48,7 @@ class VideosController extends ControllerProject {
 
 
         return array(
-            "template" => $this->entity . "/videoIndividual.html.twig",
+            "template" => $this->controller . "/videoIndividual.html.twig",
             "values" => $this->values,
         );
     }

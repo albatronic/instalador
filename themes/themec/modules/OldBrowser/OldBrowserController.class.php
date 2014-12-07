@@ -8,7 +8,7 @@
  */
 class OldBrowserController extends ControllerProject {
 
-    protected $entity = "OldBrowser";
+    protected $controller = "OldBrowser";
     
     public function IndexAction() {
         
@@ -16,7 +16,7 @@ class OldBrowserController extends ControllerProject {
         $this->values['datos']['empresa'] = $this->varWeb['Pro']['globales']['empresa'];
         
         return array(
-            'template' => $this->entity . "/index.html.twig",
+            'template' => $this->controller . "/index.html.twig",
             'values' => $this->values,
         );
     }

@@ -7,7 +7,7 @@
  */
 class PortfolioController extends ControllerProject {
 
-    protected $entity = "Portfolio";
+    protected $controller = "Portfolio";
 
     public function IndexAction() {
 

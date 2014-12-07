@@ -10,7 +10,7 @@
  */
 class ProductosController extends ControllerProject {
 
-    protected $entity = "Productos";
+    protected $controller = "Productos";
     protected $nivel = "";
 
     public function IndexAction() {
@@ -25,7 +25,7 @@ class ProductosController extends ControllerProject {
     $this->values['novedades'] = $this->getListadoArticulosRelacionados($this->values['novedad']['categoria']);
 
         return array(
-            'template' => $this->entity . '/ProductoDesarrollado.html.twig',
+            'template' => $this->controller . '/ProductoDesarrollado.html.twig',
             'values' => $this->values
         );
     }

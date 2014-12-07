@@ -8,7 +8,7 @@
  */
 class GaleriaController extends ControllerProject {
 
-    protected $entity = "Galeria";
+    protected $controller = "Galeria";
 
     public function IndexAction() {
         $this->values['galeria'] = Albumes::getAlbumes(-1, 0, -1, 999);

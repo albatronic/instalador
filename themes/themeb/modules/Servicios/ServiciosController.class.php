@@ -28,7 +28,7 @@ class ServiciosController extends ControllerProject {
 
 
         return array(
-            'template' => $this->entity . $template,
+            'template' => $this->controller . $template,
             'values' => $this->values,
         );
     }

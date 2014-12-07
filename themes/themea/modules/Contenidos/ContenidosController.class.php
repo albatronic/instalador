@@ -10,13 +10,13 @@
  */
 class ContenidosController extends ControllerProject {
 
-    protected $entity = "Contenidos";
+    protected $controller = "Contenidos";
 
     public function IndexAction() {
         switch ($this->request['Entity']) {
             case 'GconSecciones':
                 $this->values['contenido'] = new GconSecciones($this->request['IdEntity']);
-                $template = "{$this->entity}/seccion.html.twig";
+                $template = "{$this->controller}/seccion.html.twig";
                 break;
             case 'GconContenidos':
                 $contenido = Contenidos::getContenidoDesarrollado($this->request['IdEntity']);
@@ -27,7 +27,7 @@ class ContenidosController extends ControllerProject {
                     $this->values['postsPorMes'] = Blog::getArticulosMeses(12);
                     $this->values['otrosPosts'] = Blog::getArticulos(0, false, 1, 0, 1);
                 }
-                $template = "{$this->entity}/index.html.twig";
+                $template = "{$this->controller}/index.html.twig";
                 break;
         }
 

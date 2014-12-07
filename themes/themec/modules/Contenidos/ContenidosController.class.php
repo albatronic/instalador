@@ -9,7 +9,7 @@
  */
 class ContenidosController extends ControllerProject {
 
-    protected $entity = "Contenidos";
+    protected $controller = "Contenidos";
     protected $template;
 
     public function IndexAction() {
@@ -64,7 +64,7 @@ class ContenidosController extends ControllerProject {
     public function Seccion($seccion) {
 
         $this->values['seccion'] = $seccion; 
-        $this->template = $this->entity . "/seccion.html.twig";        
+        $this->template = $this->controller . "/seccion.html.twig";        
     }
     
     /**
@@ -74,7 +74,7 @@ class ContenidosController extends ControllerProject {
 
         $this->values['listadoContenidos']['contenidos'][0] = Contenidos::getContenidoDesarrollado($idContenido, 8);
 
-        $this->template = $this->entity . "/index.html.twig";
+        $this->template = $this->controller . "/index.html.twig";
     }
 
     /**
@@ -104,7 +104,7 @@ class ContenidosController extends ControllerProject {
                
                 $this->values['listadoContenidos']['paginacion'] = Paginacion::getPaginacion();
 
-                $this->template = $this->entity . '/listadoContenidos.html.twig';
+                $this->template = $this->controller . '/listadoContenidos.html.twig';
                 break;
 
             case '1': // Modo desarrollado
@@ -118,7 +118,7 @@ class ContenidosController extends ControllerProject {
                 
                 $this->values['listadoContenidos']['paginacion'] = Paginacion::getPaginacion();
                 
-                $this->template = $this->entity . '/index.html.twig';
+                $this->template = $this->controller . '/index.html.twig';
                 break;
         }
         unset($seccion);
@@ -128,7 +128,7 @@ class ContenidosController extends ControllerProject {
 
         $this->values['listadoSubsecciones'] = $this->getSubsecciones($idSeccion);
 
-        $this->template = $this->entity . '/listadoSubsecciones.html.twig';
+        $this->template = $this->controller . '/listadoSubsecciones.html.twig';
     }
  
 }
