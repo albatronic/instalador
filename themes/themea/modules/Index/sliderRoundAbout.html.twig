@@ -1,0 +1,47 @@
+{# Las imágenes deben ser de 640x380 #}
+<div id="slider-wrapper">
+    <div id="roundaboutslider">
+        <div id="roundabout-loader">
+            <div id="roundabout-inner">
+                <a id="roundabout-next" href="#"></a>
+                <a id="roundabout-prev" href="#"></a>
+                <ul id="roundabout-holder" class="roundabout-holder">
+                    {% for item in values.sliders %} 
+                    <li class="roundabout-moveable-item">
+                        <div class="roundabout-caption">
+                            <h2 class="roundabout-title">{{item.titulo}}</h2>
+                        </div>
+                        <img src="{{theme}}/{{item.imagen}}" alt="{{item.titulo}}">
+                    </li>
+                    {% endfor %}
+                    {#
+                    <li class="roundabout-moveable-item">
+                        <div class="roundabout-caption">
+                            <h2 class="roundabout-title">Easy to work</h2>
+                        </div>
+                        <img src="images/slider/roundabout/slider-2-640x380.jpg" alt="Easy to work">
+                    </li>
+                    <li class="roundabout-moveable-item">
+                        <div class="roundabout-caption">
+                            <h2 class="roundabout-title">Over 500 fonts</h2>
+                        </div>
+                        <img src="images/slider/roundabout/slider-3-640x380.jpg" alt="Over 500 fonts">
+                    </li>
+                    <li class="roundabout-moveable-item">
+                        <div class="roundabout-caption">
+                            <h2 class="roundabout-title">Unlimited color &amp; background</h2>
+                        </div>
+                        <img src="images/slider/roundabout/slider-4-640x380.jpg" alt="Unlimited color &amp; background">
+                    </li>
+                    <li class="roundabout-moveable-item">
+                        <div class="roundabout-caption">
+                            <h2 class="roundabout-title">Responsive &amp; mobile ready</h2>
+                        </div>
+                        <img src="images/slider/roundabout/slider-5-640x380.jpg" alt="Responsive &amp; mobile ready">
+                    </li>
+                    #}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

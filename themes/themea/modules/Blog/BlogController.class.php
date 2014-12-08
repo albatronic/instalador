@@ -19,9 +19,9 @@ class BlogController extends ControllerProject {
                 // Puede ser la sección principal del blog o una categoría
                 $seccion = new GconSecciones($this->request['IdEntity']);
                 if ($seccion->getBelongsTo()->getId() == 0)
-                    $this->values['blog'] = Blog::getArticulos(0, false, 1, 0, 1);
+                    $this->values['blog'] = Blog::getArticulos(0, false, 1, 0, 5);
                 else {
-                    $this->values['blog'] = Blog::getArticulos($this->request['IdEntity'], false, 1, 0, 1);
+                    $this->values['blog'] = Blog::getArticulos($this->request['IdEntity'], false, 1, 0, 5);
                     $this->values['blog']['categoria'] = $seccion->getTitulo();
                 }
 
@@ -29,7 +29,7 @@ class BlogController extends ControllerProject {
             case 'POST':
                 // Puede venir desde el buscador de texto, el archivo de meses o la paginación
                 if ($this->request['texto']) {
-                    $this->values['blog'] = Blog::getArticulosBusqueda($this->request['texto'], false, $this->request['pagina'], 0, 1);
+                    $this->values['blog'] = Blog::getArticulosBusqueda($this->request['texto'], false, $this->request['pagina'], 0, 5);
                     $this->values['blog']['texto'] = $this->request['texto'];
                 } elseif ($this->request['anio']) {
                     $anio = $this->request['anio'];
@@ -37,19 +37,19 @@ class BlogController extends ControllerProject {
                     if ($mes < 1 or $mes > 12)
                         $mes = date('m');
                     $meses = new Meses($mes);
-                    $this->values['blog'] = Blog::getArticulosMes($anio, $mes, false, $this->request['pagina'], 0, 1);
+                    $this->values['blog'] = Blog::getArticulosMes($anio, $mes, false, $this->request['pagina'], 0, 5);
                     $this->values['blog']['anio'] = $anio;
                     $this->values['blog']['mes'] = $mes;
                     $this->values['blog']['textoMes'] = $meses->getDescripcion();
                     unset($meses);
                 } else
-                    $this->values['blog'] = Blog::getArticulos(0, false, $this->request['pagina'], 0, 1);
+                    $this->values['blog'] = Blog::getArticulos(0, false, $this->request['pagina'], 0, 5);
                 break;
         }
 
         $this->values['blog']['categorias'] = Blog::getSecciones();
         $this->values['postsPorMes'] = Blog::getArticulosMeses(12);
-        $this->values['testimonios'] = Contenidos::getContenidosSeccion($this->varWeb['Pro']['staticContents'][1]);
+        $this->values['testimonios'] = Contenidos::getAllContenidosSeccion($this->varWeb['Pro']['staticContents'][1]);
 
         return parent::IndexAction();
     }

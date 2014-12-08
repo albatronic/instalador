@@ -28,17 +28,17 @@
         <div class="post-info-wrapper">
             <div class="post-icon"></div>
             <div class="post-info">
-                {#
                 <span class="author">
                     <a href="#" rel="author">admin</a>
                 </span>
+                {#                
                 <span class="tags">
                     <a href="#" rel="tag">Australia</a>, <a href="#" rel="tag">Europe</a>
                 </span>
                 <span class="comment"> 5 Comments </span>
                 #}
                 <div class="posts-link">
-                    <a href="">{{ macro.link(macros.idiomas('leerMas'),none,item.url.url,item.url.targetBlank) }}</a>
+                    {{ macro.link('Leer más',none,item.url.url,item.url.targetBlank) }}
                 </div>
             </div>
         </div>

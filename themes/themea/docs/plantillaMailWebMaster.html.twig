@@ -6,7 +6,7 @@
         <!-- Facebook sharing information tags -->
         <meta property="og:title" content="*|MC:SUBJECT|*" />
         
-        <title>#TITLE#</title>
+        <title>Mensaje Confirmación</title>
     <style type="text/css">
       /* Client-specific Styles */
       #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" button. */
@@ -260,7 +260,7 @@
                                     <tr>
                                         <td class="headerContent">
                                           <br />
-                                          <a href="#" title="#TITLE#"><img src="http://#DOMINIO#/images/albatronic-cloud-solutions.png" alt="#TITLE#" title="#TITLE#" width="280" id="headerImage campaign-icon" mc:label="header_image" mc:edit="header_image" mc:allowdesigner mc:allowtext /></a>
+                                          <a href="http://{{dominio}}" title="{{empresa}}"><img src="http://{{dominio}}/{{theme}}/docs/logo.png" alt="logo" title="{{empresa}}" width="280" id="headerImage campaign-icon" mc:label="header_image" mc:edit="header_image" mc:allowdesigner mc:allowtext /></a>
                                         </td>
                                     </tr>
                                 </table>
@@ -280,18 +280,17 @@
                                             <tr>
                                               <td valign="top" width="580" id="monkeyRewards">
                                                     <!-- EMPIENZAN LOS CAMPOS VARIABLES -->
-                                                  <div mc:edit="monkeyrewards">
-                                                      <div class="fila">De: <span class="mensaje">#EMPRESA# <a href="mailto:#MAIL#">#MAIL#</a></span></div>
-                                                      <div class="fila">Hora: <span class="mensaje">#FECHA# #HORA#</span></div>
-                                                      <div class="fila">Asunto: <span class="mensaje">Hemos recibido su mensaje</span></div>
+                                                  <div mc:edit="monkeyrewards">                                                      
+                                                      <div class="fila">Nombre: <span class="mensaje">{{Nombre}}</span></div>
+                                                      <div class="fila">Empresa: <span class="mensaje">{{Empresa}}</span></div>
+                                                      <div class="fila">E-mail <span class="mensaje"><a href="mailto:#MAIL#">{{Email}}</a></span></div>                                                      
+                                                      <div class="fila">Tel&eacute;fono <span class="mensaje">{{Telefono}}</span></div>                                                      
                                                   </div>
                                                     <!-- TERMINAN LOS CAMPOS VARIABLES -->
 
-
-
                                                   <!-- TEXTO DE CORTESÍA -->
                                                   <div mc:edit="monkeyrewards" id="cortesia">
-                                                    <p>Gracias por contactar con nosotros. El mensaje se ha trasladado a la persona responsable y en breve recibir&aacute; una respuesta.</p>
+                                                    <p>{{Mensaje}}</p>
                                                   </div> 
                                                   <!-- FIN TEXTO DE CORTESÍA -->                                                        
                                               </td>
@@ -299,7 +298,7 @@
                                                 
                                             <tr>
                                                 <td align="left" valign="middle" id="proteccion">
-                                                    <div mc:edit="std_proteccion">#TEXTOLOPD#</div>
+                                                    <div mc:edit="std_proteccion">{%autoescape false%}{{textolopd}}{%endautoescape%}</div>
                                                 </td>
                                             </tr>
                       

@@ -1,20 +1,26 @@
 {% extends layout %}
 
 {% block content %}
-{% include 'Index/slider.html.twig' %} <!-- SLIDER DE LA HOME -->
-<div id="sub-main" class="container_12">
-    <div id="content">
-	{% include 'Index/servicios.html.twig' %}        
+    
+    {% include 'Index/sliderStretcher.html.twig' %} <!-- SLIDER DE LA HOME -->
+    {% include 'Index/slider.html.twig' %} <!-- SLIDER DE LA HOME -->
+    {% include 'Index/sliderAccordion.html.twig' %} <!-- SLIDER DE LA HOME -->
+    {% include 'Index/sliderRoundAbout.html.twig' %} <!-- SLIDER DE LA HOME -->
+    {% include 'Index/sliderShowCase.html.twig' %} <!-- SLIDER DE LA HOME -->
 
-        <div class="clear mb60"></div>
-        
-	{% include 'Index/elegirnos.html.twig' %}	
+    <div id="sub-main" class="container_12">
+        <div id="content">
+            {% include 'Index/servicios.html.twig' %}        
 
-        <div class="clear mb60"></div>
+            <div class="clear mb60"></div>
 
-	{% include 'Index/blog.html.twig' %}        
+            {% include 'Index/elegirnos.html.twig' %}	
 
+            <div class="clear mb60"></div>
+
+            {% include 'Index/blog.html.twig' %}        
+
+        </div>
+        <!-- end of #content -->
     </div>
-    <!-- end of #content -->
-</div>
 {% endblock %}

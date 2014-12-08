@@ -1,9 +1,47 @@
-{# Enlaces #}
 {% extends layout %}
 
-{% set widgets = values.widgets %}
-
 {% block content %}
-	<p>Template autogenerado para el controlador Enlaces</p>
-	<p>Edítalo en themes/themea/modules/Enlaces/index.html.twig</p>
+<div id="sub-main" class="container_12">
+    <div class="h-wrapper h1 grid_12">
+	<h1>{{values.seccion.Titulo}}<span class="line"></span></h1>
+    </div>  
+    <div id="content" class="grid_12">
+	<div id="postsinglepage" class="posts">
+	    {% if values.seccion.PathNameImagenN(1) %}
+	    <div class="featured-thumbnail-wrapper image">		   		    
+		<div class="featured-thumbnail">
+		    <div class="image-wrap">
+			<img src="{{theme}}/{{values.seccion.PathNameImagenN(1)}}" alt="{{values.seccion.Titulo}}" title="{{values.seccion.Titulo}}" />
+		    </div>
+		</div>		  
+	    </div>
+	    {% endif %}            
+            <div class="single-post">
+                <div class="post-content">
+                {% if values.seccion.Subtitulo%}                    
+                    <div class="single-port">
+                        <h2>{{values.seccion.Subtitulo}}</h2>
+                    </div>
+                {% endif %}
+
+                {% autoescape false%}{{values.seccion.Introduccion}}{% endautoescape %}
+                </div>
+            </div>                 
+        </div>
+        <div class="grid_12">
+            <dl class="faq_list">
+                {% for seccion in values.enlaces %}
+                    <dt>{{seccion.titulo}}</dt>
+                    {% for enlace in seccion.enlaces %}
+                        <p>{{enlace.titulo}}</p>
+                        {{macro.link('Más',enlace.titulo,enlace.url.url,enlace.url.targetBlank)}}
+                    {% endfor %}
+                {% else %}
+                    {{macro.idioma('noEnlaces')}}
+                {% endfor %}		
+            </dl>
+            <a href="javascript:history.back(-1)" title="{{macro.idioma('volverAtras')}}" class="buttons boton right">{{macro.idioma('volverAtras')}}</a>               
+        </div>        
+    </div>	
+</div>
 {% endblock %}

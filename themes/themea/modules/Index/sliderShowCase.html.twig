@@ -1,0 +1,115 @@
+{# Necesita dos imágenes, la principal 940x290 y el thumbnail de 110x56 #}
+<div id="slider-wrapper">
+    <div id="showcase-holder">
+        <div id="showcase" class="showcase">
+            {% for item in values.sliders %}             
+            <div class="showcase-slide">
+                <div class="showcase-content">
+                    <img src="{{theme}}/{{item.imagen}}" width="940" heigth="290" alt="{{item.titulo}}">
+                </div>
+                <div class="showcase-thumbnail">
+                    <img src="{{theme}}/{{item.imagen}}" width="110" alt="{{item.titulo}}">
+                    <div class="showcase-thumbnail-caption"></div>
+                    <div class="showcase-thumbnail-cover"></div>
+                </div>
+                <div class="showcase-caption">
+                    <h2 class="showcase-title">{{item.titulo}}</h2>
+                    <span class="angle left dark"></span>{{item.subtitulo}} </div>
+            </div>
+            {% endfor %}   
+            {#
+            <div class="showcase-slide">
+                <div class="showcase-content">
+                    <img src="images/slider/showcase/slider-2-940x290.jpg" alt="Awesome slideshow">
+                </div>
+                <div class="showcase-thumbnail">
+                    <img src="images/slider/showcase/slider-2-110x56.jpg" alt="Awesome slideshow">
+                    <div class="showcase-thumbnail-caption"></div>
+                    <div class="showcase-thumbnail-cover"></div>
+                </div>
+                <div class="showcase-caption">
+                    <h2 class="showcase-title">Awesome slideshow</h2>
+                    <span class="angle left dark"></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sem dui, molestie vitae ornare tincidunt, semper non metus. Ut id arcu leo, id feugiat mauris. </div>
+            </div>
+            <div class="showcase-slide">
+                <div class="showcase-content">
+                    <img src="images/slider/showcase/slider-3-940x290.jpg" alt="Easy to work">
+                </div>
+                <div class="showcase-thumbnail">
+                    <img src="images/slider/showcase/slider-3-110x56.jpg" alt="Easy to work">
+                    <div class="showcase-thumbnail-caption"></div>
+                    <div class="showcase-thumbnail-cover"></div>
+                </div>
+                <div class="showcase-caption">
+                    <h2 class="showcase-title">Easy to work</h2>
+                    <span class="angle left dark"></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sem dui, molestie vitae ornare tincidunt, semper non metus. Ut id arcu leo, id feugiat mauris. </div>
+            </div>
+            <div class="showcase-slide">
+                <div class="showcase-content">
+                    <img src="images/slider/showcase/slider-4-940x290.jpg" alt="Over 500 fonts">
+                </div>
+                <div class="showcase-thumbnail">
+                    <img src="images/slider/showcase/slider-4-110x56.jpg" alt="Over 500 fonts">
+                    <div class="showcase-thumbnail-caption"></div>
+                    <div class="showcase-thumbnail-cover"></div>
+                </div>
+                <div class="showcase-caption">
+                    <h2 class="showcase-title">Over 500 fonts</h2>
+                    <span class="angle left dark"></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sem dui, molestie vitae ornare tincidunt, semper non metus. Ut id arcu leo, id feugiat mauris. </div>
+            </div>
+            <div class="showcase-slide">
+                <div class="showcase-content">
+                    <img src="images/slider/showcase/slider-5-940x290.jpg" alt="Unlimited color &amp; background">
+                </div>
+                <div class="showcase-thumbnail">
+                    <img src="images/slider/showcase/slider-5-110x56.jpg" alt="Unlimited color &amp; background">
+                    <div class="showcase-thumbnail-caption"></div>
+                    <div class="showcase-thumbnail-cover"></div>
+                </div>
+                <div class="showcase-caption">
+                    <h2 class="showcase-title">Unlimited color &amp; background</h2>
+                    <span class="angle left dark"></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sem dui, molestie vitae ornare tincidunt, semper non metus. Ut id arcu leo, id feugiat mauris. </div>
+            </div>
+            <div class="showcase-slide">
+                <div class="showcase-content">
+                    <img src="images/slider/showcase/slider-6-940x290.jpg" alt="Translation Ready">
+                </div>
+                <div class="showcase-thumbnail">
+                    <img src="images/slider/showcase/slider-6-110x56.jpg" alt="Translation Ready">
+                    <div class="showcase-thumbnail-caption"></div>
+                    <div class="showcase-thumbnail-cover"></div>
+                </div>
+                <div class="showcase-caption">
+                    <h2 class="showcase-title">Translation Ready</h2>
+                    <span class="angle left dark"></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sem dui, molestie vitae ornare tincidunt, semper non metus. Ut id arcu leo, id feugiat mauris. </div>
+            </div>
+            <div class="showcase-slide">
+                <div class="showcase-content">
+                    <img src="images/slider/showcase/slider-7-940x290.jpg" alt="Custom Post Types">
+                </div>
+                <div class="showcase-thumbnail">
+                    <img src="images/slider/showcase/slider-7-110x56.jpg" alt="Custom Post Types">
+                    <div class="showcase-thumbnail-caption"></div>
+                    <div class="showcase-thumbnail-cover"></div>
+                </div>
+                <div class="showcase-caption">
+                    <h2 class="showcase-title">Custom Post Types</h2>
+                    <span class="angle left dark"></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sem dui, molestie vitae ornare tincidunt, semper non metus. Ut id arcu leo, id feugiat mauris. </div>
+            </div>
+            <div class="showcase-slide">
+                <div class="showcase-content">
+                    <img src="images/slider/showcase/slider-8-940x290.jpg" alt="Custom Widgets">
+                </div>
+                <div class="showcase-thumbnail">
+                    <img src="images/slider/showcase/slider-8-110x56.jpg" alt="Custom Widgets">
+                    <div class="showcase-thumbnail-caption"></div>
+                    <div class="showcase-thumbnail-cover"></div>
+                </div>
+                <div class="showcase-caption">
+                    <h2 class="showcase-title">Custom Widgets</h2>
+                    <span class="angle left dark"></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sem dui, molestie vitae ornare tincidunt, semper non metus. Ut id arcu leo, id feugiat mauris. </div>
+            </div>
+            #}
+        </div>
+    </div>
+</div>

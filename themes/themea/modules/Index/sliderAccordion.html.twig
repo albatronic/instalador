@@ -1,0 +1,82 @@
+{# Las imágenes deben ser de 940x380 #}
+<div id="slider-wrapper">
+    <div id="liteaccordion">
+        <ol>
+            {% for item in values.sliders %} 
+            <li>
+                <h2 class="{%if loop.index==1%}first{%endif%}">
+                    <span class="slide_name"> {{item.titulo}} </span>
+                    <span class="slide_number"> {{loop.index}} </span>
+                </h2>
+                <div>
+                    <div>
+                        <img src="{{theme}}/{{item.imagen}}" alt="{{item.titulo}}">
+                        <div class="liteaccordion-caption">
+                            <h2 class="liteaccordion-title">{{item.titulo}}</h2>
+                            {{item.subtitulo}} 
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+            {#
+            <li>
+                <h2 class>
+                        <span class="slide_name"> Awesome slideshow </span>
+                        <span class="slide_number"> 02 </span>
+                </h2>
+                <div>
+                        <div>
+                                <img src="images/slider/liteaccordion/slider-2-940x380.jpg" alt="Awesome slideshow">
+                                <div class="liteaccordion-caption">
+                                        <h2 class="liteaccordion-title">Awesome slideshow</h2>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. quam id ultricies mollis, quam odio viverra nisi, vulputate fringilla risus leo ac ante. In eleifend sem eu turpis viverra quis interdum dolor tempor. Nulla lacinia nibh vitae mi ultricies vitae vulputate arcu aliquet. </div>
+                        </div>
+                </div>
+            </li>
+            <li>
+                <h2 class>
+                        <span class="slide_name"> Easy to work </span>
+                        <span class="slide_number"> 03 </span>
+                </h2>
+                <div>
+                        <div>
+                                <img src="images/slider/liteaccordion/slider-3-940x380.jpg" alt="Easy to work">
+                                <div class="liteaccordion-caption">
+                                        <h2 class="liteaccordion-title">Easy to work</h2>
+                                        Lorem ipsum dolor sit amet, quam id ultricies mollis, quam odio viverra nisi, vulputate fringilla risus leo ac ante. In eleifend sem eu turpis viverra quis interdum dolor tempor. Nulla lacinia nibh vitae mi ultricies vitae vulputate arcu aliquet. Nulla sapien ipsum, suscipit non pretium et, mollis quis quam. </div>
+                        </div>
+                </div>
+            </li>
+            <li>
+                <h2 class>
+                        <span class="slide_name"> Over 500 fonts </span>
+                        <span class="slide_number"> 04 </span>
+                </h2>
+                <div>
+                        <div>
+                                <img src="images/slider/liteaccordion/slider-4-940x380.jpg" alt="Over 500 fonts">
+                                <div class="liteaccordion-caption">
+                                        <h2 class="liteaccordion-title">Over 500 fonts</h2>
+                                        Sed consequat, quam id ultricies mollis, quam odio viverra nisi, vulputate fringilla risus leo ac ante. In eleifend sem eu turpis viverra quis interdum dolor tempor. Nulla lacinia nibh vitae mi ultricies vitae vulputate arcu aliquet. Nulla sapien ipsum, suscipit non pretium et, mollis quis quam. Etiam suscipit mattis mauris. </div>
+                        </div>
+                </div>
+            </li>
+            <li>
+                <h2 class>
+                        <span class="slide_name"> Unlimited color &amp; background </span>
+                        <span class="slide_number"> 05 </span>
+                </h2>
+                <div>
+                        <div>
+                                <img src="images/slider/liteaccordion/slider-5-940x380.jpg" alt="Unlimited color &amp; background">
+                                <div class="liteaccordion-caption">
+                                        <h2 class="liteaccordion-title">Unlimited color &amp; background</h2>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sem dui, molestie vitae ornare tincidunt, semper non metus. Ut id arcu leo, id feugiat mauris. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed consequat, quam id ultricies mollis, quam odio viverra nisi. </div>
+                        </div>
+                </div>
+            </li>
+            #}
+        </ol>
+    </div>
+</div>

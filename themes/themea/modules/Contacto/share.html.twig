@@ -4,12 +4,13 @@
     <h3>{{macro.idioma('siguenos')}}<span class="line"></span></h3>
 </div>
 	
-    <div class="textwidget">
-        {% for red in values.redes %} 
-	<div class="social-icon {{red.titulo}}">
-	    <a class="dark" href="{{red.url}}/{{red.idUsuario}}" title="{{red.titulo}}"><img src="{{theme}}/images/icons/network/dark/{{red.titulo}}.png" alt="{{red.titulo}}" /></a>
-	</div>
-	{% endfor %}   
+<div class="textwidget">
+    <p>{{macro.idioma('sloganRedesSociales')}}</p>
+    {% for red in values.redes %} 
+    <div class="social-icon {{red.titulo}}">
+        <a class="dark" href="{{red.url}}/{{red.idUsuario}}" title="{{red.titulo}}"><img src="{{theme}}/images/icons/network/dark/{{red.titulo}}.png" alt="{{red.titulo}}" /></a>
     </div>
+    {% endfor %}   
+</div>
 </div>
 {% endif %}

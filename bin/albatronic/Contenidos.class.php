@@ -87,6 +87,14 @@ class Contenidos {
         return $array;
     }
 
+    /**
+     * Devuelve array de objetos contenidos que pertenecen
+     * a la sección $idSeccion y todas sus subsecciones hijas
+     * de primer nivel (no las nietas, etc)
+     * 
+     * @param int $idSeccion
+     * @return array \GconContenidos
+     */
     static function getAllContenidosSeccion($idSeccion) {
 
         $array = array();

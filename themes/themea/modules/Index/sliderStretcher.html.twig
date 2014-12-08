@@ -1,0 +1,16 @@
+{# Slider sin imágenes #}
+<div id="slogan-wrapper">
+    <div id="slogan" class="container_12">
+        <div class="slogan-control">
+            <div class="slogan-next"></div>
+            <div class="slogan-prev"></div>
+        </div>
+        <div class="slogan">
+            <ul>
+            {% for item in values.sliders %}                 
+                <li>{{item.titulo}} </li>
+            {% endfor %}                
+            </ul>
+        </div>
+    </div>
+</div>

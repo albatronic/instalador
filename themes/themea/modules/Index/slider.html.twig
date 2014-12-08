@@ -1,17 +1,18 @@
+{# Las imágenes deben ser de 940x380 #}
 <div id="slider-wrapper">
-	<div id="nivoslider-wrapper">
-		<div id="nivoslider" class="nivoSlider">
-                    {% for item in values.sliders %} 
-			<img src="{{theme}}/{{item.imagen}}" title="#caption{{loop.index}}" alt="{{item.titulo}}">
-                    {% endfor %}
-		</div>
-	</div>
-        {% for item in values.sliders %}
-	<div id="caption{{loop.index}}" class="nivo-html-caption">
-		<h2 class="nivo-title">{{item.titulo}}</h2>
-		<span class="custom-title1 skin-color">{{item.subtitulo}}</span>
-		{#<span class="custom-title2">{{item.subtitulo}}</span>#}
-		{#<span class="custom-title3">that you need</span>#}
-	</div>
-        {% endfor %}
+    <div id="nivoslider-wrapper">
+        <div id="nivoslider" class="nivoSlider">
+            {% for item in values.sliders %} 
+                <img src="{{theme}}/{{item.imagen}}" title="#caption{{loop.index}}" alt="{{item.titulo}}">
+            {% endfor %}
+        </div>
+    </div>
+    {% for item in values.sliders %}
+    <div id="caption{{loop.index}}" class="nivo-html-caption">
+        <h2 class="nivo-title">{{item.titulo}}</h2>
+        <span class="custom-title1 skin-color">{{item.subtitulo}}</span>
+        {#<span class="custom-title2">{{item.subtitulo}}</span>#}
+        {#<span class="custom-title3">that you need</span>#}
+    </div>
+    {% endfor %}
 </div>

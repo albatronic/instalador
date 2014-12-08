@@ -1,0 +1,182 @@
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/jquery.min.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/superfish.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/supersubs.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/jquery.nivo.slider.pack.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/liteaccordion.jquery.min.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/bgstretcher.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/jquery.aw-showcase.min.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/jquery.roundabout.min.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/jquery.roundabout-shapes.min.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/jquery.masonry.min.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/jcarousellite.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/selectnav.min.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/jquery.tipsy.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/jquery.custom.js"></script>
+<script type="text/javascript" src="{{app.path}}/{{theme}}/js/jquery.search.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    // menu init
+    jQuery('ul.sf-menu').supersubs({ 
+        minWidth:18.4,   // minimum width of sub-menus in em units 
+        maxWidth:27,	// maximum width of sub-menus in em units 
+        extraWidth:1     // extra width can ensure lines don't sometimes turn over due to slight rounding differences and font-family 
+    }).superfish({	// main navigation init
+        delay:200,		// one second delay on mouseout 
+        animation:{opacity:'show',height:"show"}, // fade-in and slide-down animation 
+        speed:'normal',  // faster animation speed 
+        autoArrows:false,   // generation of arrow mark-up (for submenu) 
+        dropShadows:false   // drop shadows (for submenu)
+    });
+
+    // Liteaccordion slider init
+    jQuery('#liteaccordion').liteAccordion({
+        onTriggerSlide : function() {
+        this.find('.liteaccordion-caption').fadeOut();
+        },
+        onSlideAnimComplete : function() {    
+        this.find('.liteaccordion-caption').fadeIn();
+        },
+        containerWidth:940,                   // fixed (px)  
+        containerHeight:380,                  // fixed (px)  
+        headerWidth:48,                       // fixed (px)  
+
+        activateOn:'click',	// click or mouseover  
+        firstSlide:1,	// displays slide (n) on page load  
+        slideSpeed:800,	// slide animation speed
+
+        autoPlay:false,	// automatically cycle through slides  
+        pauseOnHover:false,	// pause on hover  
+        cycleSpeed:6000,	// time between slide cycles  
+        easing:'swing',                       // custom easing function  
+
+        theme:'basic',                        // basic, dark, light, or stitch  
+        rounded:false,	// square or rounded corners  
+        enumerateSlides:false,                // put numbers on slides  
+        linkable:false                
+    }).find('.liteaccordion-caption:first').show();
+    
+    // Nivo slider init
+    jQuery('#nivoslider').nivoSlider({
+        effect:'random',
+        slices:15,
+        boxCols:8,
+        boxRows:4,
+        animSpeed:500,
+        pauseTime:5000,
+        directionNav:false,
+        directionNavHide:false,
+        controlNav:true,
+        controlNavThumbs:false,
+        pauseOnHover:true,
+        randomStart:false,
+        manualAdvance:false
+    }); 
+    
+    // Roundabout slider init
+    var interval;
+    jQuery('#roundabout-holder').roundabout({
+        minOpacity:1,
+        minScale:0.4,
+        maxScale:1,
+        duration:600,
+        easing:'',
+        autoplay:true,
+        autoplayDuration:3000,
+        autoplayPauseOnHover:true,
+        reflect:false,
+        enableDrag:false,
+        responsive:true,
+        shape:'lazySusan',
+        btnNext:'#roundabout-next',
+        btnPrev:'#roundabout-prev'
+    })
+    .hover(
+        function() {
+            // oh no, it's the cops!
+            clearInterval(interval);
+        },
+        function() {
+            // false alarm: PARTY!
+            interval = startAutoPlay();
+        }
+    );
+
+    interval = startAutoPlay();
+
+    function startAutoPlay() {
+        return setInterval(function() {
+                jQuery('#roundabout-holder').roundabout_animateToNextChild();
+        }, 3000);
+    }
+
+    jQuery('#roundabout-inner').show(); 
+    
+    // slogan init
+    jQuery('#slogan .slogan').jCarouselLite({
+        btnNext:'#slogan .slogan-next',
+        btnPrev:'#slogan .slogan-prev',
+        auto:8000,
+        speed:800,
+        vertical:true,
+        visible:1
+    });    
+    
+    // BgStretcher slider init
+    jQuery('#stretcher').bgStretcher({
+        resizeProportionally:true,
+        resizeAnimate:false,
+        images:['images/slider/bgstretcher/bgslider2.jpg','images/slider/bgstretcher/bgslider1.jpg','images/slider/bgstretcher/bgslider3.jpg',],
+        imageWidth:1024,
+        imageHeight:768,
+        maxWidth:"auto",
+        maxHeight:"auto",
+        nextSlideDelay:6000,
+        slideShowSpeed:1000,
+        slideShow:true,
+        transitionEffect:'fade', // none, fade, simpleSlide, superSlide
+        slideDirection:'W', // N, S, W, E, (if superSlide - NW, NE, SW, SE)
+        sequenceMode:'normal', // back, random
+        buttonPrev:'',
+        buttonNext:'',
+        pagination:'#nav',
+        anchoring:'left top', // right bottom center
+        anchoringImg:'left top', // right bottom center
+        preloadImg:false,
+        startElementIndex:0,
+        callbackfunction:null
+    });    
+    
+    // Showcase slider init
+    jQuery('#showcase').fadeTo(500, 1);
+
+    jQuery('#showcase').awShowcase({
+        content_width:940,
+        content_height:290,
+        fit_to_parent:false,
+        auto:true,
+        interval:5000,
+        continuous:true,
+        loading:true,
+        arrows:false,
+        buttons:false,
+        btn_numbers:false,
+        keybord_keys:false,
+        mousetrace:false, /* Trace x and y coordinates for the mouse */
+        pauseonover:false,
+        stoponclick:true,
+        transition:'hslide', /* hslide/vslide/fade */
+        transition_delay:300,
+        transition_speed:500,
+        show_caption:'onload', /* onload/onhover/show */
+        thumbnails:true,
+        thumbnails_position:'outside-last', /* outside-last/outside-first/inside-last/inside-first */
+        thumbnails_direction:'horizontal', /* vertical/horizontal */
+        thumbnails_slidex:0, /* 0 = auto / 1 = slide one thumbnail / 2 = slide two thumbnails / etc. */
+        dynamic_height:false, /* For dynamic height to work in webkit you need to set the width and height of images in the source. Usually works to only set the dimension of the first slide in the showcase. */
+        speed_change:false, /* Set to true to prevent users from swithing more then one slide at once. */
+        viewline:false /* If set to true content_width, thumbnails, transition and dynamic_height will be disabled. As for dynamic height you need to set the width and height of images in the source. */
+    }); 
+});
+</script>

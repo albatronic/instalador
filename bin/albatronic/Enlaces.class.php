@@ -70,14 +70,15 @@ class Enlaces {
         if ($nItems <= 0)
             $nItems = 999999;
 
-        $array['seccion'] = self::getSecciondeEnlaces($idSeccion);
+        //$array['seccion'] = self::getSecciondeEnlaces($idSeccion);
 
         $enlace = new EnlEnlaces();
         $rows = $enlace->cargaCondicion("Id", "IdSeccion='{$idSeccion}'", "SortOrder ASC LIMIT {$nItems}");
 
         foreach ($rows as $row) {
             $enlace = new EnlEnlaces($row['Id']);
-            $array['enlaces'][] = array(
+            //$array['enlaces'][] = array(
+            $array[] = array(
                 'titulo' => $enlace->getTitulo(),
                 'subtitulo' => $enlace->getSubtitulo(),
                 'resumen' => $enlace->getResumen(),
@@ -114,13 +115,14 @@ class Enlaces {
         $rows = $seccion->cargaCondicion("Id", '', "SortOrder ASC LIMIT {$nItems}");
         unset($seccion);
 
-        foreach ($rows as $row)
-            $array[] = self::getSecciondeEnlaces($row['Id']);
+        foreach ($rows as $row) {
+            $array[$row['Id']] = self::getSeccionDeEnlaces($row['Id']);
+        }
 
         return $array;
     }
 
-    static function getSecciondeEnlaces($idSeccion) {
+    static function getSeccionDeEnlaces($idSeccion) {
 
         $seccion = new EnlSecciones($idSeccion);
         $array = array(
@@ -134,6 +136,14 @@ class Enlaces {
         return $array;
     }
 
+    static function getAllEnlacesGroupBySeccion() {
+        
+        $secciones = self::getSeccionesDeEnlaces();
+
+        foreach ($secciones as $key => $seccion) {
+            $secciones[$key]['enlaces'] = self::getEnlacesDeInteres($key);
+        }
+        return $secciones;
+    }
 }
 
-?>

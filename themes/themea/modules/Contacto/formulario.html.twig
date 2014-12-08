@@ -1,5 +1,4 @@
-<div id="contact-form">
-    {% if values.formContacta.accion == '' %}    
+<div id="contact-form">   
     <form name="formEnvio" id="formEnvio" action="" method="POST">
         <input name="controller" value="Contacto" type="hidden" />
         <input name="action" value="Index" type="hidden" />
@@ -41,7 +40,7 @@
         <div id="contenedorEnviar" class="{%if values.formContacta.campos.leidoPolitica.error%} error{%endif%}">
             <div class="checkbox">
                 <input name="campos[leidoPolitica][valor]" type="checkbox" id="checkbox2" {% if values.formContacta.campos.leidoPolitica.valor == 'on' %} CHECKED{% endif %} />
-                <label class="textoCheckbox" for="checkbox2">{{macro.idioma('leidoPolitica')}} <a href="{{app.path}}/politica-de-privacidad" rel="iframe-1000-360" class="pirobox" title="{{macro.idioma('politicaPrivacidad')}}">{{macro.idioma('politicaPrivacidad')}}.</a></label>
+                <label class="textoCheckbox" for="checkbox2">{{macro.idioma('heLeidoYAceptoLa')}} <a href="{{app.path}}/politica-de-privacidad" rel="iframe-1000-360" class="pirobox" title="{{macro.idioma('politicaPrivacidad')}}">{{macro.idioma('politicaPrivacidad')}}.</a></label>
             </div>
         </div>	
 	
@@ -50,9 +49,4 @@
 		<input type="submit" id="contact-submit" value="{{macro.idioma('enviar')}}">
 	    </div>	
     </form>
-    {% else %}
-        <div class="mensaje">
-            <div class="{%if values.formContacta.resultado%} exito mensaje_enviado {%else%} error {%endif%}">{{values.formContacta.mensaje}}</div>
-        </div>
-    {% endif %}
 </div>

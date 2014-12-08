@@ -1,4 +1,4 @@
-{# portfolio #}
+{# portfolio imágenes de 280x160 #}
 <div id="text-6" class="widget_text widget">
     <div class="h-wrapper">
         <h3>Portfolio<span class="line"></span></h3>
@@ -7,8 +7,11 @@
         <div class="shortcodeslider featured-thumbnail center">
             <div class="image-wrap">
                 <div id="shortcodeslider-1" class="nivoSlider">
-                    {% for item in values.portfolio.contenidos %}
-                    <img src="{{theme}}/{{item.contenido.PathNameImagenN(3)}}" alt="" title="">
+                    {% for item in values.portfolio %}
+                        {% set imagen = item.PathNameImagenN(4) %}
+                        {% if imagen %}
+                            <img src="{{theme}}/{{item.PathNameImagenN(4)}}" alt="{{item.Titulo}}" title="{{item.Titulo}}">
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>

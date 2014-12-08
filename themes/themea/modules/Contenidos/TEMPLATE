@@ -1,0 +1,9 @@
+{# Contenidos #}
+{% extends layout %}
+
+{% set widgets = values.widgets %}
+
+{% block content %}
+	<p>Template autogenerado para el controlador Contenidos</p>
+	<p>Edítalo en themes/themea/modules/Contenidos/TEMPLATE</p>
+{% endblock %}

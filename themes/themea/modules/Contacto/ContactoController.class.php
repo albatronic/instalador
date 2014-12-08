@@ -11,7 +11,6 @@
 class ContactoController extends ControllerProject {
 
     protected $controller = "Contacto";
-    
     var $plantilla = array(
         'campos' => array(
             'Nombre' => array('valor' => 'Nombre y apellidos', 'error' => false),
@@ -25,6 +24,8 @@ class ContactoController extends ControllerProject {
 
     public function IndexAction() {
 
+        $envioOk = false;
+
         switch ($this->request['METHOD']) {
             case 'GET':
                 $this->formContacta = $this->plantilla;
@@ -34,62 +35,101 @@ class ContactoController extends ControllerProject {
                 $this->formContacta = $this->request['campos'];
 
                 if ($this->Valida()) {
-                    if (file_exists('docs/plantillaMailVisitante.htm')) {
-                        $mensajeVisitante = file_get_contents('docs/plantillaMailVisitante.htm');
-                        $mensajeVisitante = str_replace("#EMPRESA#", $this->varWeb['Pro']['global']['empresa'], $mensajeVisitante);
-                        $mensajeVisitante = str_replace("#FECHA#", date('d-m-Y'), $mensajeVisitante);
-                        $mensajeVisitante = str_replace("#HORA#", date('H:m:i'), $mensajeVisitante);
-                        $mensajeVisitante = str_replace("#MAIL#", $this->varWeb['Pro']['mail']['from'], $mensajeVisitante);
-                        $mensajeVisitante = str_replace("#TEXTOLOPD#", $this->varWeb['Pro']['mail']['textoLOPD'], $mensajeVisitante);
-                        $mensajeVisitante = str_replace("#DOMINIO#", $this->varWeb['Pro']['globales']['dominio'], $mensajeVisitante);
-                        $mensajeVisitante = str_replace("#TITLE#", $this->varWeb['Pro']['globales']['empresa'], $mensajeVisitante);
-                    }
-                    if (file_exists('docs/plantillaMailWebMaster.htm')) {
-                        $mensajeWebMaster = file_get_contents('docs/plantillaMailWebMaster.htm');
-                        $mensajeWebMaster = str_replace("#EMPRESA#", $this->formContacta['campos']['Empresa']['valor'], $mensajeWebMaster);
-                        $mensajeWebMaster = str_replace("#FECHA#", date('d-m-Y'), $mensajeWebMaster);
-                        $mensajeWebMaster = str_replace("#HORA#", date('H:m:i'), $mensajeWebMaster);
-                        $mensajeWebMaster = str_replace("#MAIL#", $this->formContacta['campos']['Email']['valor'], $mensajeWebMaster);
-                        $mensajeWebMaster = str_replace("#TELEFONO#", $this->formContacta['campos']['Telefono']['valor'], $mensajeWebMaster);
-                        $mensajeWebMaster = str_replace("#MENSAJE#", $this->formContacta['campos']['Mensaje']['valor'], $mensajeWebMaster);
-                        $mensajeWebMaster = str_replace("#VISITANTE#", $this->formContacta['campos']['Nombre']['valor'], $mensajeWebMaster);
-                        $mensajeWebMaster = str_replace("#TEXTOLOPD#", $this->varWeb['Pro']['mail']['textoLOPD'], $mensajeWebMaster);
-                        $mensajeWebMaster = str_replace("#DOMINIO#", $this->varWeb['Pro']['globales']['dominio'], $mensajeWebMaster);
-                        $mensajeWebMaster = str_replace("#TITLE#", $this->varWeb['Pro']['globales']['empresa'], $mensajeWebMaster);
-                    }
-                    $mail = new Mail($this->varWeb['Pro']['mail']);
-                    // Envío al visitante
-                    $envioOk = $mail->send(
-                            $this->formContacta['campos']['Email']['valor'], $this->varWeb['Pro']['mail']['from'], $this->varWeb['Pro']['mail']['from_name'], 'Contacto desde la web', $mensajeVisitante, array()
-                    );
-                    if ($envioOk) {
-                        // Envío al web master
-                        $envioOk = $mail->send(
-                                $this->varWeb['Pro']['mail']['from'], $this->formContacta['campos']['Email']['valor'], $this->formContacta['nombre']['valor'], 'Consulta desde la web', $mensajeWebMaster, array()
-                        );
-                    }
+                    if (file_exists("{$_SESSION['theme']}/docs/plantillaMailContacto.html.twig")) {
 
-                    $this->formContacta['accion'] = 'envio';
-                    $this->formContacta['resultado'] = $envioOk;
-                    $this->formContacta['mensaje'] = ($envioOk) ? $this->values['TEXTS']['exitoEnvio'] : $this->values['TEXTS']['errorEnvio'];
-                    unset($mail);
+                        $mailer = new Mail($this->varWeb['Pro']['mail']);
+                        $envioOk = $this->enviaVisitante($mailer, "{$_SESSION['theme']}/docs/plantillaMailContacto.html.twig");
+
+                        if ($envioOk) {
+                            $envioOk = $this->enviaWebMaster($mailer, "{$_SESSION['theme']}/docs/plantillaMailWebMaster.html.twig");
+                        }
+
+                        $this->formContacta['mensaje'] = ($envioOk) ?
+                                $this->varWeb['Pro']['mail']['mensajeExito'] :
+                                $this->varWeb['Pro']['mail']['mensajeError'];
+
+                        unset($mailer);
+                    } else {
+                        $this->formContacta['mensaje'] = "No se han definido las plantillas.";
+                    }
                 }
                 break;
         }
+        $this->formContacta['envioOk'] = $envioOk;
+
         $this->values['contenido'] = new GconSecciones($this->request['IdEntity']);
-        // Portfolio
-        $this->values['portfolio'] = Contenidos::getContenidosSeccion(52);
+        $this->values['portfolio'] = Contenidos::getAllContenidosSeccion(52);
+
         $this->values['formContacta'] = $this->formContacta;
 
         return parent::IndexAction();
+    }
+
+    /**
+     * Envía el correo de confirmación al visitante
+     * en base a la plantilla htm $ficheroPlantilla.
+     * 
+     * @param Mail $mailer objeto mailer
+     * @param string $ficheroPlantilla El archivo que tiene la plantilla htm a enviar
+     * @return boolean TRUE si se envío con éxito
+     */
+    private function enviaVisitante($mailer, $ficheroPlantilla) {
+
+        $array = array(
+            'dominio' => $this->varWeb['Pro']['globales']['dominio'],
+            'empresa' => $this->varWeb['Pro']['globales']['empresa'],
+            'theme' => $_SESSION['theme'],
+            'mensaje' => $this->varWeb['Pro']['mail']['mensajeConfirmacion'],
+            'textolopd' => $this->varWeb['Pro']['mail']['textoLOPD'],
+        );
+
+        foreach ($this->formContacta['campos'] as $key => $valor) {
+            $array[$key] = $valor['valor'];
+        }
+
+        $plantilla = ControllerWeb::renderTwigTemplate($ficheroPlantilla, $array);
+
+        return $mailer->send(
+                        $this->formContacta['campos']['Email']['valor'], $this->varWeb['Pro']['mail']['from'], $this->varWeb['Pro']['mail']['from_name'], 'Hemos recibido su mensaje', $plantilla, array()
+        );
+    }
+
+    /**
+     * Envía el correo de confirmación al webmaster
+     * en base a la plantilla htm $ficheroPlantilla.
+     * 
+     * @param Mail $mailer objeto mailer
+     * @param string $ficheroPlantilla El archivo que tiene la plantilla htm a enviar
+     * @return boolean TRUE si se envío con éxito
+     */
+    private function enviaWebMaster($mailer, $ficheroPlantilla) {
+
+        $array = array(
+            'dominio' => $this->varWeb['Pro']['globales']['dominio'],
+            'empresa' => $this->varWeb['Pro']['globales']['empresa'],
+            'theme' => $_SESSION['theme'],
+            'mensaje' => $this->varWeb['Pro']['mail']['mensajeConfirmacion'],
+            'textolopd' => $this->varWeb['Pro']['mail']['textoLOPD'],
+        );
+        
+        foreach ($this->formContacta['campos'] as $key => $valor) {
+            $array[$key] = $valor['valor'];
+        }
+
+        $plantilla = ControllerWeb::renderTwigTemplate($ficheroPlantilla, $array);
+
+        return $mailer->send(
+                        $this->varWeb['Pro']['mail']['from'], $this->formContacta['campos']['Email']['valor'], $this->formContacta['nombre']['valor'], 'Ha recibido un mensaje en la web', $plantilla, array()
+        );
     }
 
     private function Valida() {
 
         $error = false;
 
-        if (!isset($this->formContacta['leidoPolitica']['valor']))
+        if (!isset($this->formContacta['leidoPolitica']['valor'])) {
             $this->formContacta['leidoPolitica']['valor'] = '';
+        }
 
         foreach ($this->formContacta as $campo => $valor) {
             $valor = trim(str_replace($this->plantilla['campos'][$campo]['valor'], "", $valor['valor']));
@@ -112,4 +152,3 @@ class ContactoController extends ControllerProject {
     }
 
 }
-

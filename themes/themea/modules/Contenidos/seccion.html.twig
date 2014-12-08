@@ -17,20 +17,19 @@
 		    </div>
 		</div>		  
 	    </div>
-	    {% endif %}
-            
+	    {% endif %}            
             <div class="single-post">
                 <div class="post-content">
+                {% if values.contenido.Subtitulo%}                    
                     <div class="single-port">
                         <h2>{{values.contenido.Subtitulo}}</h2>
                     </div>
+                {% endif %}
 
-                    <div class="post-content port-content">
-                        <p><strong class="dark-color">{{contenido.Resumen}}</strong></p>
-                        {% autoescape false%}{{values.contenido.Introduccion}}{% endautoescape %}
-                    </div> 
+                {% autoescape false%}{{values.contenido.Introduccion}}{% endautoescape %}
                 </div>
             </div>
+            <a href="javascript:history.back(-1)" title="{{macro.idioma('volverAtras')}}" class="buttons boton right">{{macro.idioma('volverAtras')}}</a>                    
         </div>
     </div>
 </div>

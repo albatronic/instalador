@@ -84,14 +84,13 @@ class ControllerWeb {
         $this->values['LANGUAGE'] = $codigoIdiomaActual;
         //$this->values['LABELS'] = $this->getEtiquetasIdioma($codigoIdiomaActual);
         //$_SESSION['LABELS'] = $this->values['LABELS'];
-
         // CARGA LOS TEXTOS DE LOS PÁRRAFOS DEL CONTROLLER EN CURSO
         // CORRESPONDIENTES AL IDIOMA SELECCIONADO
         //$this->values['TEXTS'] = $this->getTextosIdioma($codigoIdiomaActual);
         $textos = new CpanTextos();
         $this->values['LABELS'] = $textos->getTextos($this->controller);
         unset($textos);
-        
+
         // CONTROL DE VISITAS, SI ESTÁ ACTIVO POR LA VARIABLE DE ENTORNO
         if ($_SESSION['varEnv']['Pro']['visitas']['activo']) {
 
@@ -161,7 +160,7 @@ class ControllerWeb {
         $locations = explode(",", $this->varWeb['Pro']['signatures']['locations']);
         $location = trim($locations[rand(0, count($locations) - 1)]);
 
-        $idioma = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);
+        $idioma = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
         if (!is_array($this->varWeb['Pro']['signatures']['services'][$idioma])) {
             $idioma = 'es';
         }
@@ -719,5 +718,20 @@ class ControllerWeb {
 
         return ($ok) ? $controller : "";
     }
-}
 
+    /**
+     * Renderiza template
+     * 
+     * @param string $template El path completo al template
+     * @param array $values Array de valores
+     * @return string Texto html
+     */
+    static function renderTwigTemplate($template, $values) {
+        
+        $loader = new Twig_Loader_Array(array('index' => file_get_contents($template),));
+        $twig = new Twig_Environment($loader);
+
+        return $twig->render('index', $values);
+    }
+
+}

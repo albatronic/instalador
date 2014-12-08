@@ -115,7 +115,7 @@
     {% else %}
         <a href="{{url}}" 
            title="{{title|default(titulo)}}" 
-           {% if esPopup == "1" %} rel="pop-up" {% endif %} 
+           {% if esPopup == "1" %} target="_blank" {% endif %} 
            {% if id != "" %} id="{{id}}" {% endif %}               
            {% if claseCss != "" %} class="{{claseCss}}" {% endif %}
            >{{titulo}}</a>
