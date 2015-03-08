@@ -1,4 +1,5 @@
-/config/config.yml
+/config/configProd.yml
+/config/configDev.yml
 /log/
 /themes/themea/cache/
 /themes/themeb/cache/
@@ -8,3 +9,4 @@
 /unique/
 error_log
 /lib/error_log
+.DS_Store
